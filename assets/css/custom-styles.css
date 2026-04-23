@@ -1,0 +1,18 @@
+body {
+  background-image: url('/assets/img/cosmo-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Make text readable */
+.page-content {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Improve text color */
+body {
+  color: #EAEAEA;
+}
