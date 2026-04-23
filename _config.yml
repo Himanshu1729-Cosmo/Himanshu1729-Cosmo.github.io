@@ -4,7 +4,7 @@ url: "https://himanshu1729-cosmo.github.io"
 baseurl: ""
 
 navbar-links:
-    CV: "cv"
+#   CV: "cv"
 #   Publications: "publications" 
 #   Contact: "contact" 
 #   Teaching: "teaching"
