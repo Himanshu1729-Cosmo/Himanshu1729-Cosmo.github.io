@@ -17,7 +17,7 @@ img {
 <img src="/assets/img/himanshu_avatar.png" width="170">
 
 <p>
-My research lies at the intersection of cosmology and astrophysics. In cosmology, I work on constraining cosmological models using observational data and statistical inference methods. In astrophysics, I am also interested in compact objects, including black holes, quasinormal modes, and related phenomena. Beyond research, I enjoy sports, especially cricket, volleyball, running, and swimming.
+My research lies at the intersection of cosmology and astrophysics. In cosmology, I work on constraining dark energy models using observational data and statistical inference methods. In astrophysics, I work on ray-tracing of photons around compact objects, including black holes, as well as on black hole shadows, equatorial periodic orbits and their gravitational wave signatures, and quasinormal modes. Beyond research, I enjoy sports, especially cricket, volleyball, running, and swimming.
 </p>
 
 <p>
