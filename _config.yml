@@ -79,20 +79,22 @@ feed_show_tags: true
 # --- Colours / background image --- #
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
-navbar-col:  "#404040"
+navbar-col:  "#2c2c2c"
 navbar-text-col: "#EAEAEA"
-navbar-border-col: "#DDDDDD"
-#page-col: "#FAF8E8"
-page-col: "#F5F4F0"
-#page-img: "/assets/img/cosmo-bg.png"
-text-col: "#404040"
-# link-col: "#008AFF"
-link-col: "#1c3e5c"
-hover-col: "#0085A1"
-# footer-col: "#EAEAEA"
-footer-col: "#404040"
-footer-text-col: "#EAEAEA"
-footer-link-col: "#777777"
+navbar-border-col: "#444444"
+
+# TOP SECTION (make it cleaner white)
+page-col: "#ffffff"
+text-col: "#2b2b2b"
+
+# LINKS (slightly more modern)
+link-col: "#2a5db0"
+hover-col: "#6c63ff"
+
+# FOOTER (make it deeper than navbar)
+footer-col: "#1f1f1f"
+footer-text-col: "#cccccc"
+footer-link-col: "#aaaaaa"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
