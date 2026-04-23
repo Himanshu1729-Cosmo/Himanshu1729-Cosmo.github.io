@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About ...
+title: About Me
 ---
 
 ### Himanshu Chaudhary
@@ -28,8 +28,6 @@ Learn more about my research on [**ResearchGate**](https://www.researchgate.net/
   Shyam Lal College, University of Delhi, India  
 
 --------------------------------------------------------------
-# Computer Skills
----
 
 ## General Skills
 - Microsoft Office (Word, Excel, PowerPoint)  
