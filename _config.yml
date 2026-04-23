@@ -5,8 +5,8 @@ baseurl: ""
 
 navbar-links:
     About Me: "aboutme"
+    Publications: "publications" 
 #   CV: "cv"
-#   Publications: "publications" 
 #   Contact: "contact" 
 #   Teaching: "teaching"
 #   Communication: "communication"
