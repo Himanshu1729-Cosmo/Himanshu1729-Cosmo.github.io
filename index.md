@@ -21,5 +21,5 @@ My research lies at the intersection of cosmology and astrophysics. In cosmology
 </p>
 
 <p>
-I am currently pursuing my PhD at Babeș-Bolyai University, Cluj-Napoca, Romania. My work explores the nature of dark energy in light of recent datasets, including DESI, and the consequences of strong progenitor age bias in supernova cosmology on cosmological parameters.
+I am currently pursuing my PhD at Babeș-Bolyai University, Cluj-Napoca, Romania.
 </p>
