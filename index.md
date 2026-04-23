@@ -1,13 +1,12 @@
 ---
 layout: page
-title: Isidro Gómez-Vargas
+title: Himanshu Chaudhary
 ---
 
-<div align="center"><code>Postdoctoral Researcher | Machine Learning | Astrophysics </code></div>
+<div align="center"><code>PhD Researcher | Cosmology | Dark Energy | Astrophysics </code></div>
 
 <!-- ![Figura](https://igomezv.github.io/assets/img/collage1.png){: .mx-auto.d-block :} -->						
  
-
 <style>
 img {
   float: right;
@@ -16,25 +15,14 @@ img {
 }
 </style>
 
-
-<img src="https://igomezv.github.io/assets/img/isidro2mx.jpg" width="180" height="180">
-
-<p>
-My research lies at the intersection of machine learning, Bayesian inference, and astrophysics, with a focus on data-driven modeling and statistical methods for astronomical observations. I enjoy writing short stories and Python code.
-</p>
+<img src="/assets/img/avatar--home.jpeg" width="180" height="180">
 
 <p>
-I am currently a Postdoctoral Research Fellow funded through the MSCA-COFUND programme 
-<a href="https://aihub.csic.es">ALLIES</a>, based at the 
-<a href="https://www.iaa.csic.es/">Instituto de Astrofísica de Andalucía (IAA-CSIC)</a>. Previously, I held postdoctoral research positions at the 
-<a href="https://www.unige.ch/sciences/astro/exoplanets">Department of Astronomy, University of Geneva</a> 
-and at the 
-<a href="https://www.fis.unam.mx">Instituto de Ciencias Físicas, UNAM (ICF-UNAM)</a>.
+My research lies at the intersection of cosmology and astrophysics. In cosmology, I work on constraining cosmological models using observational data and statistical inference methods. In astrophysics, I am also interested in compact objects, including black holes, quasinormal modes (QNMs), and related phenomena. Beyond research, I enjoy sports, especially cricket, volleyball, running, and swimming.
+ 
+<p>
+I am currently pursuing my PhD at Babeș-Bolyai University, Cluj-Napoca, Romania. My work explores the nature of dark energy in light of recent datasets, including DESI, and the consequences of strong progenitor age bias in supernova cosmology on cosmological parameters.
 </p>
-
-
-
-
 
 <!-- 
 <p>
