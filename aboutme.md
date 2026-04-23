@@ -47,4 +47,22 @@ Learn more about my research on [**ResearchGate**](https://www.researchgate.net/
 - GetDist (post-processing and visualization)  
 - Pytearcat (tensor algebra computations)  
 - GADGET (cosmological N-body simulations)  
-- L-PICOLA (large-scale structure simulations)  
+- L-PICOLA (large-scale structure simulations)
+
+--------------------------------------------------------------
+# Coursework
+--------------------------------------------------------------
+
+### General Relativity & Cosmology
+- [Introduction to General Theory of Relativity](https://coursera.org/share/fe5eb81e775f960f2c95f5517f905e5c) — Higher School of Economics (Coursera)  
+- [Understanding Einstein: The Special Theory of Relativity](https://coursera.org/share/61db6a394d99da190edc46ddf91e7c5f) — Stanford University (Coursera)  
+- [Understanding Modern Physics I: Relativity and Cosmology](https://coursera.org/share/637a139d8e063f4977c7cde4a6997b84) — HKUST (Coursera)  
+- [From the Big Bang to Dark Energy](https://coursera.org/share/be3274b43f2e9b0b1f811cac761353e2) — University of Tokyo (Coursera)  
+
+### Astrophysics
+- [Astronomy: Exploring Time and Space](https://coursera.org/share/0030ff3b7b12e868849e3577fdb0c707) — University of Arizona (Coursera)  
+- [Astro 101: Black Holes](https://coursera.org/share/629c8bce53cada0a32c1aeb90f176fad) — University of Alberta (Coursera)  
+
+### 📐 Mathematical Methods
+- [Mathematical Predictions of General Relativity](https://udemy-certificate.s3.amazonaws.com/pdf/UC-49b66a59-71bc-46a8-8a72-d5e3dc25e682.pdf) — Udemy  
+- [Mathematical Intuition behind Relativity](https://udemy-certificate.s3.amazonaws.com/pdf/UC-7482a141-41b3-44fc-a9bc-b620c13b9aad.pdf) — Udemy  
