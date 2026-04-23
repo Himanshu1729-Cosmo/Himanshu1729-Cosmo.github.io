@@ -1,18 +1,26 @@
+/* Background */
 body {
-  background-image: url('/assets/img/cosmo-bg.jpg');
+  background-image: url('/assets/img/cosmo-bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
-
-/* Make text readable */
-.page-content {
-  background-color: rgba(0, 0, 0, 0.65);
-  padding: 30px;
-  border-radius: 10px;
-}
-
-/* Improve text color */
-body {
   color: #EAEAEA;
+}
+
+/* DARK OVERLAY (global) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+/* Content box (Beautiful Jekyll uses .container or .intro-header + .page-content-wrapper) */
+.page-content,
+.page-content-wrapper,
+.container {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 25px;
+  border-radius: 12px;
 }
