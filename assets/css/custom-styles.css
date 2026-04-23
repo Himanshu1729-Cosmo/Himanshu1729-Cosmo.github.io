@@ -1,26 +1,27 @@
-/* Background */
-body {
-  background-image: url('/assets/img/cosmo-bg.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #EAEAEA;
+/* COSMO BACKGROUND */
+html, body {
+  background: url('/assets/img/cosmo-bg.png') no-repeat center center fixed !important;
+  background-size: cover !important;
+  color: #EAEAEA !important;
 }
 
-/* DARK OVERLAY (global) */
+/* REMOVE WHITE BLOCK FROM THEME */
+.page-content-wrapper {
+  background: transparent !important;
+}
+
+/* ADD DARK GLASS EFFECT */
+.container {
+  background: rgba(0, 0, 0, 0.65) !important;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+/* OPTIONAL: DARK OVERLAY FOR BETTER LOOK */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.5);
   z-index: -1;
-}
-
-/* Content box (Beautiful Jekyll uses .container or .intro-header + .page-content-wrapper) */
-.page-content,
-.page-content-wrapper,
-.container {
-  background: rgba(0, 0, 0, 0.65);
-  padding: 25px;
-  border-radius: 12px;
 }
