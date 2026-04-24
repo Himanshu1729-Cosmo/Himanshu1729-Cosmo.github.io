@@ -267,7 +267,7 @@ ax.tick_params(axis='both', which='both', width=1.2, length=5)
 
 g2d.export("2D.png")
 ```
-![Figure](/assets/img/fig_super.png){: .mx-auto.d-block }
+![Figure](/assets/img/2D.png){: .mx-auto.d-block }
 
 
 
