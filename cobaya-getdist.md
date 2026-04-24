@@ -39,7 +39,7 @@ $$
 w(z) = w_0 + w_a \frac{z}{1+z}.
 $$
 
-# Plotting with GetDist
+## Plotting with GetDist
 
 
 
