@@ -113,7 +113,7 @@ g.settings.alpha_filled_add = 0.6
 g.settings.axes_labelsize = 20
 g.settings.legend_fontsize = 25
 g.triangle_plot( [samples], names, filled=True, contour_colors=['darkblue'], legend_labels=[r'DESI DR2 + CMB'], legend_loc='upper right', title_limit=1)
-g.export("fig_plot")
+g.export("fig_plot.png")
 ```
 ---
 
