@@ -20,6 +20,9 @@ navbar-links:
 additional_css:
   - "/assets/css/custom.css"
 
+additional_js:
+  - "/assets/js/copy-button.js"
+
 # - Learn markdown: "https://www.markdowntutorial.com/"
 #  Author's home: "https://deanattali.com"
 
