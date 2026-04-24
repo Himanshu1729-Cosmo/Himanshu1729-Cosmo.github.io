@@ -338,8 +338,6 @@ params:
     latex: '{\rm{Age}}/\mathrm{Gyr}'
   rdrag:
     latex: r_\mathrm{drag}
-```markdown
-```yaml
 sampler:
   mcmc:
     drag: true
