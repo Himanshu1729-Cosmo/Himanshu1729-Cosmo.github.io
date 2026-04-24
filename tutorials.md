@@ -7,6 +7,5 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 ---
 
-## 🔹 Cobaya
+## Cobaya
 - [Installation](cobaya-install)
-
