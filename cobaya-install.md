@@ -44,7 +44,7 @@ sudo apt install build-essential
 sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
 ```
 
-$### Install Python (Recommended: Miniconda)
+#### Install Python (Recommended: Miniconda)
 
 ```bash
 mkdir -p ~/miniconda3
@@ -54,7 +54,7 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
 
-$### Install Python Libraries
+#### Install Python Libraries
 
 ```bash
 python3 -m pip install pip
