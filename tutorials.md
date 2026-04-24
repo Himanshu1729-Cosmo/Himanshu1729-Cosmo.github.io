@@ -8,4 +8,4 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 ---
 
 ## Cobaya
-- [Installation](cobaya-install)
+- [Installation](/tutorials/cobaya-install/)
