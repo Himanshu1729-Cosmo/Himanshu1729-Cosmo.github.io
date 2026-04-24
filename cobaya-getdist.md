@@ -33,6 +33,17 @@ In this section, we will demonstrate how to load Cobaya chain files, analyze the
 
 Additional information can be found at: - [GetDist Documentation](https://getdist.readthedocs.io/en/latest/), and [Plot Gallery](https://getdist.readthedocs.io/en/latest/plot_gallery.html)
 
+As an example, we consider the $w_0w_a$CDM model, in which the equation of state (EoS) of dark energy is parameterized as:
+
+$$
+w(z) = w_0 + w_a \frac{z}{1+z}.
+$$
+
+# Plotting with GetDist
+
+
+
+
 
 
 
