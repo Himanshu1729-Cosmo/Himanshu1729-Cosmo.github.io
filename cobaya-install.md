@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cobaya Installation
-permalink: /cobaya-install/
+permalink: /tutorials/cobaya-install/
 ---
 
 # Cobaya: Bayesian Analysis in Cosmology
