@@ -216,7 +216,7 @@ g.export("fig_super.png")
 ```
 ---
 
-![Figure](/assets/img/fig_plot.png){: .mx-auto.d-block }
+![Figure](/assets/img/fig_super.png){: .mx-auto.d-block }
 
 
 
