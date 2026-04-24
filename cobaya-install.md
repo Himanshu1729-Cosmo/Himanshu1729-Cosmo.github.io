@@ -10,17 +10,16 @@ permalink: /tutorials/cobaya-install/
 
 ---
 
-Cobaya (code for bayesian analysis, and Spanish for Guinea Pig) is a framework for sampling and statistical modelling: it allows you to explore an arbitrary prior or posterior using a range of Monte Carlo samplers (including the advanced MCMC sampler from CosmoMC, and the advanced nested sampler PolyChord). The results of the sampling can be analysed with GetDist. It supports MPI parallelization (and very soon HPC containerization with Docker/Shifter and Singularity).
+Cobaya is a flexible framework for Bayesian analysis in cosmology, designed for parameter estimation and statistical inference. It enables the exploration of arbitrary priors and posteriors using a wide range of Monte Carlo sampling techniques, including advanced MCMC methods and nested sampling algorithms such as PolyChord. The resulting chains can be efficiently analysed using tools like GetDist.
 
-Its authors are Jesus Torrado and Antony Lewis. Some ideas and pieces of code have been adapted from other codes (e.g CosmoMC by Antony Lewis and contributors, and Monte Python, by J. Lesgourgues and B. Audren).
+Developed by Jesús Torrado and Antony Lewis, Cobaya builds upon ideas from established cosmological codes such as CosmoMC and MontePython. It is designed to be highly extensible, allowing users to define custom priors, likelihoods, and derived parameters without modifying the core source code.
 
-Cobaya has been conceived from the beginning to be highly and effortlessly extensible: without touching cobaya’s source code, you can define your own priors and likelihoods, create new parameters as functions of other parameter.
+In cosmological applications, Cobaya provides interfaces to widely used Boltzmann solvers such as CAMB and CLASS, along with likelihoods from major observational datasets including Planck, BICEP/Keck, and SDSS. Its modular design allows it to function either as a standalone inference engine or as part of a larger cosmological analysis pipeline.
 
-Though cobaya is a general purpose statistical framework, it includes interfaces to cosmological theory codes (CAMB and CLASS) and likelihoods of cosmological experiments (Planck, Bicep-Keck, SDSS… and more coming soon). Automatic installers are included for all those external modules. You can also use cobaya simply as a wrapper for cosmological models and likelihoods, and integrate it in your own sampler/pipeline.
+A key advantage of Cobaya is its code-agnostic interface: the likelihoods are independent of the underlying theory solver, enabling straightforward comparisons between different cosmological models. This also allows users to incorporate modified or custom theory codes without requiring additional changes to the framework.
 
-The interfaces to most cosmological likelihoods are agnostic as to which theory code is used to compute the observables, which facilitates comparison between those codes. Those interfaces are also parameter-agnostic, so using your own modified versions of theory codes and likelihoods requires no additional editing of cobaya’s source.
-
-The original web page [**Cobaya Website**](https://cobaya.readthedocs.io/en/latest/#:~:text=Cobaya%20(code%20for%20bayesian%20analysis,the%20advanced%20nested%20sampler%20PolyChord).) that is cited in this document.
+For more details, see the official documentation:  
+[**Cobaya Website**](https://cobaya.readthedocs.io/en/latest/)
 
 ---
 
@@ -157,116 +156,3 @@ cobaya-install bicep_keck_2018
 pip install PySide6
 cobaya-cosmo-generator
 ```
-
----
-
-# Sample Run
-
-### Python Input Example
-
-```python
-# (same as your original — unchanged)
-```
-
-### Run Script
-
-```python
-from mpi4py import MPI
-from cobaya import run
-from cobaya.log import LoggedError
-
-comm = MPI.COMM_WORLD
-rank = comm.Get_rank()
-
-success = False
-try:
-    upd_info, mcmc = run(info)
-    success = True
-except LoggedError:
-    pass
-
-success = all(comm.allgather(success))
-
-if not success and rank == 0:
-    print("Sampling failed!")
-```
-
----
-
-## Output Options
-
-* `output: something` → files in current folder
-* `output: folder/something` → saves in folder
-* `output: folder/` → no prefix
-* `output: null` → no files (memory only)
-
----
-
-# Parallel Run (Slurm)
-
-```bash
-#!/bin/bash
-#SBATCH -J Cobaya
-#SBATCH -n 4
-
-module purge
-module load hwloc
-module load intel/19.0.5.281
-module load openmpi3/4.0.2
-
-mpirun -n 4 python3 model.py
-```
-
----
-
-# Output Files
-
-* `.input.yaml` → input file
-* `.updated.yaml` → full config
-* `.txt` → samples
-* `.progress` → convergence
-
----
-
-# Plotting with GetDist
-
-### Load Chains
-
-```python
-from getdist import plots, loadMCSamples
-
-file_root = 'chains/test'
-samples = loadMCSamples(file_root=file_root, settings={'ignore_rows':0.5})
-```
-
----
-
-### 2D Plot
-
-```python
-g = plots.get_subplot_plotter()
-g.plot_2d([samples], 'omegabh2', 'omegach2', filled=True)
-```
-
----
-
-### Triangle Plot
-
-```python
-g.triangle_plot(samples, ['omegabh2','omegach2','ns'], filled=True)
-```
-
----
-
-### Compare Models
-
-```python
-samples2 = loadMCSamples('chains/test2')
-g.triangle_plot((samples, samples2), ['omegabh2','omegach2','ns'], filled=True)
-```
-
----
-
-## 🔥 Done
-
-This tutorial gives you a complete pipeline from installation → running → plotting.
