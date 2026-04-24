@@ -98,10 +98,12 @@ names = ['logA', 'ns', 'ombh2', 'omch2',
 labels = [r'\ln(10^{10} A_s)', r'n_s', r'\Omega_{\mathrm{b}} h^2', r'\Omega_{\mathrm{c}} h^2',
           r'\tau', r'100\,\theta_{\mathrm{MC}}', r'w_0', r'w_a', r'H_0', r'\Omega_{m}', r'r_{\mathrm{drag}}', r'\sigma_8', r'S_8']
 
+ranges = {'wa': (-3, None)}
+
 # ============================================================
 # CREATE MCSAMPLES OBJECT
 # ============================================================
-samples = MCSamples( samples=params, weights=weights, names=names, labels=labels)
+samples = MCSamples( samples=params, weights=weights, names=names, labels=labels, ranges=ranges)
 
 # ============================================================
 # TRIANGLE PLOT
@@ -169,7 +171,9 @@ def load_chain(path):
             r'\Omega_{\mathrm{c}} h^2', r'\tau', r'100\,\theta_{\mathrm{MC}}',
             r'w_0', r'w_a', r'H_0', r'\Omega_{m}', r'r_{\mathrm{drag}}', r'\sigma_8', r'S_8']
 
-    return MCSamples(samples=params, weights=weights, names=names, labels=labels)
+    ranges = {'wa': (-3, None)}
+
+    return MCSamples(samples=params, weights=weights, names=names, labels=labels, ranges=ranges)
 
 # ============================================================
 # LOAD ALL CHAINS
