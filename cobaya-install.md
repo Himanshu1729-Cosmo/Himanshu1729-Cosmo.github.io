@@ -203,4 +203,4 @@ pip install PySide6
 cobaya-cosmo-generator
 ```
 
-![Figura](https://igomezv.github.io/assets/img/triangleSimplemc.png){: .mx-auto.d-block :}
+![Figure](/assets/img/input.png){: .mx-auto.d-block }
