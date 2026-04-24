@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Cobaya Installation
+title: GetDist Post-processing
 permalink: /tutorials/cobaya-getdist/
 ---
 
-# Plotting with GetDist
+# Post-processing and Visualization
 ---
 
 Once the MCMC sampling with Cobaya is completed, the output consists of a set of chain files containing the sampled parameter values and associated statistical information. These raw chains must be analyzed and visualized to extract meaningful physical constraints.
