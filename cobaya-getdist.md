@@ -41,6 +41,84 @@ $$
 
 ## Plotting with GetDist
 
+```python
+import numpy as np
+from getdist import MCSamples, plots
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.rcParams['mathtext.fontset'] = 'cm'
+
+# ============================================================
+# LOAD CHAIN
+# ============================================================
+
+data = np.loadtxt('/Users/himanshuchaudhary/Desktop/Cobaya and Class/Cobaya_Projects/Age_bias_paper/BAO_CMB/FCPL_B_C_XX_XXX_XXXX_XX.1.txt')
+
+# ============================================================
+# APPLY 30% BURN-IN
+# ============================================================
+burn_in_fraction = 0.30
+burn_in_index = int(len(data) * burn_in_fraction)
+data = data[burn_in_index:]
+weights = data[:, 0]
+
+# ============================================================
+# EXTRACT PARAMETERS (CORRECT INDICES)
+# ============================================================
+logA     = data[:, 2]
+ns       = data[:, 3]
+ombh2    = data[:, 4]
+omch2    = data[:, 5]
+tau      = data[:, 6]
+thetaMC  = data[:, 7]
+w0       = data[:, 8]
+wa       = data[:, 9]
+H0       = data[:, 22]
+omegam   = data[:, 27]
+rdrag    = data[:, 30]
+sigma8   = data[:, 34]
+
+
+# ============================================================
+# DERIVED PARAMETER: S8
+# ============================================================
+S8 = sigma8 * np.sqrt(omegam / 0.3)
+
+# ============================================================
+# STACK PARAMETERS (FINAL ORDER)
+# ============================================================
+# ============================================================
+# STACK PARAMETERS (FINAL ORDER)
+# ============================================================
+
+params = np.column_stack([logA, ns, ombh2, omch2, tau, thetaMC,w0, wa, H0, omegam, rdrag, sigma8, S8])
+
+# ============================================================
+# PARAMETER NAMES & LABELS
+# ============================================================
+names = ['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC','w0', 'wa', 'H0', 'omegam', 'rdrag', 'sigma8', 'S8']
+labels = [r'\ln(10^{10} A_s)', r'n_s', r'\Omega_{\mathrm{b}} h^2', r'\Omega_{\mathrm{c}} h^2', r'\tau', r'100\,\theta_{\mathrm{MC}}', r'w_0', r'w_a', r'H_0', r'\Omega_{m}', r'r_{\mathrm{drag}}', r'\sigma_8', r'S_8']
+
+# ============================================================
+# CREATE MCSAMPLES OBJECT
+# ============================================================
+samples = MCSamples( samples=params, weights=weights, names=names, labels=labels)
+
+# ============================================================
+# TRIANGLE PLOT
+# ============================================================
+g = plots.getSubplotPlotter(width_inch=25.0)
+g.settings.figure_legend_frame = True
+g.settings.alpha_filled_add = 0.6
+g.settings.axes_labelsize = 20
+g.settings.legend_fontsize = 25
+g.triangle_plot( [samples], names, filled=True, contour_colors=['darkblue'], legend_labels=[r'DESI DR2 + CMB'], legend_loc='upper right', title_limit=1)
+g.export("fig_plot")
+```
+---
+
+![Figure](/assets/img/fig_plot.pdf){: .mx-auto.d-block }
+
 
 
 
