@@ -52,7 +52,7 @@ mpl.rcParams['mathtext.fontset'] = 'cm'
 # LOAD CHAIN
 # ============================================================
 
-data = np.loadtxt('/path/to/your/chains/Anton_1.1.txt')
+data = np.loadtxt('/path/to/your/chains/test_1.1.txt')
 
 # ============================================================
 # APPLY 30% BURN-IN
@@ -174,10 +174,10 @@ def load_chain(path):
 # ============================================================
 # LOAD ALL CHAINS
 # ============================================================
-chain1 = load_chain('/path/to/your/chains/Anton_1.1.txt')
-chain2 = load_chain('/path/to/your/chains/Anton_1.1.txt')
-chain3 = load_chain('/path/to/your/chains/Anton_1.1.txt')
-chain4 = load_chain('/path/to/your/chains/Anton_1.1.txt')
+chain1 = load_chain('/path/to/your/chains/test_1.1.txt')
+chain2 = load_chain('/path/to/your/chains/test_2.1.txt')
+chain3 = load_chain('/path/to/your/chains/test_3.1.txt')
+chain4 = load_chain('/path/to/your/chains/test_4.1.txt')
 
 # ============================================================
 # TRIANGLE PLOT (SUPERIMPOSED)
