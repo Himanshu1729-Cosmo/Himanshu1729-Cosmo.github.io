@@ -1,0 +1,10 @@
+/* Reduce heading sizes */
+h1 { font-size: 28px !important; }
+h2 { font-size: 24px !important; }
+h3 { font-size: 20px !important; }
+h4 { font-size: 18px !important; }
+
+/* Reduce boldness slightly */
+h1, h2, h3 {
+  font-weight: 600 !important;
+}
