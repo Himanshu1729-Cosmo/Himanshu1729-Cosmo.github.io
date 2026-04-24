@@ -8,4 +8,8 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 ---
 
 ## Cobaya
-- [Installation](/tutorials/cobaya-install/)
+<h3>
+  <a href="/tutorials/cobaya-install/" style="color:#2c3e50; text-decoration:none;">
+    Installation
+  </a>
+</h3>
