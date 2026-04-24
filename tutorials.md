@@ -10,3 +10,4 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 ## Cobaya
 
 - [Installation](/tutorials/cobaya-install/)
+- [Post-processing (GetDist)](/tutorials/cobaya-getdist/)
