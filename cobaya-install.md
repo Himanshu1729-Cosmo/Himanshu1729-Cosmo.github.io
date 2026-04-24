@@ -168,7 +168,7 @@ conda install jupyter
 
 # Cobaya 
 
-**Cobaya Library Installation**
+**1. Cobaya Library Installation**
 
 ```bash
 pip3 install cobaya
@@ -176,7 +176,7 @@ pip3 install cobaya
 
 ---
 
-## Install Cosmological Codes and Likelihoods
+**2. Install Cosmological Codes and Likelihoods**
 
 ⚠️ Replace `/path/to/your/directory` with your actual path (e.g., `/home/user/`)
 
@@ -186,11 +186,19 @@ cobaya-install planck_2018_highl_plik.TTTEEE
 cobaya-install bicep_keck_2018
 ```
 
+You need to place theory codes and likelihoods in the `/path/to/your/directory` but you can also modified this path to suit on your own machine.
+If the installation is successful, code and data directories will be shown on your pc.
+
 ---
 
-## Generate Input Automatically
+**3 Generate Input Automatically**
+
+Setting Cosmology Run Creating the input for a realistic cosmological case is quite a bit of work. But to make it simpler, cobaya has created an automatic input generator, that you can run from the shell.
 
 ```bash
 pip install PySide6
+```
+
+```bash
 cobaya-cosmo-generator
 ```
