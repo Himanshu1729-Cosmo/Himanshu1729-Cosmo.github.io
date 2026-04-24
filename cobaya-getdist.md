@@ -220,6 +220,56 @@ g.export("fig_super.png")
 
 ## 2D Plot 
 
+```python
+g2d = plots.get_single_plotter(width_inch=6)
+g2d.settings.figure_legend_frame = True
+g2d.settings.alpha_filled_add = 0.6
+g2d.settings.axes_labelsize = 20
+g2d.settings.legend_fontsize = 14
+
+g2d.plot_2d(
+    [samples1,samples2,samples3,samples4],
+    param_pair=['w0', 'wa'],
+    filled=True,
+    colors=['orange', 'darkblue', 'magenta', 'purple'],
+)
+ax = g2d.subplots[0, 0]
+ax.set_xlabel(r'$w_0$')
+ax.set_ylabel(r'$w_a$')
+
+# ΛCDM reference lines
+ax.axvline(x=-1, color='black', linestyle='--', linewidth=1.5)
+ax.axhline(y=0,  color='black', linestyle='--', linewidth=1.5)
+
+# Optional: mark the exact point
+ax.plot(-1, 0, marker='*', color='black', markersize=10, zorder=10)
+
+# Optional manual limits
+ax.set_xlim(-1.27, 0.2)
+ax.set_ylim(-3.0, 0.6)
+
+# Legend
+g2d.add_legend(
+    legend_labels=[
+        r'DESI DR2 + CMB',
+        r'DESI DR2 + CMB + Pantheon$^+$',
+        r'DESI DR2 + CMB + DES-Dovekie',
+        r'DESI DR2 + CMB + Union3 ',
+    ],
+    fontsize=7.0,
+    legend_loc=(0.52, 0.6)
+)
+
+# Aesthetics
+for spine in ax.spines.values():
+    spine.set_linewidth(1.2)
+ax.tick_params(axis='both', which='both', width=1.2, length=5)
+
+g2d.export("2D.png")
+```
+![Figure](/assets/img/fig_super.png){: .mx-auto.d-block }
+
+
 
 
 
