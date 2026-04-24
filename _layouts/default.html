@@ -23,3 +23,14 @@ layout: base
     </div>
   {% endif %}
 </div>
+
+<script src="{{ '/assets/js/copy-button.js' | relative_url }}"></script>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
