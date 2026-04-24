@@ -117,7 +117,7 @@ g.export("fig_plot")
 ```
 ---
 
-![Figure](/assets/img/fig_plot.pdf){: .mx-auto.d-block }
+![Figure](/assets/img/fig_plot.png){: .mx-auto.d-block }
 
 
 
