@@ -52,7 +52,7 @@ mpl.rcParams['mathtext.fontset'] = 'cm'
 # LOAD CHAIN
 # ============================================================
 
-data = np.loadtxt('/Users/himanshuchaudhary/Desktop/Cobaya and Class/Cobaya_Projects/Age_bias_paper/BAO_CMB/FCPL_B_C_XX_XXX_XXXX_XX.1.txt')
+data = np.loadtxt('/path/to/your/chains/Anton_1.1.txt')
 
 # ============================================================
 # APPLY 30% BURN-IN
@@ -87,13 +87,16 @@ S8 = sigma8 * np.sqrt(omegam / 0.3)
 # ============================================================
 # STACK PARAMETERS
 # ============================================================
-params = np.column_stack([logA, ns, ombh2, omch2, tau, thetaMC,w0, wa, H0, omegam, rdrag, sigma8, S8])
+params = np.column_stack([logA, ns, ombh2, omch2,
+                         tau, thetaMC,w0, wa, H0, omegam, rdrag, sigma8, S8])
 
 # ============================================================
 # PARAMETER NAMES & LABELS
 # ============================================================
-names = ['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC','w0', 'wa', 'H0', 'omegam', 'rdrag', 'sigma8', 'S8']
-labels = [r'\ln(10^{10} A_s)', r'n_s', r'\Omega_{\mathrm{b}} h^2', r'\Omega_{\mathrm{c}} h^2', r'\tau', r'100\,\theta_{\mathrm{MC}}', r'w_0', r'w_a', r'H_0', r'\Omega_{m}', r'r_{\mathrm{drag}}', r'\sigma_8', r'S_8']
+names = ['logA', 'ns', 'ombh2', 'omch2',
+         'tau', 'thetaMC','w0', 'wa', 'H0', 'omegam', 'rdrag', 'sigma8', 'S8']
+labels = [r'\ln(10^{10} A_s)', r'n_s', r'\Omega_{\mathrm{b}} h^2', r'\Omega_{\mathrm{c}} h^2',
+          r'\tau', r'100\,\theta_{\mathrm{MC}}', r'w_0', r'w_a', r'H_0', r'\Omega_{m}', r'r_{\mathrm{drag}}', r'\sigma_8', r'S_8']
 
 # ============================================================
 # CREATE MCSAMPLES OBJECT
@@ -116,6 +119,100 @@ g.export("fig_plot.png")
 ![Figure](/assets/img/fig_plot.png){: .mx-auto.d-block }
 
 ## Plotting Multiple Chains Together
+
+```python
+from getdist import MCSamples, plots
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.rcParams['mathtext.fontset'] = 'cm'
+
+# ============================================================
+# FUNCTION TO LOAD & PROCESS CHAIN
+# ============================================================
+
+def load_chain(path):
+
+    data = np.loadtxt(path)
+
+    # -------- Burn-in --------
+    burn_in_fraction = 0.30
+    burn_in_index = int(len(data) * burn_in_fraction)
+    data = data[burn_in_index:]
+
+    weights = data[:, 0]
+
+    # -------- Parameters --------
+    logA     = data[:, 2]
+    ns       = data[:, 3]
+    ombh2    = data[:, 4]
+    omch2    = data[:, 5]
+    tau      = data[:, 6]
+    thetaMC  = data[:, 7]
+    w0       = data[:, 8]
+    wa       = data[:, 9]
+    H0       = data[:, 22]
+    omegam   = data[:, 27]
+    rdrag    = data[:, 30]
+    sigma8   = data[:, 34]
+    
+    # -------- Derived --------
+    S8 = sigma8 * np.sqrt(omegam / 0.3)
+
+    params = np.column_stack([logA, ns, ombh2, omch2, tau,
+                            thetaMC,w0, wa, H0, omegam, rdrag, sigma8, S8])
+
+    names = ['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC',
+             'w0', 'wa', 'H0', 'omegam', 'rdrag', 'sigma8', 'S8']
+
+    labels = [r'\ln(10^{10} A_s)', r'n_s', r'\Omega_{\mathrm{b}} h^2',
+            r'\Omega_{\mathrm{c}} h^2', r'\tau', r'100\,\theta_{\mathrm{MC}}',
+            r'w_0', r'w_a', r'H_0', r'\Omega_{m}', r'r_{\mathrm{drag}}', r'\sigma_8', r'S_8']
+
+    return MCSamples(samples=params, weights=weights, names=names, labels=labels)
+
+# ============================================================
+# LOAD ALL CHAINS
+# ============================================================
+chain1 = load_chain('/path/to/your/chains/Anton_1.1.txt')
+chain2 = load_chain('/path/to/your/chains/Anton_1.1.txt')
+chain3 = load_chain('/path/to/your/chains/Anton_1.1.txt')
+chain4 = load_chain('/path/to/your/chains/Anton_1.1.txt')
+
+# ============================================================
+# TRIANGLE PLOT (SUPERIMPOSED)
+# ============================================================
+
+g = plots.getSubplotPlotter(width_inch=16.0)
+g.settings.figure_legend_frame = True
+g.settings.alpha_filled_add = 0.6
+g.settings.title_limit_fontsize = 12
+g.settings.axes_labelsize = 20
+g.settings.legend_fontsize = 24
+g.settings.colorbar_axes_fontsize = 10
+
+plot_params = ['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC','w0',
+              'wa', 'H0', 'omegam', 'rdrag', 'sigma8', 'S8']
+
+g.triangle_plot(
+    [chain1, chain2, chain3, chain4],
+    plot_params,
+    filled=True,
+    legend_labels=[
+        r'CMB + DESI DR2',
+        r'CMB + DESI DR2 + Pantheon$^+$',
+        r'CMB + DESI DR2 + DES-Dovekie',
+        r'CMB + DESI DR2 + Union3'
+    ],
+    contour_colors=['#4a6fdc', '#ff4500', '#a020f0', '#00008b'],
+    legend_loc='upper right'
+)
+
+g.export("fig_super.png")
+```
+---
+
+![Figure](/assets/img/fig_plot.png){: .mx-auto.d-block }
 
 
 
