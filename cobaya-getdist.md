@@ -63,7 +63,7 @@ data = data[burn_in_index:]
 weights = data[:, 0]
 
 # ============================================================
-# EXTRACT PARAMETERS (CORRECT INDICES)
+# EXTRACT PARAMETERS
 # ============================================================
 logA     = data[:, 2]
 ns       = data[:, 3]
@@ -85,12 +85,8 @@ sigma8   = data[:, 34]
 S8 = sigma8 * np.sqrt(omegam / 0.3)
 
 # ============================================================
-# STACK PARAMETERS (FINAL ORDER)
+# STACK PARAMETERS
 # ============================================================
-# ============================================================
-# STACK PARAMETERS (FINAL ORDER)
-# ============================================================
-
 params = np.column_stack([logA, ns, ombh2, omch2, tau, thetaMC,w0, wa, H0, omegam, rdrag, sigma8, S8])
 
 # ============================================================
@@ -118,6 +114,9 @@ g.export("fig_plot.png")
 ---
 
 ![Figure](/assets/img/fig_plot.png){: .mx-auto.d-block }
+
+## Plotting Multiple Chains Together
+
 
 
 
