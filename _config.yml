@@ -16,7 +16,9 @@ navbar-links:
 
     
 # GitHub: "https://github.com/igomezv"
-    
+
+additional_css:
+  - "/assets/css/custom.css"
 
 # - Learn markdown: "https://www.markdowntutorial.com/"
 #  Author's home: "https://deanattali.com"
