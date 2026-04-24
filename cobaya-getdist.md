@@ -31,9 +31,7 @@ GetDist is fully compatible with Cobaya outputs and allows efficient handling of
 
 In this section, we will demonstrate how to load Cobaya chain files, analyze them using GetDist, and produce standard cosmological plots.
 
-Additional information can be found at:  
-https://getdist.readthedocs.io/en/latest/  
-https://getdist.readthedocs.io/en/latest/plot_gallery.html
+Additional information can be found at: - [GetDist Documentation](https://getdist.readthedocs.io/en/latest/)
 
 
 
