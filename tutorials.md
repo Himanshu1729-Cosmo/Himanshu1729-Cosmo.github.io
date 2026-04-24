@@ -3,8 +3,6 @@ layout: page
 title: Tutorials
 ---
 
-# Tutorials
-
 Here I provide tutorials on cosmological tools and workflows, including installation, usage, and model development.
 
 ---
