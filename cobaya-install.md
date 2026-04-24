@@ -25,13 +25,13 @@ For more details, see the official documentation:
 
 # Preparation
 
-First, install the required compilers and libraries.
+**First, install the essential libraries and compilers.**
 
 ---
 
 ### 1. Ubuntu
 
-#### Install Compilers and Dependencies
+**Install Compilers and Dependencies**
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -44,7 +44,7 @@ sudo apt install build-essential
 sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
 ```
 
-#### Install Python (Recommended: Miniconda)
+**Install Python and Libraries — I recommend using Miniconda for better environment management (Anaconda can also be used).**
 
 ```bash
 mkdir -p ~/miniconda3
@@ -54,69 +54,83 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
 
-#### Install Python Libraries
+**Then install Python and Libraries**
 
 ```bash
 python3 -m pip install pip
-pip3 install numpy scipy matplotlib cython astropy getdist jupyter
+pip3 install numpy
+pip3 install scipy
+pip3 install matplotlib
+pip3 install cython
+pip3 install astropy
+pip3 install getdist
+pip3 install jupyter
 conda install jupyter
 ```
 
 ---
 
-## Alternative (System Python)
+**In the other way, you can also install Python via Site-Package.**
 
 ```bash
-sudo apt install python3 python3-pip
-pip3 install numpy scipy matplotlib cython astropy getdist jupyter
+sudo apt install python3
+sudo apt install python3-pip
+pip3 install numpy
+pip3 install scipy
+pip3 install matplotlib
+pip3 install cython
+pip3 install astropy
+pip3 install getdist
+pip3 install jupyter
 sudo apt install jupyter
 ```
-
 ---
 
 ## 2. macOS
 
-### Install Homebrew
+**Install HomeBrew**
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)""
 ```
 
-### Install Dependencies
+**Install Compiler**
 
 ```bash
-brew install wget git nano lapack cfitsio open-mpi
+brew install wget
+brew install git
+brew install nano
+brew install lapack
+brew install cfitsio
+brew install open-mpi
 ```
 
-### Install Python
+MacOS includes a built-in Python compiler within the site-packages libraries, do not need to install Python via Homebrew. However, if an unresolved bug arise, it may become necessary to install Homebrew's Python at that point.
+
+**Install Homebrew Python**
 
 ```bash
 brew install python3
 python3 -m pip install --upgrade pip
 ```
 
-### Install Libraries
+**Install Python's required Librareis**
 
 ```bash
-pip3 install numpy scipy matplotlib cython astropy getdist jupyter
+pip3 install numpy
+pip3 install scipy
+pip3 install matplotlib
+pip3 install cython
+pip3 install astropy
+pip3 install getdist
+pip3 install jupyter
 brew install jupyter
 ```
-
 ---
 
-### (Recommended) Miniconda
+For better handle Python evironment, I recommd you to install Miniconda.
 
-#### Apple Silicon
-
-```bash
-mkdir -p ~/miniconda3
-curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm ~/miniconda3/miniconda.sh
-source ~/miniconda3/bin/activate
-```
-
-#### Intel
+**For Apple Silicon chip**
 
 ```bash
 mkdir -p ~/miniconda3
@@ -126,11 +140,35 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
 
+**For Intel chip**
+
+```bash
+mkdir -p ~/miniconda3
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+source ~/miniconda3/bin/activate
+```
 ---
 
-# Cobaya Installation
+**Then install Python and Libraries.**
 
-## Install Cobaya
+```bash
+python3 -m pip install pip
+pip3 install numpy
+pip3 install scipy
+pip3 install matplotlib
+pip3 install cython
+pip3 install astropy
+pip3 install getdist
+pip3 install jupyter
+conda install jupyter
+```
+---
+
+# Cobaya 
+
+**Cobaya Library Installation**
 
 ```bash
 pip3 install cobaya
