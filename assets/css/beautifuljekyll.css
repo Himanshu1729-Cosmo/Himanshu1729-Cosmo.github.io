@@ -992,3 +992,13 @@ pre {
   display: block;
   margin: 0 auto;
 }
+
+/* Remove blue link color */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1a252f;
+}
