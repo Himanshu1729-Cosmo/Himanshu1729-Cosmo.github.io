@@ -359,7 +359,6 @@ $$
 %matplotlib inline
 from getdist import plots, loadMCSamples
 
-# Paths (fix your quotes here!)
 file_root1 = '/path/to/your/chains/test_1'
 file_root2 = '/path/to/your/chains/test_2'
 file_root3 = '/path/to/your/chains/test_3'
