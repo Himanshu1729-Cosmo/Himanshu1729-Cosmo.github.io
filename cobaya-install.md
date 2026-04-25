@@ -388,7 +388,7 @@ ax.text(-1.1, 0.1, r'$\Lambda$CDM', fontsize=12)
 g2.add_legend([r'DESI DR2 + CMB',
         r'DESI DR2 + CMB + Pantheon$^+$',
         r'DESI DR2 + CMB + DES-Dovekie',
-        r'DESI DR2 + CMB + Union3 ',])
+        r'DESI DR2 + CMB + Union3 '])
 g2d.export("2D.png")
 ```
 
@@ -403,4 +403,42 @@ g.triangle_plot(samples1,['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC', 'w0'
 ```
 
 ![Figure](/assets/img/fig_plot.png){: .mx-auto.d-block }
+
+If you want to superimpose more then one chains models results, you can add additional chains to the code by including another file_root similar to the first dataset. You can also adjust the number of parameters in the same way.
+
+```python
+%matplotlib inline
+from getdist import plots, loadMCSamples
+
+file_root1 = '/path/to/your/chains/test_1'
+file_root2 = '/path/to/your/chains/test_2'
+file_root3 = '/path/to/your/chains/test_3'
+file_root4 = '/path/to/your/chains/test_4'
+
+samples1 = loadMCSamples(file_root=file_root1, settings={'ignore_rows':0.5})
+samples2 = loadMCSamples(file_root=file_root2, settings={'ignore_rows':0.5})
+samples3 = loadMCSamples(file_root=file_root3, settings={'ignore_rows':0.5})
+samples4 = loadMCSamples(file_root=file_root4, settings={'ignore_rows':0.5})
+
+g = plots.get_subplot_plotter()
+
+g.settings.axes_fontsize = 14
+g.settings.axes_labelsize = 16
+g.settings.legend_fontsize = 12
+g.settings.alpha_filled_add = 0.85
+g.settings.figure_legend_frame = False
+
+g.triangle_plot(
+    [samples1, samples2, samples3, samples4],
+    ['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC', 'w0', 'wa'],
+    filled=True,
+    contour_lws=1.5,
+    colors=['#4a6fdc', '#ff4500', '#a020f0', '#00008b'])
+g2.add_legend([r'DESI DR2 + CMB',
+        r'DESI DR2 + CMB + Pantheon$^+$',
+        r'DESI DR2 + CMB + DES-Dovekie',
+        r'DESI DR2 + CMB + Union3 '])
+g.export("fig_super.png")
+```
+![Figure](/assets/img/fig_super.png){: .mx-auto.d-block }
 
