@@ -73,13 +73,13 @@ pip3 install jupyter
 sudo apt install jupyter
 ```
 
-2. MacOS
-- Install HomeBrew
+### 2. MacOS
+**Install HomeBrew**
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- Install Compiler
+**Install Compiler**
 ```bash
 brew install wget
 brew install git
@@ -89,15 +89,15 @@ brew install cfitsio
 brew install open-mpi
 ```
 
-MacOS includes a built-in Python compiler within the site-packages libraries,  do not need to install Python via Homebrew. However, if an unresolved bug arise, it may become necessary to install Homebrew's Python at that point.
+**MacOS includes a built-in Python compiler within the site-packages libraries,  do not need to install Python via Homebrew. However, if an unresolved bug arise, it may become necessary to install Homebrew's Python at that point.**
 
-- Install Homebrew Python 
+**Install Homebrew Python**
 ```bash
 brew install python3
 python3 -m pip install --upgrade pip
 ```
 
-- Install Python's required Librareis
+**Install Python's required Librareis**
 ```bash
 pip3 install numpy
 pip3 install scipy
@@ -109,8 +109,9 @@ pip3 install jupyter
 brew install jupyter
 ```
 
-For better handle Python evironment, we recommd you to install Miniconda.
- - For Apple Silicon chip
+**For better handle Python evironment, we recommd you to install Miniconda.**
+
+**For Apple Silicon chip**
 ```bash
 mkdir -p ~/miniconda3
 curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
