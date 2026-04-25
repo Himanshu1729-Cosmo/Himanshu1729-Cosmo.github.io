@@ -373,3 +373,5 @@ g2.settings.axes_labelsize = 20
 g2.plot_2d([samples1],'w0', 'wa',filled=True,contour_lws=1.5)
 ```
 
+![Figure](/assets/img/2D.png){: .mx-auto.d-block }
+
