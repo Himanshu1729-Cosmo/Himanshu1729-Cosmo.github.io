@@ -22,7 +22,7 @@ First, the computer needs to install essential libraries and compilers.
 
 ### 1. Ubuntu
 
-#### Install Compiler
+**Install Compiler**
 ```bash
 sudo apt update && sudo apt upgrade
 sudo apt install nano
