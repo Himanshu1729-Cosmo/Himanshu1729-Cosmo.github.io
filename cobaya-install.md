@@ -179,6 +179,7 @@ theory:
   camb:
     extra_args:
       lens_potential_accuracy: 1
+      dark_energy_model: ppf
       num_massive_neutrinos: 1
       nnu: 3.044
       theta_H0_range:
@@ -263,8 +264,26 @@ params:
     derived: 'lambda omegam, H0: omegam*(H0/100)**2'
     latex: \Omega_\mathrm{m} h^2
   mnu: 0.06
-  omega_de:
-    latex: \Omega_\Lambda
+  w:
+    prior:
+      min: -3
+      max: 1
+    ref:
+      dist: norm
+      loc: -0.99
+      scale: 0.02
+    proposal: 0.02
+    latex: w_{0,\mathrm{DE}}
+  wa:
+    prior:
+      min: -3
+      max: 2
+    ref:
+      dist: norm
+      loc: 0
+      scale: 0.05
+    proposal: 0.05
+    latex: w_{a,\mathrm{DE}}
   YHe:
     latex: Y_\mathrm{P}
   Y_p:
