@@ -66,7 +66,9 @@ Install HomeBrew
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-- Install GNU Compiler
+
+Install GNU Compiler
+
 ```bash
 brew install gcc
 brew install gfortran
