@@ -17,6 +17,8 @@ For more information about CLASS can be found on the website: [CLASS official we
 
 ## 1. Pre-requisites
 
+### Mac users
+
 Mac users may have to install the Command Line Tools for Xcode in order to use the commands like `gcc`, `git` or `make` or package management tools like Homebrew. You can check if the Command Line Tools have already installed to your system or not by open the terminal and run
 
 ```bash
