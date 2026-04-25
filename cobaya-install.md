@@ -338,3 +338,5 @@ Each file serves a specific purpose:
 **For post-processing and plotting, the most important file is:**
 
 `test.1.txt`
+
+#7. Post-processing and Visualization
