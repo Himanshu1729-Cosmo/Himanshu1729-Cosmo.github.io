@@ -385,9 +385,22 @@ ax.axhline(y=0,  color='black', linestyle='--', linewidth=1.5)
 ax.plot(-1, 0, marker='*', color='gold', markersize=12, zorder=10)
 ax.text(-1.1, 0.1, r'$\Lambda$CDM', fontsize=12)
 
-g2.add_legend(['Chain 1', 'Chain 2', 'Chain 3', 'Chain 4'])
+g2.add_legend([r'DESI DR2 + CMB',
+        r'DESI DR2 + CMB + Pantheon$^+$',
+        r'DESI DR2 + CMB + DES-Dovekie',
+        r'DESI DR2 + CMB + Union3 ',])
 g2d.export("2D.png")
 ```
 
-![Figure](/assets/img/2D.png){: .mx-auto.d-block }
+![Figure](/assets/img/2D.png){: .mx-auto.d-block}
+
+Triangle plot
+```python
+g = plots.get_subplot_plotter(width_inch=10)
+g.settings.axes_fontsize = 16
+g.settings.axes_labelsize = 20
+g.triangle_plot(samples1,['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC', 'w0', 'wa'],legend_labels=[r'CMB + DESI DR2'],filled=True,contour_lws=1.5)
+```
+
+![Figure](/assets/img/fig_plot.png){: .mx-auto.d-block }
 
