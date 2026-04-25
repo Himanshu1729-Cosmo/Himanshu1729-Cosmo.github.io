@@ -211,7 +211,7 @@ Firstly you have to install Jupyter Notebook.
 pip install notebook
 ```
 
-To make sure that the path of Jupyter Notebook is in the created venv, type.
+To make sure that the path of Jupyter Notebook is in the created myenv, type.
 
 ```bash
 which jupyter
