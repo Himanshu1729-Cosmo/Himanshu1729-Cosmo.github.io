@@ -165,6 +165,7 @@ make
 ```
 
 **3. Running**
+
 To run CosmoMC you need to run it with MPI/OpenMPI using mpirun command. Set your corrent directory to CosmoMC directory and run this command.
 
 ```bash
