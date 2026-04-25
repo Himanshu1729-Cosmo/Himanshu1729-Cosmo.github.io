@@ -146,7 +146,7 @@ python3.11 -c "import classy; print(classy.__version__)"
 ```
 ---
 
-## 4. Setting Python wrapper in a virtual environment
+## 2.b) Setting Python wrapper in a virtual environment
 
 Create a virtual environment (venv) using
 
