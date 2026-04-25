@@ -14,7 +14,7 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 ## Cobaya
 
-- [Installation](/tutorials/cobaya-install/)
+- [Installation & Post Processing](/tutorials/cobaya-install/)
 
 ## CLASS & Monte Python
 
