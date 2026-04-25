@@ -89,7 +89,7 @@ python --version
 
 In case you want a better handling of the `Python` packages download and install Miniconda or Anaconda from the following links;
 
-[Miniconde](https://docs.anaconda.com/miniconda/)
+[Miniconde](https://docs.anaconda.com/miniconda/)  
 [Anaconda](https://www.anaconda.com/download)
 
 Next to install `Cython`;
