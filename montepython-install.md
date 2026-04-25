@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Monte Python Installation
+title: Monte Python & CLASS Installation
 permalink: /tutorials/montepython-install/
 ---
 
