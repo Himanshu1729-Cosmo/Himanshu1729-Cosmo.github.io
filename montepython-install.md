@@ -119,6 +119,8 @@ git clone https://github.com/lesgourg/class_public.git
 
 We can also download `CLASS` directly from Github.
 
+![Figure](/assets/img/class.png){: .mx-auto.d-block }
+
 ---
 
 ## 3. Installing CLASS
