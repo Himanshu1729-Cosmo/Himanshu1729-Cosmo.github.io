@@ -21,10 +21,9 @@ Preparation
 
 First, the computer needs to install essential libraries and compilers.  
 
+### 1. Ubuntu
 
-1. Ubuntu
-
-Install Compiler
+#### Install Compiler
 ```bash
 sudo apt update && sudo apt upgrade
 sudo apt install nano
@@ -36,8 +35,8 @@ sudo apt install build-essential
 sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
 ```
 
-- Install Python and Librareis
-  We recommd you to install Miniconda for better manage Python evironment.
+#### Install Python and Librareis, We recommd you to install Miniconda for better manage Python evironment.
+
 ```bash
 mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
@@ -45,7 +44,9 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
-Then install Python and Libraries.
+
+### Then install Python and Libraries.
+
 ```bash
 python3 -m pip install pip
 pip3 install numpy
@@ -58,7 +59,8 @@ pip3 install jupyter
 conda install jupyter
 ```
 
-In the other way, you can also install Python via Site-Package.
+### In the other way, you can also install Python via Site-Package.
+
 ```bash
 sudo apt install python3
 sudo apt install python3-pip
