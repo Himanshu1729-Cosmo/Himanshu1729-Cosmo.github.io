@@ -119,7 +119,7 @@ We can also download `CLASS` directly from Github.
 
 ---
 
-## 3. Installing CLASS
+## 2.a) Installing CLASS
 
 Enter `CLASS` directory. Compile C code and Python wrapper using the command.
 
