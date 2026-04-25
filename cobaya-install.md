@@ -321,3 +321,20 @@ sampler:
 ```bash
 cobaya-run test.yaml
 ```
+**6. Output Files
+
+**Once the MCMC sampling with Cobaya is completed, the output consists of several files generated using the chosen run name (e.g., `test`). These typically include:**
+
+`test.1.txt`, `test.checkpoint`, `test.covmat`, `test.input.yaml`, `test.progress`, and `test.updated.yaml`.
+
+Each file serves a specific purpose:
+
+- `.1.txt` → Main MCMC chain file containing sampled parameter values  
+- `.covmat` → Covariance matrix used for proposal updates  
+- `.progress` → Information about convergence and sampling status  
+- `.input.yaml` / `.updated.yaml` → Configuration files for the run  
+- `.checkpoint` → Allows restarting the chain if interrupted  
+
+**For post-processing and plotting, the most important file is:**
+
+`test.1.txt`
