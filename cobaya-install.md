@@ -340,3 +340,57 @@ Each file serves a specific purpose:
 `test.1.txt`
 
 **7. Post-processing and Visualization (Plotting with GetDist)**
+
+To generate distribution plots and triangle plots, you need packages for graph creation from files, which are output files from running CosmoMC. The packages have been use in Python. For displaying plots, it is recommended to use Jupyter Notebook or Jupyter Lab. Additional information can be found at: [https://getdist.readthedocs.io/en/latest/](https://getdist.readthedocs.io/en/latest/) and [ https://getdist.readthedocs.io/en/latest/plot\_gallery.html](https://getdist.readthedocs.io/en/latest/plot\_gallery.html)
+
+First, you need to import the getdist library and select the chain you want to use for plotting graph by specifying the directory path to your output files in the line `file_root`. For example, `file_root1` has been dowloaded output files from `planck/plikHM_TTTEEE_lowl_lowE_BK15_lensing/base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO`. You do not to specify type of files such as `base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO_1.txt` or `base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO.inputparams`. Set only name of files `base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO`.
+
+```python
+%matplotlib inline
+import getdist
+from getdist import plots, MCSamples, loadMCSamples
+
+file_root1 = 'planck/plikHM_TTTEEE_lowl_lowE_BK15_lensing/base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO'
+samples1 = loadMCSamples(file_root=file_root1,settings={'ignore_rows':0.5})
+```
+2D plot
+```python
+g2 = plots.get_subplot_plotter(width_inch=5)
+g2.settings.axes_fontsize = 16
+g2.settings.axes_labelsize = 20
+g2.plot_2d([samples1],'omegabh2','omegach2',filled=True,contour_lws=1.5)
+```
+<p align="center">
+<img src="https://github.com/CraverBoyyy/CosmoMC-Installation/assets/109847168/b3fff9b8-fdac-4e60-9a71-68af71c1f8b9"  width="500px" height="500px">
+</p>
+
+Triangle plot
+```python
+g = plots.get_subplot_plotter(width_inch=10)
+g.settings.axes_fontsize = 16
+g.settings.axes_labelsize = 20
+g.triangle_plot(samples1,['omegabh2','omegach2','theta','tau','logA','ns'],filled=True,contour_lws=1.5)
+```
+<p align="center">  
+<img src="https://github.com/CraverBoyyy/CosmoMC-Installation/assets/109847168/6b1cf5c6-e40f-4157-88c4-7ff48a081819" width="700px" height="700px"  align="center" >
+</p>
+
+Triangle plot with uncertainty limit at 68%CL and 95%CL
+```python
+g.triangle_plot(samples1,['omegabh2','omegach2','theta','tau','logA','ns'],filled=True,contour_lws=1.5,title_limit=2)
+```
+<p align="center">  
+<img src="https://github.com/CraverBoyyy/CosmoMC-Installation/assets/109847168/e3cfdad7-847a-4424-ba9d-5f79e7c897dc" width="700px" height="700px"  align="center" >
+</p>
+
+If you want to compare the two or more models results, you can add additional chains to the code by including another file_root similar to the first dataset. You can also adjust the number of parameters in the same way.
+```python
+file_root2 = 'planck/plikHM_TTTEEE_lowl_lowE_BK15_lensing/base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing'
+samples2 = loadMCSamples(file_root=file_root2,settings={'ignore_rows':0.5})
+
+g.triangle_plot((samples1,samples2),['omegabh2','omegach2','theta','tau','logA','ns'],filled=True,contour_lws=1.5)
+```
+<p align="center">        
+<img src="https://github.com/CraverBoyyy/CosmoMC-Installation/assets/109847168/b236a90e-5337-41a9-8252-988f8944275a" width="700px" height="700px"  align="center" >
+</p>
+
