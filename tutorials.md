@@ -16,6 +16,10 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 - [Installation & Post Processing](/tutorials/cobaya-install/)
 
+## CosmoMC
+
+- [Installation & Post Processing](/tutorials/CosmoMC-install/)
+
 ## CLASS & Monte Python
 
 - [Installation](/tutorials/montepython-install/)
