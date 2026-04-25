@@ -53,7 +53,7 @@ Next step, check for the python version with
 python --version
 ```
 
-Python wrapper for class may not yet be compatible with Python version ¿ 3.11, so we have to specify version of Python in order to set up the wrapper. In this note we will use Python v.3.11. Next step, we need to install Cython. This allows Python code to directly call the C functions in CLASS. To install Cython that associate with the Python v.3.11, use the command below.
+Python wrapper for class may not yet be compatible with Python version v.3.11, so we have to specify version of Python in order to set up the wrapper. In this note we will use Python v.3.11. Next step, we need to install Cython. This allows Python code to directly call the C functions in CLASS. To install Cython that associate with the Python v.3.11, use the command below.
 
 ```bash
 python3.11 -m pip install Cython
