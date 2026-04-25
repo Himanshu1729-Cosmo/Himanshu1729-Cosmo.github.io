@@ -355,3 +355,21 @@ $$
 
 **8. Plotting with GetDist**
 
+```python
+%matplotlib inline
+import getdist
+from getdist import plots, MCSamples, loadMCSamples
+
+file_root1 = /path/to/your/chains/test_1.1.txt'
+samples1 = loadMCSamples(file_root=file_root1,settings={'ignore_rows':0.5})
+```
+
+2D plot
+
+```python
+g2 = plots.get_subplot_plotter(width_inch=5)
+g2.settings.axes_fontsize = 16
+g2.settings.axes_labelsize = 20
+g2.plot_2d([samples1],'w0', 'wa',filled=True,contour_lws=1.5)
+```
+
