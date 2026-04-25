@@ -373,5 +373,8 @@ g2.settings.axes_labelsize = 20
 g2.plot_2d([samples1],'w0', 'wa',filled=True,contour_lws=1.5)
 ```
 
-<img src="{{ '/assets/img/2D.png' | relative_url }}" width="700px" height="700px" style="display:block; margin:auto;">
+<p align="center">
+  <img src="{{ '/assets/img/2D.png' | relative_url }}" width="700px">
+</p>
+<p align="center"><em>Figure: 2D confidence contours for the model.</em></p>
 
