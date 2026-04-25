@@ -15,8 +15,6 @@ For more information about CLASS can be found on the website: http://class-code.
 
 ---
 
-# CLASS Installation
-
 ## 1. Pre-requisites
 
 ### Mac Users
