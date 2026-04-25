@@ -339,4 +339,4 @@ Each file serves a specific purpose:
 
 `test.1.txt`
 
-#7. Post-processing and Visualization
+#7. Post-processing and Visualization (Plotting with GetDist)
