@@ -22,6 +22,7 @@ If you have any questions about installation, please feel free to contact me via
 Preparation 
 ===================
 First, the computer needs to install essential libraries and compilers.  
+
 1. Ubuntu
 - Install Compiler
 ```bash
