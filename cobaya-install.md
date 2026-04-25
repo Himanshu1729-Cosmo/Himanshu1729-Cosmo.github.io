@@ -89,7 +89,7 @@ brew install cfitsio
 brew install open-mpi
 ```
 
-**MacOS includes a built-in Python compiler within the site-packages libraries,  do not need to install Python via Homebrew. However, if an unresolved bug arise, it may become necessary to install Homebrew's Python at that point.**
+MacOS includes a built-in Python compiler within the site-packages libraries,  do not need to install Python via Homebrew. However, if an unresolved bug arise, it may become necessary to install Homebrew's Python at that point.
 
 **Install Homebrew Python**
 ```bash
@@ -119,7 +119,8 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
-- For Intel chip
+**For Intel chip**
+
 ```bash
 mkdir -p ~/miniconda3
 curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
@@ -127,7 +128,8 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
-Then install Python and Libraries.
+**Then install Python and Libraries.**
+
 ```bash
 python3 -m pip install pip
 pip3 install numpy
