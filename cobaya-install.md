@@ -321,7 +321,7 @@ sampler:
 ```bash
 cobaya-run test.yaml
 ```
-**6. Output Files
+**6. Output Files**
 
 **Once the MCMC sampling with Cobaya is completed, the output consists of several files generated using the chosen run name (e.g., `test`). These typically include:**
 
