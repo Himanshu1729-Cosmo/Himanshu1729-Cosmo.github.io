@@ -357,11 +357,18 @@ $$
 
 ```python
 %matplotlib inline
-import getdist
-from getdist import plots, MCSamples, loadMCSamples
+from getdist import plots, loadMCSamples
 
-file_root1 = /path/to/your/chains/test_1.1.txt'
-samples1 = loadMCSamples(file_root=file_root1,settings={'ignore_rows':0.5})
+# Paths (fix your quotes here!)
+file_root1 = '/path/to/your/chains/test_1'
+file_root2 = '/path/to/your/chains/test_2'
+file_root3 = '/path/to/your/chains/test_3'
+file_root4 = '/path/to/your/chains/test_4'
+
+samples1 = loadMCSamples(file_root=file_root1, settings={'ignore_rows':0.5})
+samples2 = loadMCSamples(file_root=file_root2, settings={'ignore_rows':0.5})
+samples3 = loadMCSamples(file_root=file_root3, settings={'ignore_rows':0.5})
+samples4 = loadMCSamples(file_root=file_root4, settings={'ignore_rows':0.5})
 ```
 
 2D plot
@@ -370,7 +377,17 @@ samples1 = loadMCSamples(file_root=file_root1,settings={'ignore_rows':0.5})
 g2 = plots.get_subplot_plotter(width_inch=5)
 g2.settings.axes_fontsize = 16
 g2.settings.axes_labelsize = 20
-g2.plot_2d([samples1],'w0', 'wa',filled=True,contour_lws=1.5)
+g2.plot_2d( [samples1, samples2, samples3, samples4], 'w0', 'wa', filled=True,
+    contour_lws=1.5, colors=['red', 'blue', 'green', 'black'])
+
+ax = g2.subplots[0, 0]
+ax.axvline(x=-1, color='black', linestyle='--', linewidth=1.5)
+ax.axhline(y=0,  color='black', linestyle='--', linewidth=1.5)
+ax.plot(-1, 0, marker='*', color='gold', markersize=12, zorder=10)
+ax.text(-1.1, 0.1, r'$\Lambda$CDM', fontsize=12)
+
+g2.add_legend(['Chain 1', 'Chain 2', 'Chain 3', 'Chain 4'])
+g2d.export("2D.png")
 ```
 
 ![Figure](/assets/img/2D.png){: .mx-auto.d-block }
