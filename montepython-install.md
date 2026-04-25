@@ -5,8 +5,6 @@ permalink: /tutorials/montepython-install/
 ---
 
 # Class-Installation
-This documentation was written by Chakkrit Kaeonikom and Nandan Roy and was used in CosCOM 2023.
-
 CLASS (Cosmic Linear Anisotropy Solving System) is a numerical tool for solving the evolution of linear cosmological perturbations and for computing the cosmological observables for a given input model. CLASS is a flexible and user-friendly code that can be easily generalized to non-minimal cosmological models. CLASS was written by Julien Lesgourgues & Thomas Tram, and first released in 2011. CLASS is written in C language for each module. It comes with C++ and Python wrapper. 
 
 For more information about CLASS can be found on the website: [http://class-code.net](http://class-code.net). The CLASS papers can be found below
@@ -103,10 +101,8 @@ the command
   git clone https://github.com/lesgourg/class_public.git
   ```
   We can also download `CLASS` directly from [Github](https://github.com/).
-  <p align="center">  
-  <img src="https://github.com/user-attachments/assets/d21381d5-8094-45aa-9bf0-5260ea5dd80f" height="500px"  width="1000px"   align="center" >
-  </p>
-
+  ![Figure](/assets/img/input.png){: .mx-auto.d-block}
+  
 ### 3. Installing CLASS
   Enter `CLASS` directory. Compile Ccode and Pythonwrapper using the command.
   ```Linux
