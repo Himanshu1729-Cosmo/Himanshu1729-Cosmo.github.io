@@ -95,11 +95,14 @@ brew install open-mpi
 
 Planck Likelihood
 ===================
+
 Due to the large size of the data file, approximately 20 GB, it is recommended to download only **Code** and **Baseline** for compilation. For other files, you can download and move the files into the successfully compiled directory. Alternatively, you can directly download the files from  [Planck Likelihood](https://pla.esac.esa.int) on the Cosmology page by clicking on Likelihood, which will display all 7 files available for download.
+
 ```bash
 wget -O COM_Likelihood_Code-v3.0_R3.10.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Code-v3.0_R3.10.tar.gz"
 wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-baseline_R3.00.tar.gz"
 ```
+
 ```bash
 tar -xzvf COM_Likelihood_Code-v3.0_R3.10.tar.gz
 tar -xzvf COM_Likelihood_Data-baseline_R3.00.tar.gz
@@ -109,7 +112,9 @@ python3 ./waf configure --install_all_deps
 python3 ./waf install
 source ./bin/clik_profile.sh
 ```
+
 If you want to use the Intel Compiler, add the command `--lapack\_mkl=\$MKLROOT` at the end of `python3 ./waf configure --install_all_deps` line. After installing the **code** file, proceed to extract the remaining files. Then, move the **hi\_l**, **low\_l**, **lensing** files from the extracted directory to the `code/plc\_3.0/plc-3.1/` directory.
+
 ```bash
 wget -O COM_Likelihood_Data-extra-plik-lite-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-plik-lite-ext_R3.00.tar.gz"
 wget -O COM_Likelihood_Data-extra-camspec-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-camspec-ext_R3.00.tar.gz"
