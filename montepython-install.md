@@ -203,7 +203,7 @@ python -c "import classy; print(classy.__version__)"
 
 ---
 
-## 5. Using `CLASS` on Jupyter Notebook
+## 2.c) Using `CLASS` on Jupyter Notebook
 
 Firstly you have to install Jupyter Notebook.
 
