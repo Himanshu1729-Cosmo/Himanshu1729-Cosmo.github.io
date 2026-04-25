@@ -215,46 +215,46 @@ Monte Python
 ==================
 ### 1. Getting Monte Python
   MontePython can be downloaded by
-  ```Linux
+  ```bash
   git clone https://github.com/brinckmann/montepython_public.git
   ```
   You need the Python program version 2.7.x** or version 3.x**. Your Python must have ‘numpy‘ (version >= 1.4.1) and ‘Cython’. The last one is used to wrap `CLASS` in `Python`. \
   Optional: If you want to use the plotting capabilities of Monte Python fully, you also need the ‘scipy’, with interpolate, and ‘matplotlib’ modules. \
   After installation, go to the directory:
-  ```Linux
+  ```bash
   cd montepython_public
   ```
   Make a copy of the file `default.conf.template` and rename it to `default.conf` (or any name your prefer)
-  ```Linux
+  ```bash
   cp default.conf.template default.conf
   ```
   At minimum, the file `default.cof` needs one line. \
   ⚠️ **You need to replace `<path/to/your/class_public>` by your `class_public` installed directory path.**
-  ```Linux
+  ```bash
   path['cosmo'] = '<path/to/your/class_public>'
   ```
   Make sure that your `CLASS` directory has the same name as in the path.
   Now the code is installed. There are two main (optional) commands in `MontePython`: the first one is run, for running MCMC to generate chains, another one is info, for analysing chains. More information can be viewed by executing
-  ```Linux
+  ```bash
   python montepython/MontePython.py --help
   python montepython/MontePython.py run --help
   python montepython/MontePython.py info --help
   ```
   To test a small running, executing:
-  ```Linux
+  ```bash
   path['cosmo'] = '<path/to/your/class_public>'
   ```
   ⚠️ **You need to replace `<path/to/your/class_public>` by your `class_public` installed directory path.** \
   To get running, type:
-  ```Linux
+  ```bash
   python montepython/MontePython.py run -o test -p input/example.param
   ```
   If the directory `test/` doesn’t exist, it will be created, and a run with the number of steps described in `example.param` will be started. To run a chain with more steps, one can type:
-  ```Linux
+  ```bash
   python montepython/MontePython.py run -o test -p input/example.param -N 100
   ```
   To analyse the chains, type
-  ```Linux
+  ```bash
   python montepython/MontePython.py info test/
   ```
   For more information, see [https://baudren.github.io/montepython.html](https://baudren.github.io/montepython.html). The documentation can be found in this link. \
@@ -268,39 +268,39 @@ Setting up Planck Likelihood
 Here is the detail of the full installation.
   Next, create a directory which you want to store Planck data, and go into that directory \
   ⚠️ **You need to replace `<path/to/your/planck>` by your own name such as `planck`.**
-  ```Linux
+  ```bash
   mkdir -p <path/to/planck> && cd $_
   ```
   Download the code and baseline data (will need 300 Mb of space)
-  ```Linux
+  ```bash
 wget -O COM_Likelihood_Code-v3.0_R3.10.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Code-v3.0_R3.10.tar.gz"
 wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz  "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-baseline_R3.00.tar.gz"
   ```
   Uncompress the code and the likelihood, and do some clean-up
-  ```Linux
+  ```bash
   tar -xvzf COM_Likelihood_Code-v3.0_R3.10.tar.gz
   tar -xvzf COM_Likelihood_Data-baseline_R3.00.tar.gz
   rm COM_Likelihood_*tar.gz
   ```
   Move into the code directory
-  ```Linux
+  ```bash
   cd code/plc_3.0/plc-3.01
   ```
   Configure the code. Note that you are **strongly advised** to configure clik with the Intel mkl library, and not with lapack. There is a massive gain in execution time: without it, the code is dominated by the execution of the low-l polarisation data. Before the next step, ensure you do NOT have any old Planck likelihoods sourced!
-  ```Linux
+  ```bash
   ./waf configure --lapack_mkl=${MKLROOT} --install_all_deps
   ```
   If everything goes well, you will be ready to install the code
-  ```Linux
+  ```bash
   ./waf install
   ```
   Next, source the likelihood. If you are running on a shell, type the command
-  ```Linux
+  ```bash
   source bin/clik_profile.sh
   ```
   ### For MacOS
   Running on a z-shell, you will first need to create a .zsh version of the above file. This can be done in many ways, for example
-  ```Linux
+  ```bash
   cp bin/clik_profile.sh bin/clik_profile.zsh
   sed -i 's/addvar PATH /PATH=$PATH:/g' bin/clik_profile.zsh
   sed -i 's/addvar PYTHONPATH /PYTHONPATH=$PYTHONPATH:/g' bin/clik_profile.zsh
@@ -308,14 +308,14 @@ wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz  "http://pla.esac.esa.int/pla/
   source bin/clik_profile.zsh
   ```
   You need to add
-  ```Linux
+  ```bash
   source </path/to/planck>/code/plc_3.0/plc-3.01/bin/clik_profile.sh
   ```
   ⚠️ **You need to replace `<path/to/your/planck>` by your own installed path.
   to your `.bashrc`, and you should put it in your scripts for cluster computing. \
   ### For Ubuntu
   Running on a bash-shell, you will first need to create a .sh version of the above file. This can be done in many ways, for example
-  ```Linux
+  ```bash
   cp bin/clik_profile.sh bin/clik_profile.sh
   sed -i 's/addvar PATH /PATH=$PATH:/g' bin/clik_profile.sh
   sed -i 's/addvar PYTHONPATH /PYTHONPATH=$PYTHONPATH:/g' bin/clik_profile.sh
@@ -323,12 +323,12 @@ wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz  "http://pla.esac.esa.int/pla/
   source bin/clik_profile.sh
   ```
   You need to add
-  ```Linux
+  ```bash
   source </path/to/planck/>code/plc_3.0/plc-3.01/bin/clik_profile.sh
   ```
   to your `.shellrc` (or the `.zsh` to your `.zshrc` on a z-shell), and you should put it in your scripts for cluster computing. \
   After successfully installing Planck likelihoods, in MontePython configuration file, you will need to add
-  ```Linux
+  ```bash
   path['clik'] = '</path/to/planck/code/plc_3.0/plc-3.01>'
   ```
 ⚠️ **You need to replace `<path/to/your/planck/code/plc_3.0/plc-3.01>` by your own installed path.\
