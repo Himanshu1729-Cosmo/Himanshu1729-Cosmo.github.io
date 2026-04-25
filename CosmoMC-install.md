@@ -3,7 +3,7 @@ layout: page
 title: CosmoMC Installation
 permalink: /tutorials/CosmoMC-install/
 ---
-===================
+
 This project will guide you through the detailed installation process of CosmoMC. It includes instructions for compiling and running on both a computer and a cluster. Additionally, it demonstrates how to analyze the chains from CosmoMC and generate 2D plots or triangle plots using GetDist. This guidance has been adapted from [arXiv:1409.1354](https://arxiv.org/abs/1409.1354) and [arXiv:1808.05080](https://arxiv.org/abs/1808.05080).
 
 Preparation 
