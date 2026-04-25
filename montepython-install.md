@@ -277,11 +277,16 @@ Then, overwrite the file with `:wq` (in vim command mode), or `Ctr+O` (for nano)
 
 ## 1. Getting Monte Python
 
+MontePython can be downloaded by
+
 ```bash
 git clone https://github.com/brinckmann/montepython_public.git
 ```
 
-Go to directory
+You need a Python installation (version **2.7.x** or **3.x**). Your Python environment must include: **numpy** (version ≥ 1.4.1) and **Cython** (used to wrap CLASS in Python)
+Optional: To fully use the plotting capabilities of MontePython, you should also install: **scipy** (with interpolation support) and **matplotlib**
+
+After installation, go to the directory:
 
 ```bash
 cd montepython_public
