@@ -100,7 +100,7 @@ the command
   git clone https://github.com/lesgourg/class_public.git
   ```
   We can also download `CLASS` directly from [Github](https://github.com/).
-  ![Figure](/assets/img/input.png){: .mx-auto.d-block}
+  ![Figure](/assets/img/class.png){: .mx-auto.d-block}
   
 ### 3. Installing CLASS
   Enter `CLASS` directory. Compile Ccode and Pythonwrapper using the command.
