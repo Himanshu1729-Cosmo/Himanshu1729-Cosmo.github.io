@@ -14,53 +14,63 @@ For more information about CLASS can be found on the website: [http://class-code
 
 ==================
 ### 1. Pre-requisites
-- Mac Users
-  Mac users may have to install the Command Line Tools for Xcode in order
+
+Mac users may have to install the Command Line Tools for Xcode in order
 to use the commands like `gcc`, `git` or `make` or package management tools like
 Homebrew. You can check if the Command Line Tools have already installed
 to your system or not by open the terminal and run
-  ```bash
-  xcode-select -p
-  ```
-  If they are already installed, it should return a path like /Library/Develop-
+
+```bash
+xcode-select -p
+```
+
+If they are already installed, it should return a path like /Library/Develop-
 er/CommandLineTools. If not, you can install them manually by running the
 following command
-  ```bash
-  xcode-select --install
-  ```
-  Alternatively you can download the Command Line Tools by going to the site:
-  [https://developer.apple.com/download/all/](https://developer.apple.com/download/all/) (sign in is required), click download
-  Command Line Tools for XCode. \
-  Next step, you need to install Homebrew in the system. Homebrew can be
-  downloaded it by typing this command on the terminal
-  ```bash
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  ```
-  After that, you will need to install a C-language compiler such as `GCC` (Gnu
-  Compiler Collection), which is commonly used as a compiler with support for
-  `C`, `C++`, `Fortran`, etc. `GCC` can be installed by compiling.
-  ```bash
-  brew install gcc
-  ```
-  To make sure that CGG works properly, run
-  ```bash
-  gcc --version
-  ```
+
+```bash
+xcode-select --install
+```
+
+Alternatively you can download the Command Line Tools by going to the site: [https://developer.apple.com/download/all/](https://developer.apple.com/download/all/) (sign in is required),
+click download Command Line Tools for XCode.
+
+Next step, you need to install Homebrew in the system. Homebrew can be downloaded it by typing this command on the terminal
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+After that, you will need to install a C-language compiler such as `GCC` (Gnu Compiler Collection), which is commonly used as a compiler with support for
+`C`, `C++`, `Fortran`, etc. `GCC` can be installed by compiling.
+
+```bash
+brew install gcc
+```
+
+To make sure that CGG works properly, run
+
+```bash
+gcc --version
+```
+
   Next step, check for the python version with
-  ```bash
-  python --version
-  ```
-  Python wrapper for class may not yet be compatible with Python version ¿
-  3.11, so we have to specify version of Python in order to set up the wrapper. In
-  this note we will use Python v.3.11. Next step, we need to install Cython. This
-  allows Python code to directly call the C functions in CLASS. To install Cython
-  that associate with the Python v.3.11, use the command below.
-  ```bash
-  python3.11 -m pip install Cython
-  ```
+  
+```bash
+python --version
+```
 
+Python wrapper for class may not yet be compatible with Python version ?
+3.11, so we have to specify version of Python in order to set up the wrapper. In
+this note we will use Python v.3.11. Next step, we need to install Cython. This
+allows Python code to directly call the C functions in CLASS. To install Cython
+that associate with the Python v.3.11, use the command below.
 
-- Linux Users \
+```bash
+python3.11 -m pip install Cython
+```
+
+Linux Users \
   You need to have `gcc` compiler `Python`, and `Cython`. To install `gcc` use the following commands,
   ```bash
   sudo apt update
