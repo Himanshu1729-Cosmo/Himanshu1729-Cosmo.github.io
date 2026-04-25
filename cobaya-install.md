@@ -377,7 +377,7 @@ g2 = plots.get_subplot_plotter(width_inch=5)
 g2.settings.axes_fontsize = 16
 g2.settings.axes_labelsize = 20
 g2.plot_2d( [samples1, samples2, samples3, samples4], 'w0', 'wa', filled=True,
-    contour_lws=1.5, colors=['red', 'blue', 'green', 'black'])
+    contour_lws=1.5, colors=['#4a6fdc', '#ff4500', '#a020f0', '#00008b'])
 
 ax = g2.subplots[0, 0]
 ax.axvline(x=-1, color='black', linestyle='--', linewidth=1.5)
