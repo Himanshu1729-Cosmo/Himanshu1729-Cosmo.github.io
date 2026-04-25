@@ -1,66 +1,32 @@
 ---
 layout: page
-title: Cobaya Installation
+title: CosmoMC Installation
 permalink: /tutorials/CosmoMC-install/
 ---
-
-Cobaya (code for bayesian analysis, and Spanish for Guinea Pig) is a framework for sampling and statistical modelling: it allows you to explore an arbitrary prior or posterior using a range of Monte Carlo samplers (including the advanced MCMC sampler from CosmoMC, and the advanced nested sampler PolyChord). The results of the sampling can be analysed with GetDist. It supports MPI parallelization (and very soon HPC containerization with Docker/Shifter and Singularity).
-
-Its authors are Jesus Torrado and Antony Lewis. Some ideas and pieces of code have been adapted from other codes (e.g CosmoMC by Antony Lewis and contributors, and Monte Python, by J. Lesgourgues and B. Audren).
-
-Cobaya has been conceived from the beginning to be highly and effortlessly extensible: without touching cobaya’s source code, you can define your own priors and likelihoods, create new parameters as functions of other parameter.
-
-Though cobaya is a general purpose statistical framework, it includes interfaces to cosmological theory codes (CAMB and CLASS) and likelihoods of cosmological experiments (Planck, Bicep-Keck, SDSS… and more coming soon). Automatic installers are included for all those external modules. You can also use cobaya simply as a wrapper for cosmological models and likelihoods, and integrate it in your own sampler/pipeline.
-
-The interfaces to most cosmological likelihoods are agnostic as to which theory code is used to compute the observables, which facilitates comparison between those codes. Those interfaces are also parameter-agnostic, so using your own modified versions of theory codes and likelihoods requires no additional editing of cobaya’s source.
-
-The original web page [Cobaya Website](https://cobaya.readthedocs.io/en/latest/index.html) that is cited in this document.
+===================
+This project will guide you through the detailed installation process of CosmoMC. It includes instructions for compiling and running on both a computer and a cluster. Additionally, it demonstrates how to analyze the chains from CosmoMC and generate 2D plots or triangle plots using GetDist. This guidance has been adapted from [arXiv:1409.1354](https://arxiv.org/abs/1409.1354) and [arXiv:1808.05080](https://arxiv.org/abs/1808.05080).
 
 Preparation 
-
-First, the computer needs to install essential libraries and compilers.  
-
-### 1. Ubuntu
-
-**Install Compiler**
-```bash
+===================
+* Hardware : To employ the provided parallel capabilities of CosmoMC, you need more than just one core. Markov chain algorithms are time-consuming and performing them on parallel machines will boost the code’s performance.
+* Operating System : CosmoMC is available for Linux and MacOS. Here, we installed and tested CosmoMC on Ubuntu and also MacOS.
+* Compilers : CosmoMC is compatible with GFORTRAN compiler (GNU) and IFORT compiler (Oneapi).
+* Open-MPI : OpenMPI library is required for running on parallel machines.
+* Cfitsio : CosmoMC uses the CFITSIO library to read file FITS data format including CMB data files.
+* Planck Likelihood : Planck Likelihood Code V3.0 is required to run CosmoMC with Planck 2018 data.
+ 
+1. Ubuntu
+- Install GNU Compiler
+```Linux
 sudo apt update && sudo apt upgrade
+sudo apt install gcc
+sudo apt install gfortran
+sudo apt install g++
+sudo apt install make
+sudo apt install gedit
 sudo apt install nano
 sudo apt install wget
 sudo apt install git -y
-sudo apt install liblapack-dev
-sudo apt install libcfitsio-dev
-sudo apt install build-essential
-sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
-```
-
-**Install Python and Librareis, We recommd you to install Miniconda for better manage Python evironment.**
-
-```bash
-mkdir -p ~/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm ~/miniconda3/miniconda.sh
-source ~/miniconda3/bin/activate
-```
-
-**Then install Python and Libraries.**
-
-```bash
-python3 -m pip install pip
-pip3 install numpy
-pip3 install scipy
-pip3 install matplotlib
-pip3 install cython
-pip3 install astropy
-pip3 install getdist
-pip3 install jupyter
-conda install jupyter
-```
-
-**In the other way, you can also install Python via Site-Package.**
-
-```bash
 sudo apt install python3
 sudo apt install python3-pip
 pip3 install numpy
@@ -71,34 +37,41 @@ pip3 install astropy
 pip3 install getdist
 pip3 install jupyter
 sudo apt install jupyter
+sudo apt install liblapack-dev
+sudo apt install libcfitsio-dev
+sudo apt install build-essential
+sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
 ```
 
-### 2. MacOS
-**Install HomeBrew**
-```bash
+- Install Intel Compiler (Optional)
+You can install Intel Compiler additionally after installing the GNU Compiler. The performance of the Intel Compiler is typically faster than GNU, around 10%-20% faster, although the GNU Compiler is generally sufficient for running the program.
+```Linux
+wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/992857b9-624c-45de-9701-f6445d845359/l_BaseKit_p_2023.2.0.49397.sh
+sudo sh ./l_BaseKit_p_2023.2.0.49397.sh
+wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/0722521a-34b5-4c41-af3f-d5d14e88248d/l_HPCKit_p_2023.2.0.49440.sh
+sudo sh ./l_HPCKit_p_2023.2.0.49440.sh
+sudo apt update
+sudo apt -y install cmake pkg-config build-essential
+. /opt/intel/oneapi/setvars.sh 
+```
+
+2. MacOS
+- Install HomeBrew
+```Linux
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-**Install Compiler**
-```bash
+- Install GNU Compiler
+```Linux
+brew install gcc
+brew install gfortran
+brew install g++
+brew install make
+brew install gedit
 brew install wget
 brew install git
 brew install nano
-brew install lapack
-brew install cfitsio
-brew install open-mpi
-```
-
-MacOS includes a built-in Python compiler within the site-packages libraries,  do not need to install Python via Homebrew. However, if an unresolved bug arise, it may become necessary to install Homebrew's Python at that point.
-
-**Install Homebrew Python**
-```bash
 brew install python3
 python3 -m pip install --upgrade pip
-```
-
-**Install Python's required Librareis**
-```bash
 pip3 install numpy
 pip3 install scipy
 pip3 install matplotlib
@@ -107,357 +80,268 @@ pip3 install astropy
 pip3 install getdist
 pip3 install jupyter
 brew install jupyter
+brew install lapack
+brew install cfitsio
+brew install open-mpi
 ```
 
-**For better handle Python evironment, we recommd you to install Miniconda.**
-
-**For Apple Silicon chip**
-```bash
-mkdir -p ~/miniconda3
-curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm ~/miniconda3/miniconda.sh
-source ~/miniconda3/bin/activate
+Planck Likelihood
+===================
+Due to the large size of the data file, approximately 20 GB, it is recommended to download only **Code** and **Baseline** for compilation. For other files, you can download and move the files into the successfully compiled directory. Alternatively, you can directly download the files from  [Planck Likelihood](https://pla.esac.esa.int) on the Cosmology page by clicking on Likelihood, which will display all 7 files available for download.
+```Linux
+wget -O COM_Likelihood_Code-v3.0_R3.10.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Code-v3.0_R3.10.tar.gz"
+wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-baseline_R3.00.tar.gz"
 ```
-**For Intel chip**
-
-```bash
-mkdir -p ~/miniconda3
-curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm ~/miniconda3/miniconda.sh
-source ~/miniconda3/bin/activate
+```Linux
+tar -xzvf COM_Likelihood_Code-v3.0_R3.10.tar.gz
+tar -xzvf COM_Likelihood_Data-baseline_R3.00.tar.gz
+mv -f baseline/plc_3.0/* code/plc_3.0/plc-3.1/
+cd code/plc_3.0/plc-3.1/
+python3 ./waf configure --install_all_deps
+python3 ./waf install
+source ./bin/clik_profile.sh
 ```
-**Then install Python and Libraries.**
-
-```bash
-python3 -m pip install pip
-pip3 install numpy
-pip3 install scipy
-pip3 install matplotlib
-pip3 install cython
-pip3 install astropy
-pip3 install getdist
-pip3 install jupyter
-conda install jupyter
+If you want to use the Intel Compiler, add the command `--lapack\_mkl=\$MKLROOT` at the end of `python3 ./waf configure --install_all_deps` line. After installing the **code** file, proceed to extract the remaining files. Then, move the **hi\_l**, **low\_l**, **lensing** files from the extracted directory to the `code/plc\_3.0/plc-3.1/` directory.
+```Linux
+wget -O COM_Likelihood_Data-extra-plik-lite-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-plik-lite-ext_R3.00.tar.gz"
+wget -O COM_Likelihood_Data-extra-camspec-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-camspec-ext_R3.00.tar.gz"
+wget -O COM_Likelihood_Data-extra-plik-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-plik-ext_R3.00.tar.gz"
+wget -O COM_Likelihood_Data-extra-bflike-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-bflike-ext_R3.00.tar.gz"
+wget -O COM_Likelihood_Data-extra-lensing-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-lensing-ext_R3.00.tar.gz"
 ```
 
-### 3. Cobaya
-
-**Cobaya Library Installation**
-
-```bash
-pip3 install cobaya
-```
-**Cosmological theory codes and likelihoods. ⚠️ You need to replace `<path/to/your/directory>` by your istalled directory path such as `/home/if01/`**
-
-```bash
-cobaya-install cosmo -p /path/to/your/directory
-cobaya-install planck_2018_highl_plik.TTTEEE
-cobaya-install bicep_keck_2018
+```Linux
+tar -xzvf COM_Likelihood_Data-extra-plik-lite-ext_R3.00.tar.gz
+tar -xzvf COM_Likelihood_Data-extra-camspec-ext_R3.00.tar.gz
+tar -xzvf COM_Likelihood_Data-extra-plik-ext_R3.00.tar.gz
+tar -xzvf COM_Likelihood_Data-extra-bflike-ext_R3.00.tar.gz
+tar -xzvf COM_Likelihood_Data-extra-lensing-ext_R3.00.tar.gz
+mv extended_plik_lite/plc_3.0/hi_l/plik_lite/* code/plc_3.0/plc-3.1/hi_l/plik_lite/
+mv extended_plik/plc_3.0/hi_l/plik/* code/plc_3.0/plc-3.1/hi_l/plik/
+mv extended_lensing/plc_3.0/lensing/* code/plc_3.0/plc-3.1/lensing/
+mv -f extended_bflike/plc_3.0/low_l/bflike code/plc_3.0/plc-3.1/low_l/
+mv -f extended_camspec/plc_3.0/hi_l/camspec code/plc_3.0/plc-3.1/hi_l/
 ```
 
-You need to place theory codes and likelihoods in the `/path/to/packages` directory, but you can also modified this path to suit on your own machine.\
-If the installation is successful, `code` and `data` directories will be shown on your pc.
+CosmoMC
+===================
 
-**Setting Cosmology Run, Creating the input for a realistic cosmological case is quite a bit of work. But to make it simpler, cobaya has created an automatic input generator, that you can run from the shell.**
+1. Installation
+```Linux
+git clone --recursive https://github.com/cmbant/CosmoMC.git
+cd CosmoMC
+ln -s /PATH/to/plc-3.1 ./data/clik_14.0
+```
+The PATH of the `/plc-3.1` file can be checked by typing the command `echo $CLIK_PATH`. It will display the PATH of the file.
 
-```bash
-python3 -m pip install PySide6
+2. Compilation
+```Linux
+make
+```
+After successful compiling, a file named `cosmomc` will be created in CosmoMC directory.
+
+```Linux
+make clean && make
+```
+If unable to execute the `make` command, delete the file `cosmomc` first by typing the command `rm cosmomc`. The compilation of the CAMB program, which is used for calculating the theoretical part of CosmoMC and is located within a subdirectory `camb/fortran/`. If the compilation is successful, the file `camb` will appear in the directory.
+
+```Linux
+cd camb/fortran/
+make
 ```
 
-```bash
-cobaya-cosmo-generator
+3. Running
+To run CosmoMC you need to run it with MPI/OpenMPI using mpirun command. Set your corrent directory to CosmoMC directory and run this command.
+
+```Linux
+mpirun -np number of processers (cores) ./cosmomc <.ini file>
+```
+Inside the `.ini file` there are some lines which start with DEFAULT keyword. If these lines are not commented, it means we can use likelihoods related to these data.
+```
+#high-L plik likelihood
+DEFAULT(batch3/plik_rd12_HM_v22_TTTEEE.ini)
+
+#low-L temperature
+DEFAULT(batch3/lowl.ini)
+
+#low-L EE polarization
+DEFAULT(batch3/simall_EE.ini)
+
+#Bicep-Keck-Planck 2015, varying cosmological parameters (use only if varying r)
+DEFAULT(batch3/BK15.ini)
+
+#DES 1-yr joint
+DEFAULT(batch3/DES.ini)
+
+#Planck 2018 lensing (native code, does not require Planck likelihood code)
+DEFAULT(batch3/lensing.ini)
+
+#BAO compilation
+DEFAULT(batch3/BAO.ini)
+
+#Pantheon SN
+DEFAULT(batch3/Pantheon.ini)
+
+#general settings
+DEFAULT(batch3/common.ini)
+
+propose_matrix= planck_covmats/<.covmat file for each work>
+
+#Folder where files (chains, checkpoints, etc.) are stored
+root_dir = chains/<model directory for each work>/
+
+#Root name for files produced
+file_root=<name>
+#action= 0 runs chains, 1 importance samples, 2 minimizes
+#use action=4 just to quickly test likelihoods
+action = 0
+
+#turn on checkpoint for real runs where you want to be able to continue them
+checkpoint = T
+```
+Setting `root_dir` to model directory and `file_root` should contain information about the model and used datasets. To do a MCMC run you need to find the line which starts with action and set its value to 0.
+
+4. Running on Cluster
+
+Running CosmoMC can be initiated on an HPC (High Performance Computing) machine for faster completion compared to using a regular computer. Currently in Thailand, access to the Chalawan HPC facility at the National Astronomical Research Institute of Thailand (NARIT) can be requested for running jobs. There are two main nodes available for execution: the pollux node (GPU) and the castor node (CPU). The pollux node tends to run faster, but since there are only 2 nodes, it is recommended to use the castor node, which offers more nodes for processing.
+
+For running jobs on the cluster, `.sh` files must be used to keep commands for the HPC to execute the jobs. In the Chalawan HPC, built-in modules are available for running unmodified models. For instance, the LCDM model can be run using these built-in modules.
+
+ ```Linux
+#!/bin/bash
+
+#SBATCH -J CosmoMC      # Job name
+#SBATCH -n 10           # Number of tasks
+
+module purge
+module load hwloc
+module load intel/19.0.5.281
+module load openmpi3/4.0.2
+module load CosmoMC
+mpirun <path to .ini file>
+```
+For running on the pollux node, if model has been modified, a symbolic link for `$CLIK_PATH` must be created in step 1. Following this, compilation is required, and it is essential to load the necessary modules as follows.
+```Linux
+module purge
+module load hwloc
+module load intel/19.0.5.281
+module load openmpi3/4.0.2
+export PLANCKLIKE=cliklike
+export CLIK_DATA=/data3/opt/ohpc/pub/apps/CosmoMC-Oct19/plc_3.1/share/clik
+export CLIK_PATH=/data3/opt/ohpc/pub/apps/CosmoMC-Oct19/plc_3.1
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CLIK_PATH/lib
+```
+```Linux
+#!/bin/bash
+
+#SBATCH -J CosmoMC      # Job name
+#SBATCH -n 10           # Number of tasks
+#SBATCH -p chalawan_gpu # Partition
+#SBATCH -w pollux3
+
+module purge
+module load hwloc
+module load intel/19.0.5.281
+module load openmpi3/4.0.2
+export PLANCKLIKE=cliklike
+export CLIK_DATA=/data3/opt/ohpc/pub/apps/CosmoMC-Oct19/plc_3.1/share/clik
+export CLIK_PATH=/data3/opt/ohpc/pub/apps/CosmoMC-Oct19/plc_3.1
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CLIK_PATH/lib
+mpirun ./cosmomc <path to .ini file>
+```
+For running on the castor node, it is necessary to install the Planck likelihood and recompile using the GNU Compiler. The important modules should be loaded as follows.
+```Linux
+module purge
+module load gnu8
+module load hwloc
+module load openmpi3
+```
+```Linux
+#!/bin/bash
+
+#SBATCH -J CosmoMC      # Job name
+#SBATCH -p chalawan_cpu # Partition
+#SBATCH -n 10           # Number of task
+
+module purge
+module load gnu8
+module load hwloc
+module load openmpi3
+source data/clik_14.0/bin/clik_profile.sh
+
+mpirun ./cosmomc <path to .ini file>
 ```
 
-![Figure](/assets/img/input.png){: .mx-auto.d-block }
+Tutorial for basic Slurm Commands: [http://chalawan.narit.or.th/home/index.php/using-pollux/using-slurm/](http://chalawan.narit.or.th/home/index.php/using-pollux/using-slurm/) 
 
-**4. Configuration of the YAML file**
+5. Output
 
-```yaml
-theory:
-  camb:
-    extra_args:
-      lens_potential_accuracy: 1
-      dark_energy_model: ppf
-      num_massive_neutrinos: 1
-      nnu: 3.044
-      theta_H0_range:
-      - 20
-      - 100
-likelihood:
-  bao.desi_dr2: null
-  planck_2018_lowl.TT: null
-  planck_2018_lowl.EE: null
-  planck_NPIPE_highl_CamSpec.TTTEEE: null
-  planckpr4lensing:
-    package_install:
-      github_repository: carronj/planck_PR4_lensing
-      min_version: 1.0.2
-params:
-  logA:
-    prior:
-      min: 1.61
-      max: 3.91
-    ref:
-      dist: norm
-      loc: 3.05
-      scale: 0.001
-    proposal: 0.001
-    latex: \log(10^{10} A_\mathrm{s})
-    drop: true
-  As:
-    value: 'lambda logA: 1e-10*np.exp(logA)'
-    latex: A_\mathrm{s}
-  ns:
-    prior:
-      min: 0.8
-      max: 1.2
-    ref:
-      dist: norm
-      loc: 0.965
-      scale: 0.004
-    proposal: 0.002
-    latex: n_\mathrm{s}
-  theta_MC_100:
-    prior:
-      min: 0.5
-      max: 10
-    ref:
-      dist: norm
-      loc: 1.04109
-      scale: 0.0004
-    proposal: 0.0002
-    latex: 100\theta_\mathrm{MC}
-    drop: true
-    renames: theta
-  cosmomc_theta:
-    value: 'lambda theta_MC_100: 1.e-2*theta_MC_100'
-    derived: false
-  H0:
-    latex: H_0
-    min: 20
-    max: 100
-  ombh2:
-    prior:
-      min: 0.005
-      max: 0.1
-    ref:
-      dist: norm
-      loc: 0.0224
-      scale: 0.0001
-    proposal: 0.0001
-    latex: \Omega_\mathrm{b} h^2
-  omch2:
-    prior:
-      min: 0.001
-      max: 0.99
-    ref:
-      dist: norm
-      loc: 0.12
-      scale: 0.001
-    proposal: 0.0005
-    latex: \Omega_\mathrm{c} h^2
-  omegam:
-    latex: \Omega_\mathrm{m}
-  omegamh2:
-    derived: 'lambda omegam, H0: omegam*(H0/100)**2'
-    latex: \Omega_\mathrm{m} h^2
-  mnu: 0.06
-  w:
-    prior:
-      min: -3
-      max: 1
-    ref:
-      dist: norm
-      loc: -0.99
-      scale: 0.02
-    proposal: 0.02
-    latex: w_{0,\mathrm{DE}}
-  wa:
-    prior:
-      min: -3
-      max: 2
-    ref:
-      dist: norm
-      loc: 0
-      scale: 0.05
-    proposal: 0.05
-    latex: w_{a,\mathrm{DE}}
-  YHe:
-    latex: Y_\mathrm{P}
-  Y_p:
-    latex: Y_P^\mathrm{BBN}
-  DHBBN:
-    derived: 'lambda DH: 10**5*DH'
-    latex: 10^5 \mathrm{D}/\mathrm{H}
-  tau:
-    prior:
-      min: 0.01
-      max: 0.8
-    ref:
-      dist: norm
-      loc: 0.055
-      scale: 0.006
-    proposal: 0.003
-    latex: \tau_\mathrm{reio}
-  zrei:
-    latex: z_\mathrm{re}
-  sigma8:
-    latex: \sigma_8
-  s8h5:
-    derived: 'lambda sigma8, H0: sigma8*(H0*1e-2)**(-0.5)'
-    latex: \sigma_8/h^{0.5}
-  s8omegamp5:
-    derived: 'lambda sigma8, omegam: sigma8*omegam**0.5'
-    latex: \sigma_8 \Omega_\mathrm{m}^{0.5}
-  s8omegamp25:
-    derived: 'lambda sigma8, omegam: sigma8*omegam**0.25'
-    latex: \sigma_8 \Omega_\mathrm{m}^{0.25}
-  A:
-    derived: 'lambda As: 1e9*As'
-    latex: 10^9 A_\mathrm{s}
-  clamp:
-    derived: 'lambda As, tau: 1e9*As*np.exp(-2*tau)'
-    latex: 10^9 A_\mathrm{s} e^{-2\tau}
-  age:
-    latex: '{\rm{Age}}/\mathrm{Gyr}'
-  rdrag:
-    latex: r_\mathrm{drag}
-sampler:
-  mcmc:
-    drag: true
-    oversample_power: 0.4
-    proposal_scale: 1.9
-    covmat: auto
-    Rminus1_stop: 0.01
-    Rminus1_cl_stop: 0.2
-```
----
+* `.txt file` lists each accepted set of parameters for each chain.
+* `.log file` contains some info which may be useful to assess performance.
+* `.data file` contains full computed model information at the independent sample points (power spectra etc).
+* `.chk file` stores the current status that if the processes are terminated they can be restarted again from close to where they left off.
+* `.inputparams file` contains the input values of the parameters and setting.
+* `.likelihood file` lists the names of the likelihoods.
+* `.paramnames file` lists the names and labels of the parameters.
+* `.ranges file` lists the name tags of the parameters, and their upper and lower bounds.
+* `.converge_stat file` contains "R-1" statistic that also used for the stopping criterion when generating chains with MPI.
 
-**5. After saving the `.yaml` file (e.g., `test.yaml`), run:**
+Plotting with GetDist
+===================
 
-```bash
-cobaya-run test.yaml
-```
-**6. Output Files**
+To generate distribution plots and triangle plots, you need packages for graph creation from files, which are output files from running CosmoMC. The packages have been use in Python. For displaying plots, it is recommended to use Jupyter Notebook or Jupyter Lab. Additional information can be found at: [https://getdist.readthedocs.io/en/latest/](https://getdist.readthedocs.io/en/latest/) and [ https://getdist.readthedocs.io/en/latest/plot\_gallery.html](https://getdist.readthedocs.io/en/latest/plot\_gallery.html)
 
-**Once the MCMC sampling with Cobaya is completed, the output consists of several files generated using the chosen run name (e.g., `test`). These typically include:**
-
-`test.1.txt`, `test.checkpoint`, `test.covmat`, `test.input.yaml`, `test.progress`, and `test.updated.yaml`.
-
-Each file serves a specific purpose:
-
-- `.1.txt` → Main MCMC chain file containing sampled parameter values  
-- `.covmat` → Covariance matrix used for proposal updates  
-- `.progress` → Information about convergence and sampling status  
-- `.input.yaml` / `.updated.yaml` → Configuration files for the run  
-- `.checkpoint` → Allows restarting the chain if interrupted  
-
-**For post-processing and plotting, the most important file is:**
-
-`test.1.txt`
-
-This file contains the actual MCMC samples. Inside, you will find multiple columns corresponding to different cosmological parameters (e.g., $H_0$, $\Omega_m$, $\sigma_8$, etc.), along with additional columns such as weights and likelihood values.
-
-**7. Post-processing and Visualization**
-
-Now, we introduce the main library used for post-processing, namely the **GetDist** package, which is widely used in cosmology. It provides a powerful and flexible framework for processing Monte Carlo chains, computing marginalized constraints, and generating high-quality plots such as one-dimensional distributions and two-dimensional contour (triangle) plots. GetDist is fully compatible with Cobaya outputs and allows efficient handling of large datasets. It also supports derived parameters, parameter transformations, and comparison between different cosmological models or datasets.
-
-In this section, we will demonstrate how to load Cobaya chain files, analyze them using GetDist, and produce standard cosmological plots. Additional information can be found at: - [GetDist Documentation](https://getdist.readthedocs.io/en/latest/), and [Plot Gallery](https://getdist.readthedocs.io/en/latest/plot_gallery.html)
-
-As an example, we consider the $w_0w_a$CDM model, in which the equation of state (EoS) of dark energy is parameterized as:
-
-$$
-w(z) = w_0 + w_a \frac{z}{1+z}.
-$$
-
-**8. Plotting with GetDist**
+First, you need to import the getdist library and select the chain you want to use for plotting graph by specifying the directory path to your output files in the line `file_root`. For example, `file_root1` has been dowloaded output files from `planck/plikHM_TTTEEE_lowl_lowE_BK15_lensing/base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO`. You do not to specify type of files such as `base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO_1.txt` or `base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO.inputparams`. Set only name of files `base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO`.
 
 ```python
 %matplotlib inline
-from getdist import plots, loadMCSamples
+import getdist
+from getdist import plots, MCSamples, loadMCSamples
 
-file_root1 = '/path/to/your/chains/test_1'
-file_root2 = '/path/to/your/chains/test_2'
-file_root3 = '/path/to/your/chains/test_3'
-file_root4 = '/path/to/your/chains/test_4'
-
-samples1 = loadMCSamples(file_root=file_root1, settings={'ignore_rows':0.5})
-samples2 = loadMCSamples(file_root=file_root2, settings={'ignore_rows':0.5})
-samples3 = loadMCSamples(file_root=file_root3, settings={'ignore_rows':0.5})
-samples4 = loadMCSamples(file_root=file_root4, settings={'ignore_rows':0.5})
+file_root1 = 'planck/plikHM_TTTEEE_lowl_lowE_BK15_lensing/base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO'
+samples1 = loadMCSamples(file_root=file_root1,settings={'ignore_rows':0.5})
 ```
-
 2D plot
-
 ```python
 g2 = plots.get_subplot_plotter(width_inch=5)
 g2.settings.axes_fontsize = 16
 g2.settings.axes_labelsize = 20
-g2.plot_2d( [samples1, samples2, samples3, samples4], 'w0', 'wa', filled=True,
-    contour_lws=1.5, colors=['#4a6fdc', '#ff4500', '#a020f0', '#00008b'])
-
-ax = g2.subplots[0, 0]
-ax.axvline(x=-1, color='black', linestyle='--', linewidth=1.5)
-ax.axhline(y=0,  color='black', linestyle='--', linewidth=1.5)
-ax.plot(-1, 0, marker='*', color='gold', markersize=12, zorder=10)
-ax.text(-1.1, 0.1, r'$\Lambda$CDM', fontsize=12)
-
-g2.add_legend([r'DESI DR2 + CMB',
-        r'DESI DR2 + CMB + Pantheon$^+$',
-        r'DESI DR2 + CMB + DES-Dovekie',
-        r'DESI DR2 + CMB + Union3 '])
-g2d.export("2D.png")
+g2.plot_2d([samples1],'omegabh2','omegach2',filled=True,contour_lws=1.5)
 ```
-
-![Figure](/assets/img/2D.png){: .mx-auto.d-block}
+<p align="center">
+<img src="https://github.com/CraverBoyyy/CosmoMC-Installation/assets/109847168/b3fff9b8-fdac-4e60-9a71-68af71c1f8b9"  width="500px" height="500px">
+</p>
 
 Triangle plot
 ```python
 g = plots.get_subplot_plotter(width_inch=10)
 g.settings.axes_fontsize = 16
 g.settings.axes_labelsize = 20
-g.triangle_plot(samples1,['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC', 'w0', 'wa'],legend_labels=[r'CMB + DESI DR2'],filled=True,contour_lws=1.5)
+g.triangle_plot(samples1,['omegabh2','omegach2','theta','tau','logA','ns'],filled=True,contour_lws=1.5)
 ```
+<p align="center">  
+<img src="https://github.com/CraverBoyyy/CosmoMC-Installation/assets/109847168/6b1cf5c6-e40f-4157-88c4-7ff48a081819" width="700px" height="700px"  align="center" >
+</p>
 
-![Figure](/assets/img/fig_plot.png){: .mx-auto.d-block }
-
-If you want to superimpose more then one chains models results, you can add additional chains to the code by including another file_root similar to the first dataset. You can also adjust the number of parameters in the same way.
-
+Triangle plot with uncertainty limit at 68%CL and 95%CL
 ```python
-%matplotlib inline
-from getdist import plots, loadMCSamples
-
-file_root1 = '/path/to/your/chains/test_1'
-file_root2 = '/path/to/your/chains/test_2'
-file_root3 = '/path/to/your/chains/test_3'
-file_root4 = '/path/to/your/chains/test_4'
-
-samples1 = loadMCSamples(file_root=file_root1, settings={'ignore_rows':0.5})
-samples2 = loadMCSamples(file_root=file_root2, settings={'ignore_rows':0.5})
-samples3 = loadMCSamples(file_root=file_root3, settings={'ignore_rows':0.5})
-samples4 = loadMCSamples(file_root=file_root4, settings={'ignore_rows':0.5})
-
-g = plots.get_subplot_plotter()
-
-g.settings.axes_fontsize = 14
-g.settings.axes_labelsize = 16
-g.settings.legend_fontsize = 12
-g.settings.alpha_filled_add = 0.85
-g.settings.figure_legend_frame = False
-
-g.triangle_plot(
-    [samples1, samples2, samples3, samples4],
-    ['logA', 'ns', 'ombh2', 'omch2', 'tau', 'thetaMC', 'w0', 'wa'],
-    filled=True,
-    contour_lws=1.5,
-    colors=['#4a6fdc', '#ff4500', '#a020f0', '#00008b'])
-g2.add_legend([r'DESI DR2 + CMB',
-        r'DESI DR2 + CMB + Pantheon$^+$',
-        r'DESI DR2 + CMB + DES-Dovekie',
-        r'DESI DR2 + CMB + Union3 '])
-g.export("fig_super.png")
+g.triangle_plot(samples1,['omegabh2','omegach2','theta','tau','logA','ns'],filled=True,contour_lws=1.5,title_limit=2)
 ```
-![Figure](/assets/img/fig_super.png){: .mx-auto.d-block }
+<p align="center">  
+<img src="https://github.com/CraverBoyyy/CosmoMC-Installation/assets/109847168/e3cfdad7-847a-4424-ba9d-5f79e7c897dc" width="700px" height="700px"  align="center" >
+</p>
+
+If you want to compare the two or more models results, you can add additional chains to the code by including another file_root similar to the first dataset. You can also adjust the number of parameters in the same way.
+```python
+file_root2 = 'planck/plikHM_TTTEEE_lowl_lowE_BK15_lensing/base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing'
+samples2 = loadMCSamples(file_root=file_root2,settings={'ignore_rows':0.5})
+
+g.triangle_plot((samples1,samples2),['omegabh2','omegach2','theta','tau','logA','ns'],filled=True,contour_lws=1.5)
+```
+<p align="center">        
+<img src="https://github.com/CraverBoyyy/CosmoMC-Installation/assets/109847168/b236a90e-5337-41a9-8252-988f8944275a" width="700px" height="700px"  align="center" >
+</p>
+
+
+
 
