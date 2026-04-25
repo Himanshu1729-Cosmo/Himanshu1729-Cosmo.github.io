@@ -81,22 +81,22 @@ following command
   [Miniconde](https://docs.anaconda.com/miniconda/)
   [Anaconda](https://www.anaconda.com/download)
   Next to install `Cython`;
-  ```Linux
+  ```bash
   pip install Cython
   ```
   or
-  ```Linux
+  ```bash
   conda install Cython
   ```
 ### 2. Downloading CLASS
   Before getting CLASS, you may create a project directory using
-  ```Linux
+  ```bash
   mkdir <dirname> && cd $_
   ```
   Replace <dirname> with the name you prefer. After entering the <dirname>
 directory, download the latest version of `CLASS` by downloading via git using
 the command
-  ```Linux
+  ```bash
   git clone https://github.com/lesgourg/class_public.git
   ```
   We can also download `CLASS` directly from [Github](https://github.com/).
@@ -104,37 +104,37 @@ the command
   
 ### 3. Installing CLASS
   Enter `CLASS` directory. Compile Ccode and Pythonwrapper using the command.
-  ```Linux
+  ```bash
   PYTHON=python3.11 make all
   ```
   or
-  ```Linux
+  ```bash
   make -j
   ```
   If you have no multiple versions of Python. Execute the command.   
-  ```Linux
+  ```bash
   ./class explanatory.ini
   ```
   to test if the `C` code installed successfully. To test if the Python wrapper setup successfully, compile.
-  ```Linux
+  ```bash
   python3.11 -c "import classy; print(classy.__version__)"
   ```
 
 ### 4. Setting Python wrapper in a virtual environment
   Create a virtual environment (venv) using  
-  ```Linux
+  ```bash
   python3.11 -m venv <myenv>
   ```
   You can replace `<myenv>` with any name you want. Then activate the virtual
 environment with  
-```Linux
+```bash
   source <myenv>/bin/activate
   ```
   To make sure that whenever the command python is compiled it point to the
 correct version of Python as you included in the virtual environment, you can
 place the function below in .bashrc or .zshrc for z-shell (if you don’t have
 .bashrc or .zshrc, just create one).
-  ```Linux
+  ```bash
   function venv() {
     source "$1/bin/activate"  
     alias python="$1/bin/python"
@@ -144,68 +144,68 @@ place the function below in .bashrc or .zshrc for z-shell (if you don’t have
   Then restart the terminal. Activate the virtual environment again. Now you
 can test if the command python points to the same version of Python using in
 the virtual environment by compiling.
-  ```Linux
+  ```bash
   which python; which pip
   ```
   Or, check for the version of Python.
-  ```Linux
+  ```bash
   python --version; pip --version
   ```
   After that, install necessary modules to the environment, type.
-  ```Linux
+  ```bash
   pip install numpy scipy cython matplotlib
   ```
   In the `CLASS` directory, go to the ‘python’ directory and execute the command:
-  ```Linux
+  ```bash
   python setup.py build
   python setup.py install
   ```
   Checking if the steps above worked properly by compiling
-  ```Linux
+  ```bash
   python -c "import classy; print(classy.__version__)"
   ```
 ### 5.Using `CLASS` on Jupyter Notebook
   Firstly you have to install Jupyter Notebook.
-  ```Linux
+  ```bash
   pip install notebook
   ```
   To make sure that the path of Jupyter Notebook is in the created venv, type.
-  ```Linux
+  ```bash
   which jupyter
   ```
   If the Notebook is not in the right path, you may have follow this way:
-  ```Linux
+  ```bash
   pip install ipython ipykernel
   ```
   After installing `ipython` and `ipykernel`, run
-  ```Linux
+  ```bash
   ipython kernel install --user --name=<myvenv>
   ```
   and
-  ```Linux
+  ```bash
   python -m ipykernel install --user --name=<myvenv>
   ```
   Now the Jupyter Notebook should be in the right path. You can test it by
 typing (you probably have to restart the shell, and activate the venv again).
-  ```Linux
+  ```bash
   which jupyter
   ```
   If all thing going fine, to use the Jupyter Notebook, run
-  ```Linux
+  ```bash
   jupyter notebook
   ```
 ### (Optional) Creating the alias for the virtual environment 
   You can create a command to activate the venv any directory by putting the
 following command in the file `.bashrc` or `.zshrc`. Firstly, open the `.bashrc` or `.zshrc` file by typing
-  ```Linux
+  ```bash
   vim ~/.bashrc
   ```
   or
-  ```Linux
+  ```bash
   vim ~/.zshrc
   ```
   (or you can use the text editor, nano, if you prefer). Then, put the command:
-  ```Linux
+  ```bash
   alias <your_prefer_name>="source $HOME/<path/to/myvenv>/bin/activate"
   ```
   Then, overwrite the file with `:wq` (in vim command mode), or `Ctr+O` (for nano).
