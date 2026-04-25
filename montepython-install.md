@@ -29,9 +29,7 @@ If they are already installed, it should return a path like /Library/Developer/C
 xcode-select --install
 ```
 
-Alternatively you can download the Command Line Tools by going to the site: [Apple Developer Downloads](https://developer.apple.com/download/all/) (sign in is required), click download Command Line Tools for XCode.
-
-Next step, you need to install Homebrew in the system. Homebrew can be downloaded it by typing this command on the terminal
+Alternatively you can download the Command Line Tools by going to the site: [Apple Developer Downloads](https://developer.apple.com/download/all/) (sign in is required), click download Command Line Tools for XCode. Next step, you need to install Homebrew in the system. Homebrew can be downloaded it by typing this command on the terminal
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
