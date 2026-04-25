@@ -19,13 +19,13 @@ For more information about CLASS can be found on the website: [http://class-code
 to use the commands like `gcc`, `git` or `make` or package management tools like
 Homebrew. You can check if the Command Line Tools have already installed
 to your system or not by open the terminal and run
-  ```Linux
+  ```bash
   xcode-select -p
   ```
   If they are already installed, it should return a path like /Library/Develop-
 er/CommandLineTools. If not, you can install them manually by running the
 following command
-  ```Linux
+  ```bash
   xcode-select --install
   ```
   Alternatively you can download the Command Line Tools by going to the site:
@@ -33,21 +33,21 @@ following command
   Command Line Tools for XCode. \
   Next step, you need to install Homebrew in the system. Homebrew can be
   downloaded it by typing this command on the terminal
-  ```Linux
+  ```bash
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   ```
   After that, you will need to install a C-language compiler such as `GCC` (Gnu
   Compiler Collection), which is commonly used as a compiler with support for
   `C`, `C++`, `Fortran`, etc. `GCC` can be installed by compiling.
-  ```Linux
+  ```bash
   brew install gcc
   ```
   To make sure that CGG works properly, run
-  ```Linux
+  ```bash
   gcc --version
   ```
   Next step, check for the python version with
-  ```Linux
+  ```bash
   python --version
   ```
   Python wrapper for class may not yet be compatible with Python version ¿
@@ -55,25 +55,25 @@ following command
   this note we will use Python v.3.11. Next step, we need to install Cython. This
   allows Python code to directly call the C functions in CLASS. To install Cython
   that associate with the Python v.3.11, use the command below.
-  ```Linux
+  ```bash
   python3.11 -m pip install Cython
   ```
 
 
 - Linux Users \
   You need to have `gcc` compiler `Python`, and `Cython`. To install `gcc` use the following commands,
-  ```Linux
+  ```bash
   sudo apt update
   sudo apt upgrade
   sudo apt install gcc
   ```
 
   Almost every Linux distribution comes with a version of `Python` included in the default system packages, Check your `Python` version by using the following command;
-  ```Linux
+  ```bash
   python3 --version
   ```
   or
-  ```Linux
+  ```bash
   python --version
   ```
   
