@@ -16,8 +16,10 @@ Preparation
 * Planck Likelihood : Planck Likelihood Code V3.0 is required to run CosmoMC with Planck 2018 data.
  
 1. Ubuntu
-- Install GNU Compiler
-```Linux
+
+Install GNU Compiler
+
+```bash
 sudo apt update && sudo apt upgrade
 sudo apt install gcc
 sudo apt install gfortran
@@ -43,9 +45,11 @@ sudo apt install build-essential
 sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
 ```
 
-- Install Intel Compiler (Optional)
+Install Intel Compiler (Optional)
+
 You can install Intel Compiler additionally after installing the GNU Compiler. The performance of the Intel Compiler is typically faster than GNU, around 10%-20% faster, although the GNU Compiler is generally sufficient for running the program.
-```Linux
+
+```bash
 wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/992857b9-624c-45de-9701-f6445d845359/l_BaseKit_p_2023.2.0.49397.sh
 sudo sh ./l_BaseKit_p_2023.2.0.49397.sh
 wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/0722521a-34b5-4c41-af3f-d5d14e88248d/l_HPCKit_p_2023.2.0.49440.sh
@@ -57,11 +61,12 @@ sudo apt -y install cmake pkg-config build-essential
 
 2. MacOS
 - Install HomeBrew
-```Linux
+  
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 - Install GNU Compiler
-```Linux
+```bash
 brew install gcc
 brew install gfortran
 brew install g++
@@ -88,11 +93,11 @@ brew install open-mpi
 Planck Likelihood
 ===================
 Due to the large size of the data file, approximately 20 GB, it is recommended to download only **Code** and **Baseline** for compilation. For other files, you can download and move the files into the successfully compiled directory. Alternatively, you can directly download the files from  [Planck Likelihood](https://pla.esac.esa.int) on the Cosmology page by clicking on Likelihood, which will display all 7 files available for download.
-```Linux
+```bash
 wget -O COM_Likelihood_Code-v3.0_R3.10.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Code-v3.0_R3.10.tar.gz"
 wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-baseline_R3.00.tar.gz"
 ```
-```Linux
+```bash
 tar -xzvf COM_Likelihood_Code-v3.0_R3.10.tar.gz
 tar -xzvf COM_Likelihood_Data-baseline_R3.00.tar.gz
 mv -f baseline/plc_3.0/* code/plc_3.0/plc-3.1/
@@ -102,7 +107,7 @@ python3 ./waf install
 source ./bin/clik_profile.sh
 ```
 If you want to use the Intel Compiler, add the command `--lapack\_mkl=\$MKLROOT` at the end of `python3 ./waf configure --install_all_deps` line. After installing the **code** file, proceed to extract the remaining files. Then, move the **hi\_l**, **low\_l**, **lensing** files from the extracted directory to the `code/plc\_3.0/plc-3.1/` directory.
-```Linux
+```bash
 wget -O COM_Likelihood_Data-extra-plik-lite-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-plik-lite-ext_R3.00.tar.gz"
 wget -O COM_Likelihood_Data-extra-camspec-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-camspec-ext_R3.00.tar.gz"
 wget -O COM_Likelihood_Data-extra-plik-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-plik-ext_R3.00.tar.gz"
@@ -110,7 +115,7 @@ wget -O COM_Likelihood_Data-extra-bflike-ext_R3.00.tar.gz "http://pla.esac.esa.i
 wget -O COM_Likelihood_Data-extra-lensing-ext_R3.00.tar.gz "http://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_Likelihood_Data-extra-lensing-ext_R3.00.tar.gz"
 ```
 
-```Linux
+```bash
 tar -xzvf COM_Likelihood_Data-extra-plik-lite-ext_R3.00.tar.gz
 tar -xzvf COM_Likelihood_Data-extra-camspec-ext_R3.00.tar.gz
 tar -xzvf COM_Likelihood_Data-extra-plik-ext_R3.00.tar.gz
@@ -127,7 +132,7 @@ CosmoMC
 ===================
 
 1. Installation
-```Linux
+```bash
 git clone --recursive https://github.com/cmbant/CosmoMC.git
 cd CosmoMC
 ln -s /PATH/to/plc-3.1 ./data/clik_14.0
@@ -135,17 +140,17 @@ ln -s /PATH/to/plc-3.1 ./data/clik_14.0
 The PATH of the `/plc-3.1` file can be checked by typing the command `echo $CLIK_PATH`. It will display the PATH of the file.
 
 2. Compilation
-```Linux
+```bash
 make
 ```
 After successful compiling, a file named `cosmomc` will be created in CosmoMC directory.
 
-```Linux
+```bash
 make clean && make
 ```
 If unable to execute the `make` command, delete the file `cosmomc` first by typing the command `rm cosmomc`. The compilation of the CAMB program, which is used for calculating the theoretical part of CosmoMC and is located within a subdirectory `camb/fortran/`. If the compilation is successful, the file `camb` will appear in the directory.
 
-```Linux
+```bash
 cd camb/fortran/
 make
 ```
@@ -153,7 +158,7 @@ make
 3. Running
 To run CosmoMC you need to run it with MPI/OpenMPI using mpirun command. Set your corrent directory to CosmoMC directory and run this command.
 
-```Linux
+```bash
 mpirun -np number of processers (cores) ./cosmomc <.ini file>
 ```
 Inside the `.ini file` there are some lines which start with DEFAULT keyword. If these lines are not commented, it means we can use likelihoods related to these data.
@@ -207,7 +212,7 @@ Running CosmoMC can be initiated on an HPC (High Performance Computing) machine 
 
 For running jobs on the cluster, `.sh` files must be used to keep commands for the HPC to execute the jobs. In the Chalawan HPC, built-in modules are available for running unmodified models. For instance, the LCDM model can be run using these built-in modules.
 
- ```Linux
+```bash
 #!/bin/bash
 
 #SBATCH -J CosmoMC      # Job name
@@ -220,8 +225,10 @@ module load openmpi3/4.0.2
 module load CosmoMC
 mpirun <path to .ini file>
 ```
+
 For running on the pollux node, if model has been modified, a symbolic link for `$CLIK_PATH` must be created in step 1. Following this, compilation is required, and it is essential to load the necessary modules as follows.
-```Linux
+
+```bash
 module purge
 module load hwloc
 module load intel/19.0.5.281
@@ -231,7 +238,8 @@ export CLIK_DATA=/data3/opt/ohpc/pub/apps/CosmoMC-Oct19/plc_3.1/share/clik
 export CLIK_PATH=/data3/opt/ohpc/pub/apps/CosmoMC-Oct19/plc_3.1
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CLIK_PATH/lib
 ```
-```Linux
+
+```bash
 #!/bin/bash
 
 #SBATCH -J CosmoMC      # Job name
@@ -249,14 +257,17 @@ export CLIK_PATH=/data3/opt/ohpc/pub/apps/CosmoMC-Oct19/plc_3.1
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CLIK_PATH/lib
 mpirun ./cosmomc <path to .ini file>
 ```
+
 For running on the castor node, it is necessary to install the Planck likelihood and recompile using the GNU Compiler. The important modules should be loaded as follows.
-```Linux
+
+```bash
 module purge
 module load gnu8
 module load hwloc
 module load openmpi3
 ```
-```Linux
+
+```bash
 #!/bin/bash
 
 #SBATCH -J CosmoMC      # Job name
