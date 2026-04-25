@@ -15,7 +15,7 @@ Preparation
 * Cfitsio : CosmoMC uses the CFITSIO library to read file FITS data format including CMB data files.
 * Planck Likelihood : Planck Likelihood Code V3.0 is required to run CosmoMC with Planck 2018 data.
  
-1. Ubuntu
+**1. Ubuntu**
 
 Install GNU Compiler
 
@@ -59,8 +59,9 @@ sudo apt -y install cmake pkg-config build-essential
 . /opt/intel/oneapi/setvars.sh 
 ```
 
-2. MacOS
-- Install HomeBrew
+**2. MacOS**
+
+Install HomeBrew
   
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
