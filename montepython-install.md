@@ -12,7 +12,6 @@ For more information about CLASS can be found on the website: [http://class-code
 - CLASS I: Overview, by J. Lesgourgues, arXiv:1104.2932 [astro-ph.IM]
 - CLASS II: Approximation schemes, by D. Blas, J. Lesgourgues, T. Tram, arXiv:1104.2933 [astro-ph.CO], JCAP 1107 (2011) 034
 
-CLASS Installation 
 ==================
 ### 1. Pre-requisites
 - Mac Users
