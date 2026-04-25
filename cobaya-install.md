@@ -21,9 +21,8 @@ Preparation
 
 First, the computer needs to install essential libraries and compilers.  
 
-------------
-$1. Ubuntu$
------------
+
+1. Ubuntu
 
 Install Compiler
 ```bash
