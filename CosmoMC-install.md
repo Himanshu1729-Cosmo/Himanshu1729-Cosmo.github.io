@@ -130,9 +130,9 @@ mv -f extended_camspec/plc_3.0/hi_l/camspec code/plc_3.0/plc-3.1/hi_l/
 ```
 
 CosmoMC
-===================
 
-1. Installation
+**1. Installation**
+   
 ```bash
 git clone --recursive https://github.com/cmbant/CosmoMC.git
 cd CosmoMC
@@ -140,7 +140,8 @@ ln -s /PATH/to/plc-3.1 ./data/clik_14.0
 ```
 The PATH of the `/plc-3.1` file can be checked by typing the command `echo $CLIK_PATH`. It will display the PATH of the file.
 
-2. Compilation
+**2. Compilation**
+
 ```bash
 make
 ```
@@ -156,7 +157,7 @@ cd camb/fortran/
 make
 ```
 
-3. Running
+**3. Running**
 To run CosmoMC you need to run it with MPI/OpenMPI using mpirun command. Set your corrent directory to CosmoMC directory and run this command.
 
 ```bash
@@ -207,7 +208,7 @@ checkpoint = T
 ```
 Setting `root_dir` to model directory and `file_root` should contain information about the model and used datasets. To do a MCMC run you need to find the line which starts with action and set its value to 0.
 
-4. Running on Cluster
+**4. Running on Cluster**
 
 Running CosmoMC can be initiated on an HPC (High Performance Computing) machine for faster completion compared to using a regular computer. Currently in Thailand, access to the Chalawan HPC facility at the National Astronomical Research Institute of Thailand (NARIT) can be requested for running jobs. There are two main nodes available for execution: the pollux node (GPU) and the castor node (CPU). The pollux node tends to run faster, but since there are only 2 nodes, it is recommended to use the castor node, which offers more nodes for processing.
 
@@ -286,7 +287,7 @@ mpirun ./cosmomc <path to .ini file>
 
 Tutorial for basic Slurm Commands: [http://chalawan.narit.or.th/home/index.php/using-pollux/using-slurm/](http://chalawan.narit.or.th/home/index.php/using-pollux/using-slurm/) 
 
-5. Output
+**5. Output**
 
 * `.txt file` lists each accepted set of parameters for each chain.
 * `.log file` contains some info which may be useful to assess performance.
@@ -299,7 +300,6 @@ Tutorial for basic Slurm Commands: [http://chalawan.narit.or.th/home/index.php/u
 * `.converge_stat file` contains "R-1" statistic that also used for the stopping criterion when generating chains with MPI.
 
 Plotting with GetDist
-===================
 
 To generate distribution plots and triangle plots, you need packages for graph creation from files, which are output files from running CosmoMC. The packages have been use in Python. For displaying plots, it is recommended to use Jupyter Notebook or Jupyter Lab. Additional information can be found at: [https://getdist.readthedocs.io/en/latest/](https://getdist.readthedocs.io/en/latest/) and [ https://getdist.readthedocs.io/en/latest/plot\_gallery.html](https://getdist.readthedocs.io/en/latest/plot\_gallery.html)
 
@@ -313,7 +313,9 @@ from getdist import plots, MCSamples, loadMCSamples
 file_root1 = 'planck/plikHM_TTTEEE_lowl_lowE_BK15_lensing/base_r_plikHM_TTTEEE_lowl_lowE_BK15_lensing_post_BAO'
 samples1 = loadMCSamples(file_root=file_root1,settings={'ignore_rows':0.5})
 ```
+
 2D plot
+
 ```python
 g2 = plots.get_subplot_plotter(width_inch=5)
 g2.settings.axes_fontsize = 16
@@ -325,6 +327,7 @@ g2.plot_2d([samples1],'omegabh2','omegach2',filled=True,contour_lws=1.5)
 </p>
 
 Triangle plot
+
 ```python
 g = plots.get_subplot_plotter(width_inch=10)
 g.settings.axes_fontsize = 16
