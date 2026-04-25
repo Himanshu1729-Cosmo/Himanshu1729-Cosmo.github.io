@@ -148,7 +148,6 @@ to test if the `C` code installed successfully. To test if the Python wrapper se
 ```bash
 python3.11 -c "import classy; print(classy.__version__)"
 ```
-
 ---
 
 ## 4. Setting Python wrapper in a virtual environment
@@ -159,13 +158,13 @@ Create a virtual environment (venv) using
 python3.11 -m venv <myenv>
 ```
 
-You can replace (myenv) with any name you want. Then activate the virtual environment with 
+You can replace `(myenv)` with any name you want. Then activate the virtual environment with 
 
 ```bash
 source <myenv>/bin/activate
 ```
 
-To make sure that whenever the command python is compiled it point to the correct version of Python as you included in the virtual environment, you can place the function below in `.bashrc` or `.zshrc` for z-shell (if you don’t have .bashrc or .zshrc, just create one).
+To make sure that whenever the command python is compiled it point to the correct version of Python as you included in the virtual environment, you can place the function below in `.bashrc` or `.zshrc` for z-shell (if you don’t have `.bashrc` or `.zshrc`, just create one).
 
 ```bash
 function venv() {
