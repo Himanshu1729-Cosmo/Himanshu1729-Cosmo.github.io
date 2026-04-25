@@ -4,35 +4,26 @@ title: Cobaya Installation
 permalink: /tutorials/cobaya-install/
 ---
 
-# Cobaya: Bayesian Analysis in Cosmology
+Cobaya, a code for Bayesian analysis in Cosmology: Installation and Using Guide
+===================
+Cobaya (code for bayesian analysis, and Spanish for Guinea Pig) is a framework for sampling and statistical modelling: it allows you to explore an arbitrary prior or posterior using a range of Monte Carlo samplers (including the advanced MCMC sampler from CosmoMC, and the advanced nested sampler PolyChord). The results of the sampling can be analysed with GetDist. It supports MPI parallelization (and very soon HPC containerization with Docker/Shifter and Singularity).
 
-## Installation and Usage Guide
+Its authors are Jesus Torrado and Antony Lewis. Some ideas and pieces of code have been adapted from other codes (e.g CosmoMC by Antony Lewis and contributors, and Monte Python, by J. Lesgourgues and B. Audren).
 
----
+Cobaya has been conceived from the beginning to be highly and effortlessly extensible: without touching cobaya’s source code, you can define your own priors and likelihoods, create new parameters as functions of other parameter.
 
-Cobaya is a flexible framework for Bayesian analysis in cosmology, designed for parameter estimation and statistical inference. It enables the exploration of arbitrary priors and posteriors using a wide range of Monte Carlo sampling techniques, including advanced MCMC methods and nested sampling algorithms such as PolyChord. The resulting chains can be efficiently analysed using tools like GetDist.
+Though cobaya is a general purpose statistical framework, it includes interfaces to cosmological theory codes (CAMB and CLASS) and likelihoods of cosmological experiments (Planck, Bicep-Keck, SDSS… and more coming soon). Automatic installers are included for all those external modules. You can also use cobaya simply as a wrapper for cosmological models and likelihoods, and integrate it in your own sampler/pipeline.
 
-Developed by Jesús Torrado and Antony Lewis, Cobaya builds upon ideas from established cosmological codes such as CosmoMC and MontePython. It is designed to be highly extensible, allowing users to define custom priors, likelihoods, and derived parameters without modifying the core source code.
+The interfaces to most cosmological likelihoods are agnostic as to which theory code is used to compute the observables, which facilitates comparison between those codes. Those interfaces are also parameter-agnostic, so using your own modified versions of theory codes and likelihoods requires no additional editing of cobaya’s source.
 
-In cosmological applications, Cobaya provides interfaces to widely used Boltzmann solvers such as CAMB and CLASS, along with likelihoods from major observational datasets including Planck, BICEP/Keck, and SDSS. Its modular design allows it to function either as a standalone inference engine or as part of a larger cosmological analysis pipeline.
+The original web page [Cobaya Website](https://cobaya.readthedocs.io/en/latest/index.html) that is cited in this document. \
+If you have any questions about installation, please feel free to contact me via email: j.pongsapatb@gmail.com
 
-A key advantage of Cobaya is its code-agnostic interface: the likelihoods are independent of the underlying theory solver, enabling straightforward comparisons between different cosmological models. This also allows users to incorporate modified or custom theory codes without requiring additional changes to the framework.
-
-For more details, see the official documentation:  
-[**Cobaya Website**](https://cobaya.readthedocs.io/en/latest/)
-
----
-
-# Preparation
-
-**First, install the essential libraries and compilers.**
-
----
-
-### 1. Ubuntu
-
-**Install Compilers and Dependencies**
-
+Preparation 
+===================
+First, the computer needs to install essential libraries and compilers.  
+1. Ubuntu
+- Install Compiler
 ```bash
 sudo apt update && sudo apt upgrade
 sudo apt install nano
@@ -44,8 +35,8 @@ sudo apt install build-essential
 sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
 ```
 
-**Install Python and Libraries — I recommend using Miniconda for better environment management (Anaconda can also be used).**
-
+- Install Python and Librareis
+  We recommd you to install Miniconda for better manage Python evironment.
 ```bash
 mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
@@ -53,9 +44,7 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
-
-**Then install Python and Libraries**
-
+Then install Python and Libraries.
 ```bash
 python3 -m pip install pip
 pip3 install numpy
@@ -68,10 +57,7 @@ pip3 install jupyter
 conda install jupyter
 ```
 
----
-
-**In the other way, you can also install Python via Site-Package.**
-
+In the other way, you can also install Python via Site-Package.
 ```bash
 sudo apt install python3
 sudo apt install python3-pip
@@ -84,18 +70,14 @@ pip3 install getdist
 pip3 install jupyter
 sudo apt install jupyter
 ```
----
 
-## 2. macOS
-
-**Install HomeBrew**
-
+2. MacOS
+- Install HomeBrew
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)""
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-**Install Compiler**
-
+- Install Compiler
 ```bash
 brew install wget
 brew install git
@@ -105,17 +87,15 @@ brew install cfitsio
 brew install open-mpi
 ```
 
-MacOS includes a built-in Python compiler within the site-packages libraries, do not need to install Python via Homebrew. However, if an unresolved bug arise, it may become necessary to install Homebrew's Python at that point.
+MacOS includes a built-in Python compiler within the site-packages libraries,  do not need to install Python via Homebrew. However, if an unresolved bug arise, it may become necessary to install Homebrew's Python at that point.
 
-**Install Homebrew Python**
-
+- Install Homebrew Python 
 ```bash
 brew install python3
 python3 -m pip install --upgrade pip
 ```
 
-**Install Python's required Librareis**
-
+- Install Python's required Librareis
 ```bash
 pip3 install numpy
 pip3 install scipy
@@ -126,12 +106,16 @@ pip3 install getdist
 pip3 install jupyter
 brew install jupyter
 ```
----
-
-For better handle Python evironment, I recommd you to install Miniconda.
-
-**For Apple Silicon chip**
-
+For better handle Python evironment, we recommd you to install Miniconda.
+ - For Apple Silicon chip
+```bash
+mkdir -p ~/miniconda3
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+source ~/miniconda3/bin/activate
+```
+- For Intel chip
 ```bash
 mkdir -p ~/miniconda3
 curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
@@ -139,20 +123,7 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
-
-**For Intel chip**
-
-```bash
-mkdir -p ~/miniconda3
-curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm ~/miniconda3/miniconda.sh
-source ~/miniconda3/bin/activate
-```
----
-
-**Then install Python and Libraries.**
-
+Then install Python and Libraries.
 ```bash
 python3 -m pip install pip
 pip3 install numpy
@@ -164,39 +135,29 @@ pip3 install getdist
 pip3 install jupyter
 conda install jupyter
 ```
----
+  
+Cobaya
+===================
 
-# Cobaya 
-
-**1. Cobaya Library Installation**
-
+1. Cobaya Library Installation
 ```bash
 pip3 install cobaya
 ```
 
----
-
-**2. Install Cosmological Codes and Likelihoods**
-
-⚠️ Replace `/path/to/your/directory` with your actual path (e.g., `/home/user/`)
-
+2. Cosmological theory codes and likelihoods. ⚠️ **You need to replace `<path/to/your/directory>` by your istalled directory path such as `/home/if01/`**
 ```bash
 cobaya-install cosmo -p /path/to/your/directory
 cobaya-install planck_2018_highl_plik.TTTEEE
 cobaya-install bicep_keck_2018
 ```
+You need to place theory codes and likelihoods in the `/path/to/packages` directory, but you can also modified this path to suit on your own machine.\
+If the installation is successful, `code` and `data` directories will be shown on your pc.
 
-You need to place theory codes and likelihoods in the `/path/to/your/directory` but you can also modified this path to suit on your own machine.
-If the installation is successful, code and data directories will be shown on your pc.
-
----
-
-**3. Generate Input Automatically**
-
-Setting Cosmology Run Creating the input for a realistic cosmological case is quite a bit of work. But to make it simpler, cobaya has created an automatic input generator, that you can run from the shell.
+3. Setting Cosmology Run
+Creating the input for a realistic cosmological case is quite a bit of work. But to make it simpler, cobaya has created an automatic input generator, that you can run from the shell.
 
 ```bash
-pip install PySide6
+python3 -m pip install PySide6
 ```
 
 ```bash
