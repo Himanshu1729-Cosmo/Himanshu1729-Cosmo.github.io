@@ -11,3 +11,8 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 - [Installation](/tutorials/cobaya-install/)
 - [Post-processing (GetDist)](/tutorials/cobaya-getdist/)
+
+## CLASS and Monte Python
+
+- [Installation](/tutorials/montepython-install/)
+
