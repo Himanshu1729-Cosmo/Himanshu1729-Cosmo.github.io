@@ -209,30 +209,43 @@ python -c "import classy; print(classy.__version__)"
 
 ## 5. Using `CLASS` on Jupyter Notebook
 
-Install Jupyter Notebook
+Firstly you have to install Jupyter Notebook.
 
 ```bash
 pip install notebook
 ```
 
-Check path
+To make sure that the path of Jupyter Notebook is in the created venv, type.
 
 ```bash
 which jupyter
 ```
 
-If needed
+If the Notebook is not in the right path, you may have follow this way:
 
 ```bash
 pip install ipython ipykernel
 ```
 
+After installing `ipython` and `ipykernel`, run
+
 ```bash
 ipython kernel install --user --name=<myvenv>
+```
+
+and
+
+```bash
 python -m ipykernel install --user --name=<myvenv>
 ```
 
-Run Jupyter
+Now the Jupyter Notebook should be in the right path. You can test it by typing (you probably have to restart the shell, and activate the venv again).
+
+```bash
+which jupyter
+```
+
+If all thing going fine, to use the Jupyter Notebook, run
 
 ```bash
 jupyter notebook
@@ -242,7 +255,7 @@ jupyter notebook
 
 ## (Optional) Creating the alias for the virtual environment
 
-Open `.bashrc` or `.zshrc`
+You can create a command to activate the venv any directory by putting the following command in the file `.bashrc` or `.zshrc.` Firstly, open the `.bashrc` or `.zshrc` file by typing
 
 ```bash
 vim ~/.bashrc
@@ -254,11 +267,13 @@ or
 vim ~/.zshrc
 ```
 
-Add
+(or you can use the text editor, nano, if you prefer). Then, put the command:
 
 ```bash
 alias <your_prefer_name>="source $HOME/<path/to/myvenv>/bin/activate"
 ```
+
+Then, overwrite the file with `:wq` (in vim command mode), or `Ctr+O` (for nano).
 
 ---
 
