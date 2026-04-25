@@ -159,13 +159,13 @@ Create a virtual environment (venv) using
 python3.11 -m venv <myenv>
 ```
 
-Activate the virtual environment
+You can replace (myenv) with any name you want. Then activate the virtual environment with 
 
 ```bash
 source <myenv>/bin/activate
 ```
 
-Add function in `.bashrc` or `.zshrc`
+To make sure that whenever the command python is compiled it point to the correct version of Python as you included in the virtual environment, you can place the function below in `.bashrc` or `.zshrc` for z-shell (if you don’t have .bashrc or .zshrc, just create one).
 
 ```bash
 function venv() {
@@ -175,34 +175,32 @@ function venv() {
 }
 ```
 
-Then restart the terminal. Activate the virtual environment again.
-
-Check paths
+Then restart the terminal. Activate the virtual environment again. Now you can test if the command python points to the same version of Python using in the virtual environment by compiling.
 
 ```bash
 which python; which pip
 ```
 
-Check Python version
+Or, check for the version of Python.
 
 ```bash
 python --version; pip --version
 ```
 
-Install required packages
+After that, install necessary modules to the environment, type.
 
 ```bash
 pip install numpy scipy cython matplotlib
 ```
 
-Build Python wrapper
+In the '`CLASS` directory, go to the ‘python’ directory and execute the command:
 
 ```bash
 python setup.py build
 python setup.py install
 ```
 
-Test again
+Checking if the steps above worked properly by compiling
 
 ```bash
 python -c "import classy; print(classy.__version__)"
