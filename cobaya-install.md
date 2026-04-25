@@ -4,8 +4,6 @@ title: Cobaya Installation
 permalink: /tutorials/cobaya-install/
 ---
 
-Cobaya, a code for Bayesian analysis in Cosmology: Installation and Using Guide
-===================
 Cobaya (code for bayesian analysis, and Spanish for Guinea Pig) is a framework for sampling and statistical modelling: it allows you to explore an arbitrary prior or posterior using a range of Monte Carlo samplers (including the advanced MCMC sampler from CosmoMC, and the advanced nested sampler PolyChord). The results of the sampling can be analysed with GetDist. It supports MPI parallelization (and very soon HPC containerization with Docker/Shifter and Singularity).
 
 Its authors are Jesus Torrado and Antony Lewis. Some ideas and pieces of code have been adapted from other codes (e.g CosmoMC by Antony Lewis and contributors, and Monte Python, by J. Lesgourgues and B. Audren).
@@ -20,7 +18,7 @@ The original web page [Cobaya Website](https://cobaya.readthedocs.io/en/latest/i
 If you have any questions about installation, please feel free to contact me via email: j.pongsapatb@gmail.com
 
 Preparation 
-===================
+
 First, the computer needs to install essential libraries and compilers.  
 
 1. Ubuntu
@@ -107,6 +105,7 @@ pip3 install getdist
 pip3 install jupyter
 brew install jupyter
 ```
+
 For better handle Python evironment, we recommd you to install Miniconda.
  - For Apple Silicon chip
 ```bash
@@ -138,7 +137,6 @@ conda install jupyter
 ```
   
 Cobaya
-===================
 
 1. Cobaya Library Installation
 ```bash
