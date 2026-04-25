@@ -8,7 +8,7 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 ---
 
 > 🚧 **Work in Progress**  
-> This pages are currently under development. An official announcement will be made once they are ready.
+> These pages are currently under development. An official announcement will be made once they are ready.
 
 ---
 
