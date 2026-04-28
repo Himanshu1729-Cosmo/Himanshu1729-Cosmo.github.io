@@ -24,3 +24,7 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 - [Installation](/tutorials/montepython-install/)
 
+## Cosmological Inference: Learn with Me
+
+- [Installation](/tutorials/Introduction-to-MCMC/)
+
