@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Understanding MCMC
-permalink: /tutorials/understanding-mcmc/
+permalink: /tutorials/Introduction-to-MCMC/
 ---
 
 # Markov Chain Monte Carlo (MCMC)
