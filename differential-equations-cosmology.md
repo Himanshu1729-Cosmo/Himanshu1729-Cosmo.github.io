@@ -1,5 +1,5 @@
 ---
 layout: page
-title: Analytical-Hubble-function
-permalink: /tutorials/analytical-hubble-function/
+title: Differential Equations in Cosmology
+permalink: /tutorials/differential-equations-cosmology/
 ---
