@@ -16,8 +16,6 @@ The notebooks provide practical demonstrations of how to compute and interpret i
 - Bayesian evidence and Bayes factors in logarithmic space,
 - minimum chi-square statistics ($\chi^2_{\min}$),
 - goodness-of-fit tests,
-- likelihood comparisons,
 - $p$-values,
-- posterior distributions,
-- parameter estimation,
-- and model selection criteria.
+
+The first step is to install PyPolyChord on the local system. Here, I will provide installation examples for both Linux-based systems and macOS. For macOS, I expect the architecture to be `arm64`. However, even if the system is using an `x86_64` architecture, one can still follow the Linux-based Miniconda installation procedure.
