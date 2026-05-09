@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Understanding MCMC
-permalink: /tutorials/Introduction-to-MCMC/
+title: Analytical-Hubble-function
+permalink: /tutorials/analytical-hubble-function/
 ---
 
 # Learn Markov Chain Monte Carlo with Me.
