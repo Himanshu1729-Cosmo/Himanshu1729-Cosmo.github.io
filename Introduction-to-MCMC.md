@@ -119,7 +119,7 @@ In this notebook, I discuss the standard $\Lambda$CDM cosmology using Cosmic Chr
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #d35400; margin-bottom:18px;">
-<a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP_M.ipynb"><b>$\Lambda$CDM (CC + DESI + Pantheon$^+$M)</b></a><br>
+<a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP_M.ipynb"><b>$\Lambda$CDM (CC + DESI + Pantheon$^+$)</b></a><br>
 In this notebook, I discuss the $\Lambda$CDM cosmology by additionally considering the supernova absolute magnitude parameter $M$ as a free parameter together with Cosmic Chronometers, DESI DR2, and Pantheon$^+$ datasets.
 </div>
 
