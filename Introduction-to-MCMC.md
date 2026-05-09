@@ -102,10 +102,25 @@ Below, you will find links to several practical notebooks, which will help users
   In this notebook, I discuss the o$\Lambda$CDM model by considering the spatial curvature parameter $\Omega_k$ as a free parameter. The datasets considered are Cosmic Chronometers, Pantheon$^+$ uncalibrated, and DESI DR2.
   
 - [$w$CDM Model](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/wCDM_Model.ipynb)
-- [$\Lambda$CDM + CC + DESI + DES](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_DES.ipynb)
+  In this notebook, I discuss the $w$CDM model by considering the dark energy equation of state parameter $w$ as a free parameter. The datasets considered are Cosmic Chronometers, Pantheon$^+$ uncalibrated, and DESI DR2.
+
 - [$\Lambda$CDM + CC + DESI + Pantheon$^+$](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP.ipynb)
+  In this notebook, I discuss the standard $\Lambda$CDM cosmology using Cosmic Chronometers, DESI DR2, and the Pantheon$^+$ uncalibrated supernova dataset.
+
+- [$\Lambda$CDM + CC + DESI + DES](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_DES.ipynb)
+  In this notebook, I discuss the standard $\Lambda$CDM cosmology using Cosmic Chronometers, DESI DR2, and DES-Dovekie datasets.
+
 - [$\Lambda$CDM + CC + DESI + Pantheon$^+$ + M](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP_M.ipynb)
+  In this notebook, I discuss the $\Lambda$CDM cosmology by additionally considering the supernova absolute magnitude parameter $M$ as a free parameter together with Cosmic Chronometers, DESI DR2, and Pantheon$^+$ datasets.
+- 
 - [$\Lambda$CDM + CC + DESI + Union3](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_Union3.ipynb)
+  In this notebook, I discuss the $\Lambda$CDM cosmology using Cosmic Chronometers, DESI DR2, and the Union3 Type Ia supernova compilation.
+  
 - [$\Lambda$CDM + Pantheon$^+$ + SH0ES](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_PP_SHOES.ipynb)
+  In this notebook, I discuss the calibrated Pantheon$^+$ + SH0ES supernova dataset within the framework of the standard $\Lambda$CDM cosmology.
+
 - [$\Lambda$CDM + Pantheon$^+$ Correction Parameter](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_PP_correction_parameter.ipynb)
+  In this notebook, I discuss the implementation of correction parameters in the Pantheon$^+$ supernova dataset and study their cosmological implications within the $\Lambda$CDM framework.
+
 - [Superimposed Cosmological Constraints](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_superimposed_all.ipynb)
+   In this notebook, I present superimposed cosmological constraints obtained from different datasets and cosmological models for comparison and visualization purposes.
