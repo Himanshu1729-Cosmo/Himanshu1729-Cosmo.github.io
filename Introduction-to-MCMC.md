@@ -145,3 +145,8 @@ In this notebook, I consider the o$\Lambda$CDM model by considering the spatial 
 In this notebook, I consider the $w$CDM model by considering the dark energy equation of state parameter $w$ as a free parameter. The datasets considered are Cosmic Chronometers, Pantheon$^+$ uncalibrated, and DESI DR2.
 </div>
 
+<div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #2980b9; margin-bottom:18px;">
+<a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/wCDM_Model.ipynb"><b>$w_0 w_a$CDM Model</b></a><br>
+In this notebook, I consider the $w_0 w_a$CDM model by considering the dark energy equation of state parameter $w$ as a free parameter. The datasets considered are Cosmic Chronometers, Pantheon$^+$ uncalibrated, and DESI DR2.
+</div>
+
