@@ -100,39 +100,39 @@ Below, you will find links to several practical notebooks, which will help users
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #16a085; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP.ipynb"><b>$\Lambda$CDM (CC + DESI + Pantheon$^+$)</b></a><br>
-In this notebook, I constrain the parameters of the standard $\Lambda$CDM model using Cosmic Chronometers, DESI DR2, and the Pantheon$^+$ uncalibrated supernova dataset.
+In this notebook, I constrain the parameters of the $\Lambda$CDM model using Cosmic Chronometers, DESI DR2, and the Pantheon$^+$ uncalibrated supernova dataset.
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #8e44ad; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_DES.ipynb"><b>$\Lambda$CDM (CC + DESI + DES-Dovekie)</b></a><br>
-In this notebook, I constrain the parameters of the standard $\Lambda$CDM model using Cosmic Chronometers, DESI DR2, and DES-Dovekie datasets.
+In this notebook, I constrain the parameters of the $\Lambda$CDM model using Cosmic Chronometers, DESI DR2, and DES-Dovekie datasets.
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #27ae60; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_Union3.ipynb"><b>$\Lambda$CDM (CC + DESI + Union3)</b></a><br>
-In this notebook, I constrain the parameters of the standard $\Lambda$CDM model using Cosmic Chronometers, DESI DR2, and the Union3 Type Ia supernova datasets.
+In this notebook, I constrain the parameters of the $\Lambda$CDM model using Cosmic Chronometers, DESI DR2, and the Union3 Type Ia supernova datasets.
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #e74c3c; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_superimposed_all.ipynb"><b>Superimposed Cosmological Constraints</b></a><br>
-In this notebook, I constrain the parameters of the standard $\Lambda$CDM model using the combinations CC + Pantheon$^+$ + DESI DR2, CC + DES-Dovekie + DESI DR2, and CC + Union3 + DESI DR2, and then superimpose the obtained cosmological constraints for comparison and visualization purposes.
+In this notebook, I constrain the parameters of the $\Lambda$CDM model using the combinations CC + Pantheon$^+$ + DESI DR2, CC + DES-Dovekie + DESI DR2, and CC + Union3 + DESI DR2, and then superimpose the obtained cosmological constraints for comparison and visualization purposes.
 </div>
 
 **Keep in mind that, in the three supernova notebooks above, I marginalize over the nuisance parameter $\mathcal{M}$. However, in the notebook below, I instead vary $\mathcal{M}$ as a free parameter**
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #d35400; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP_M.ipynb"><b>$\Lambda$CDM (CC + DESI + Pantheon$^+$)</b></a><br>
-In this notebook, I constrain the parameters of the standard $\Lambda$CDM model by varying the nuisance parameter $\mathcal{M}$ as a free parameter. The datasets considered in this notebook are Cosmic Chronometers, DESI DR2, and the Pantheon$^+$ dataset.
+In this notebook, I constrain the parameters of the $\Lambda$CDM model by varying the nuisance parameter $\mathcal{M}$ as a free parameter. The datasets considered in this notebook are Cosmic Chronometers, DESI DR2, and the Pantheon$^+$ dataset.
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #2c3e50; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_PP_SHOES.ipynb"><b>$\Lambda$CDM (Pantheon$^+$SH0ES)</b></a><br>
-In this notebook, I constrain the parameters of the standard $\Lambda$CDM model using the calibrated Pantheon$^+$ supernova dataset, also known as Pantheon$^+$SH0ES.
+In this notebook, I constrain the parameters of the $\Lambda$CDM model using the calibrated Pantheon$^+$ supernova dataset, also known as Pantheon$^+$SH0ES.
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #7f8c8d; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_PP_correction_parameter.ipynb"><b>$\Lambda$CDM (Pantheon$^+$ Correction Parameter)</b></a><br>
-In this notebook, I consider the implementation of correction parameters in the Pantheon$^+$ supernova dataset and study their cosmological implications within the $\Lambda$CDM framework.
+In this notebook, I consider the $\Lambda$CDM model and obation teh consation on the of correction parameters in the Pantheon$^+$ supernova dataset such as M, \Delta_{M}, \alpha, and \beta
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #c0392b; margin-bottom:18px;">
