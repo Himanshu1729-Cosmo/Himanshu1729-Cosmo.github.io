@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Understanding MCMC
 permalink: /tutorials/Introduction-to-MCMC/
 ---
 
