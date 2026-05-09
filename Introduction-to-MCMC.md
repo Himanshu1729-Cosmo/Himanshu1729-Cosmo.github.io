@@ -93,3 +93,17 @@ cd PolyChordLite
 make
 pip install .
 ```
+
+---
+
+Below, you will find links to several practical notebooks covering different cosmological models and datasets. Each notebook is designed to help users understand the implementation of cosmological parameter estimation, likelihood construction, Bayesian inference, and statistical analysis using PyPolyChord.
+
+- [o$\Lambda$CDM Model](https://your-link-here)
+- [$w$CDM Model](https://your-link-here)
+- [$\Lambda$CDM + CC + DESI + DES](https://your-link-here)
+- [$\Lambda$CDM + CC + DESI + Pantheon$^+$](https://your-link-here)
+- [$\Lambda$CDM + CC + DESI + Pantheon$^+$ + M](https://your-link-here)
+- [$\Lambda$CDM + CC + DESI + Union3](https://your-link-here)
+- [$\Lambda$CDM + Pantheon$^+$ + SH0ES](https://your-link-here)
+- [$\Lambda$CDM + Pantheon$^+$ Correction Parameter](https://your-link-here)
+- [Superimposed Cosmological Constraints](https://your-link-here)
