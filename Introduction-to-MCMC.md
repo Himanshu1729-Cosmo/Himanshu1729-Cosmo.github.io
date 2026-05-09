@@ -9,7 +9,7 @@ permalink: /tutorials/Introduction-to-MCMC/
 
 In this page, I provide several practical `.ipynb` notebooks designed to help researchers at the early stages of their careers understand and apply cosmological parameter estimation techniques in modern cosmology.
 
-These notebooks are designed to be used for constraining cosmological models, especially models such as (ΛCDM, oΛCDM, and $w$CDM), that can be written in analytical form. The major focus of these notebooks is Bayesian inference through nested sampling using the PyPolyChord Python library. These notebooks are intended to help users understand not only how to run cosmological analyses, but also how to correctly construct likelihoods, apply proper statistical methods, and interpret the statistical quality of cosmological models.
+These notebooks are designed to be used for constraining cosmological models, especially models such as (ΛCDM, oΛCDM, $w$CDM, and $w_0 w_a$CDM), that can be written in analytical form. The major focus of these notebooks is Bayesian inference through nested sampling using the PyPolyChord Python library. These notebooks are intended to help users understand not only how to run cosmological analyses, but also how to correctly construct likelihoods, apply proper statistical methods, and interpret the statistical quality of cosmological models.
 
 The notebooks provide practical demonstrations of how to compute and interpret important statistical quantities commonly used in cosmology, including:
 
@@ -96,7 +96,7 @@ pip install .
 
 ---
 
-Below, you will find links to several practical notebooks, which will help users understand how to construct likelihoods for different datasets such as Cosmic Chronometers, Pantheon$^+$ calibrated, Pantheon$^+$ uncalibrated, DES-Dovekie, Union3, and baryon acoustic oscillation (BAO) measurements from DESI Data Release 2 (DR2) considering cosmological models such as $\Lambda$CDM, o$\Lambda$CDM, and $w$CDM. Each notebook is designed to help users understand the implementation of cosmological parameter estimation, including all relevant equations and mathematical arguments, likelihood construction, Bayesian inference, and statistical analysis using PyPolyChord. Keep in mind that, in these notebooks, I keep the sound horizon as a free parameter.
+Below, you will find links to several practical notebooks, which will help users understand how to construct likelihoods for different datasets such as Cosmic Chronometers, Pantheon$^+$ calibrated, Pantheon$^+$ uncalibrated, DES-Dovekie, Union3, and baryon acoustic oscillation (BAO) measurements from DESI Data Release 2 (DR2) considering cosmological models such as $\Lambda$CDM, o$\Lambda$CDM, $w$CDM, and $w_0 w_a$CDM. Each notebook is designed to help users understand the implementation of cosmological parameter estimation, including all relevant equations and mathematical arguments, likelihood construction, Bayesian inference, and statistical analysis using PyPolyChord. Keep in mind that, in these notebooks, I keep the sound horizon as a free parameter.
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #16a085; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP.ipynb"><b>$\Lambda$CDM (CC + DESI + Pantheon$^+$)</b></a><br>
