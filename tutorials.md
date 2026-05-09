@@ -26,5 +26,6 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 ## Cosmological Inference: Learn with Me
 
-- [Installation](/tutorials/Introduction-to-MCMC/)
+- [Analytical Forms of the Hubble Function](/tutorials/analytical-hubble-function/)
+- [Differential Equations in Cosmology](/tutorials/differential-equations-cosmology/)
 
