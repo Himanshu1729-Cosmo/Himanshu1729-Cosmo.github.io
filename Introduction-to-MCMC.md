@@ -98,12 +98,12 @@ pip install .
 
 Below, you will find links to several practical notebooks covering different cosmological models and datasets. Each notebook is designed to help users understand the implementation of cosmological parameter estimation, likelihood construction, Bayesian inference, and statistical analysis using PyPolyChord.
 
-- [o$\Lambda$CDM Model](https://your-link-here)
-- [$w$CDM Model](https://your-link-here)
-- [$\Lambda$CDM + CC + DESI + DES](https://your-link-here)
-- [$\Lambda$CDM + CC + DESI + Pantheon$^+$](https://your-link-here)
-- [$\Lambda$CDM + CC + DESI + Pantheon$^+$ + M](https://your-link-here)
-- [$\Lambda$CDM + CC + DESI + Union3](https://your-link-here)
-- [$\Lambda$CDM + Pantheon$^+$ + SH0ES](https://your-link-here)
-- [$\Lambda$CDM + Pantheon$^+$ Correction Parameter](https://your-link-here)
-- [Superimposed Cosmological Constraints](https://your-link-here)
+- [o$\Lambda$CDM Model](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/o%CE%9BCDM_Model.ipynb)
+- [$w$CDM Model](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/wCDM_Model.ipynb)
+- [$\Lambda$CDM + CC + DESI + DES](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_DES.ipynb)
+- [$\Lambda$CDM + CC + DESI + Pantheon$^+$](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP.ipynb)
+- [$\Lambda$CDM + CC + DESI + Pantheon$^+$ + M](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_PP_M.ipynb)
+- [$\Lambda$CDM + CC + DESI + Union3](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_CC_DESI_Union3.ipynb)
+- [$\Lambda$CDM + Pantheon$^+$ + SH0ES](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_PP_SHOES.ipynb)
+- [$\Lambda$CDM + Pantheon$^+$ Correction Parameter](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_PP_correction_parameter.ipynb)
+- [Superimposed Cosmological Constraints](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_superimposed_all.ipynb)
