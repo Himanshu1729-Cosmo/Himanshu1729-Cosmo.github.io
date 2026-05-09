@@ -67,3 +67,29 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
+
+From now on, I will give an example for Intel-based chips, where the architecture is `x86_64`. To install PyPolyChord, we need to do the following:
+
+### 3. macOS when the architecture is `x86_64`
+
+```bash
+conda create --name polychord_env python=3.10 --platform osx-64
+conda activate polychord_env
+conda install -c conda-forge compilers openmpi mpi4py cmake make
+git clone https://github.com/PolyChord/PolyChordLite.git
+cd PolyChordLite
+make
+pip install .
+```
+
+### 4. macOS when the architecture is `arm64`
+
+```bash
+conda create -n cobaya_env python=3.10 -y
+conda activate polychord_env
+conda install -c conda-forge compilers openmpi mpi4py cmake make
+git clone https://github.com/PolyChord/PolyChordLite.git
+cd PolyChordLite
+make
+pip install .
+```
