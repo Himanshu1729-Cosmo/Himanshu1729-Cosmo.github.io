@@ -7,7 +7,7 @@ permalink: /tutorials/Introduction-to-MCMC/
 # Learn Markov Chain Monte Carlo with Me.
 ---
 
-Welcome to this collection of cosmology and statistical-analysis notebooks. In this page, I provide several practical `.ipynb` notebooks designed to help researchers and early-stage students directly apply modern Bayesian cosmological analysis techniques in their own research.
+In this page, I provide several practical `.ipynb` notebooks designed to help researchers at the early stages of their careers understand and apply cosmological parameter estimation techniques in modern cosmology.
 
 A major focus of these notebooks is Bayesian inference and nested sampling using PyPolyChord, which provides an efficient implementation of the PolyChord nested sampling algorithm. These notebooks are intended to help users understand not only how to run cosmological analyses, but also how to correctly interpret the statistical quality of cosmological models.
 
