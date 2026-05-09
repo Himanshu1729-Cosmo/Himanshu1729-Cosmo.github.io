@@ -132,16 +132,16 @@ In this notebook, I constrain the parameters of the $\Lambda$CDM model using the
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #7f8c8d; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/%CE%9BCDM_Model_PP_correction_parameter.ipynb"><b>$\Lambda$CDM (Pantheon$^+$ Correction Parameter)</b></a><br>
-In this notebook, I consider the $\Lambda$CDM model and obation teh consation on the of correction parameters in the Pantheon$^+$ supernova dataset such as M, \Delta_{M}, \alpha, and \beta
+In this notebook, I consider the $\Lambda$CDM model and obtain constraints on the correction parameters in the Pantheon$^+$ supernova dataset, such as $M$, $\Delta_{M}$, $\alpha$, and $\beta$.
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #c0392b; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/o%CE%9BCDM_Model.ipynb"><b>o$\Lambda$CDM Model</b></a><br>
-In this notebook, I discuss the o$\Lambda$CDM model by considering the spatial curvature parameter $\Omega_k$ as a free parameter. The datasets considered are Cosmic Chronometers, Pantheon$^+$ uncalibrated, and DESI DR2.
+In this notebook, I consider the o$\Lambda$CDM model by considering the spatial curvature parameter $\Omega_k$ as a free parameter. The datasets considered are Cosmic Chronometers, Pantheon$^+$ uncalibrated, and DESI DR2.
 </div>
 
 <div style="background-color:#f8f9fa; padding:15px; border-left:5px solid #2980b9; margin-bottom:18px;">
 <a href="https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/wCDM_Model.ipynb"><b>$w$CDM Model</b></a><br>
-In this notebook, I discuss the $w$CDM model by considering the dark energy equation of state parameter $w$ as a free parameter. The datasets considered are Cosmic Chronometers, Pantheon$^+$ uncalibrated, and DESI DR2.
+In this notebook, I consider the $w$CDM model by considering the dark energy equation of state parameter $w$ as a free parameter. The datasets considered are Cosmic Chronometers, Pantheon$^+$ uncalibrated, and DESI DR2.
 </div>
 
