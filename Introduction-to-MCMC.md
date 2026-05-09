@@ -96,7 +96,7 @@ pip install .
 
 ---
 
-Below, you will find links to several practical notebooks covering different cosmological models and datasets. Each notebook is designed to help users understand the implementation of cosmological parameter estimation, likelihood construction, Bayesian inference, and statistical analysis using PyPolyChord.
+Below, you will find links to several practical notebooks, which will help users understand how to construct likelihoods for different datasets such as Cosmic Chronometers (CC), Pantheon$^+$ calibrated, Pantheon$^+$ uncalibrated, DES-Dovekie, and Union3, considering cosmological models such as $\Lambda$CDM, o$\Lambda$CDM, and $w$CDM. Each notebook is designed to help users understand the implementation of cosmological parameter estimation, including all relevant equations and mathematical arguments, likelihood construction, Bayesian inference, and statistical analysis using PyPolyChord. Keep in mind that, in these notebooks, I keep the sound horizon as a free parameter.
 
 - [o$\Lambda$CDM Model](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/o%CE%9BCDM_Model.ipynb)
 - [$w$CDM Model](https://github.com/Himanshu1729-Cosmo/Cosmological-Inference-Learn-with-Me/blob/main/wCDM_Model.ipynb)
