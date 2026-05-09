@@ -24,6 +24,12 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 - [Installation](/tutorials/montepython-install/)
 
+## SimpleMC
+
+- [Installation](/tutorials/simplemc-install/)
+- [Adding New Models and Likelihoods](/tutorials/simplemc-models-likelihoods/)
+- [Post-processing and Statistical Analysis](/tutorials/simplemc-postprocessing/)
+  
 ## Cosmological Inference: Learn with Me
 
 - [Analytical Forms of the Hubble Function](/tutorials/analytical-hubble-function/)
