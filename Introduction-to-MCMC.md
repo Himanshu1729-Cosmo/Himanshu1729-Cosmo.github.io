@@ -9,7 +9,7 @@ permalink: /tutorials/Introduction-to-MCMC/
 
 In this page, I provide several practical `.ipynb` notebooks designed to help researchers at the early stages of their careers understand and apply cosmological parameter estimation techniques in modern cosmology.
 
-These notebooks are designed to be used for constraining cosmological models, especially models such as (ΛCDM, oΛCDM, and wCDM), that can be written in analytical form. The major focus of these notebooks is Bayesian inference through nested sampling using the PyPolyChord Python library. These notebooks are intended to help users understand not only how to run cosmological analyses, but also how to correctly construct likelihoods, apply proper statistical methods, and interpret the statistical quality of cosmological models.
+These notebooks are designed to be used for constraining cosmological models, especially models such as (ΛCDM, oΛCDM, and $w$CDM), that can be written in analytical form. The major focus of these notebooks is Bayesian inference through nested sampling using the PyPolyChord Python library. These notebooks are intended to help users understand not only how to run cosmological analyses, but also how to correctly construct likelihoods, apply proper statistical methods, and interpret the statistical quality of cosmological models.
 
 The notebooks provide practical demonstrations of how to compute and interpret important statistical quantities commonly used in cosmology, including:
 
