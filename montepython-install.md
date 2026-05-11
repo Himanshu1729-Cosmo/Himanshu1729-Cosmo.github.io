@@ -307,7 +307,7 @@ wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz  "http://pla.esac.esa.int/pla/
   ```bash
   source bin/clik_profile.sh
   ```
-  ## For MacOS ##
+  **For MacOS**
   
   Running on a z-shell, you will first need to create a .zsh version of the above file. This can be done in many ways, for example
   ```bash
@@ -324,7 +324,7 @@ wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz  "http://pla.esac.esa.int/pla/
   ⚠️ You need to replace `<path/to/your/planck>` by your own installed path.
   to your `.bashrc`, and you should put it in your scripts for cluster computing. 
   
-  ## For Ubuntu ##
+  **For Ubuntu**
   
   Running on a bash-shell, you will first need to create a .sh version of the above file. This can be done in many ways, for example
   ```bash
