@@ -4,7 +4,7 @@ title: SimpleMC Installation
 permalink: /tutorials/simplemc-install/
 ---
 
-The first step is to install PyPolyChord on the local system. Here, I will provide installation examples for both Linux-based systems and macOS. For macOS, I expect the architecture to be `arm64`. However, even if the system is using an `x86_64` architecture, one can still follow the Linux-based Miniconda installation procedure.
+The first step is to install....
 
 First, the computer needs to install essential libraries and compilers.  
 
@@ -54,30 +54,54 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
 
-From now on, I will give an example for Intel-based chips, where the architecture is `x86_64`. To install PyPolyChord, we need to do the following:
+## Installing SimpleMC
 
-### 3. macOS when the architecture is `x86_64`
+To install SimpleMC, the system architecture does not matter significantly. The code can be installed on both `x86_64` and `arm64` systems by following the methods below.
+
+In this tutorial, I will use my personal GitHub repository for convenience and testing purposes. However, please always cite and acknowledge the original [SimpleMC repository](https://github.com/ja-vazquez/SimpleMC.git) appropriately in scientific work.
+
+Clone the repository:
 
 ```bash
-conda create --name polychord_env python=3.10 --platform osx-64
-conda activate polychord_env
-conda install -c conda-forge compilers openmpi mpi4py cmake make
-git clone https://github.com/PolyChord/PolyChordLite.git
-cd PolyChordLite
-make
+git clone https://github.com/1729Him/SimpleMC
+cd SimpleMC
+```
+
+Install Required Python Packages
+Using `pip`
+
+Install the core required packages:
+
+```bash
+pip install numpy==1.26.4
+pip install scipy==1.11.4
+pip install scikit-learn==1.3.2
+pip install pandas matplotlib numdifftools mpi4py
+```
+
+Using conda (Recommended)
+
+For better compatibility and easier dependency management, we recommend using `conda`:
+
+```bash
+conda install numpy=1.26.4
+conda install scipy=1.11.4
+conda install scikit-learn=1.3.2
+conda install -c conda-forge pandas matplotlib numdifftools mpi4py
+```
+
+Install SimpleMC
+
+For editable/development mode:
+
+```bash
+pip install -e .
+```
+
+or for a standard installation:
+
+```bash
 pip install .
 ```
 
-### 4. macOS when the architecture is `arm64`
 
-```bash
-conda create -n cobaya_env python=3.10 -y
-conda activate polychord_env
-conda install -c conda-forge compilers openmpi mpi4py cmake make
-git clone https://github.com/PolyChord/PolyChordLite.git
-cd PolyChordLite
-make
-pip install .
-```
-
----
