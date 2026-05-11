@@ -66,3 +66,7 @@ The figure above shows the overall structure and workflow of `SimpleMC`. At the 
 Now, I will explain how to add a new dark energy model within `SimpleMC`. However, before doing that, we first need to understand the internal structure of `SimpleMC` and how the code is organized once you clone and install it. Below, you can see a schematic overview of the `SimpleMC` code.
 
 ![Figure](/assets/img/simpleMC_1.png){: .mx-auto.d-block }
+
+You will first find the parent `SimpleMC` folder, and once you open it, you will see the smaller `simplemc` directory, which contains the main source code of the framework.
+
+![Figure](/assets/img/simpleMC_2.png){: .mx-auto.d-block }
