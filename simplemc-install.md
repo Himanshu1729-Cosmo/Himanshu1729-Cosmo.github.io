@@ -60,7 +60,17 @@ To install SimpleMC, the system architecture does not matter significantly. The 
 
 In this tutorial, I will use my personal GitHub repository for convenience and testing purposes. However, please always cite and acknowledge the original [SimpleMC repository](https://github.com/ja-vazquez/SimpleMC.git) appropriately in scientific work.
 
-**1. Clone the repository:**
+
+**1. Create a Conda Environment**
+
+Before installing SimpleMC, it is recommended to create a clean Conda environment:
+
+```bash
+conda create -n simpleMC_env python=3.10 -y
+conda activate simpleMC_env
+```
+
+**2. Clone the repository:**
 
 ```bash
 git clone https://github.com/1729Him/SimpleMC
@@ -70,7 +80,7 @@ cd SimpleMC
 Install Required Python Packages
 Using `pip`
 
-**2. Install the core required packages:**
+**3. Install the core required packages:**
 
 ```bash
 pip install numpy==1.26.4
@@ -79,7 +89,7 @@ pip install scikit-learn==1.3.2
 pip install pandas matplotlib numdifftools mpi4py
 ```
 
-**3. Using conda (Recommended)**
+**4. Using conda (Recommended)**
 
 For better compatibility and easier dependency management, we recommend using `conda`:
 
@@ -90,7 +100,7 @@ conda install scikit-learn=1.3.2
 conda install -c conda-forge pandas matplotlib numdifftools mpi4py
 ```
 
-**4. Install SimpleMC**
+**5. Install SimpleMC**
 
 For editable/development mode:
 
