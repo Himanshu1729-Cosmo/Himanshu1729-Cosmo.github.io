@@ -4,9 +4,9 @@ title: SimpleMC Installation
 permalink: /tutorials/simplemc-install/
 ---
 
-This page is devoted to the full installation guide for the `SimpleMC` cosmological inference code. \texttt{SimpleMC} is a Python package designed for cosmological parameter estimation and model comparison using Bayesian inference, optimization techniques, and machine learning algorithms. It also provides a collection of useful tools for cosmological data analysis, including cosmological calculators, plotting utilities, and various statistical analysis tools.
+This page is devoted to the full installation guide for the `SimpleMC` cosmological inference code. `SimpleMC` is a Python package designed for cosmological parameter estimation and model comparison using Bayesian inference, optimization techniques, and machine learning algorithms. It also provides a collection of useful tools for cosmological data analysis, including cosmological calculators, plotting utilities, and various statistical analysis tools.
 
-The cosmological models currently implemented in \texttt{SimpleMC} mainly focus on dark energy scenarios in which the cosmic expansion history plays the central role. In this tutorial, you will learn how to install `SimpleMC` on Linux-based systems, macOS, and Windows. The guide is written for beginners and includes step-by-step instructions to help you set up a fully working environment for cosmological analyses.
+The cosmological models currently implemented in `SimpleMC` mainly focus on dark energy scenarios in which the cosmic expansion history plays the central role. In this tutorial, you will learn how to install `SimpleMC` on Linux-based systems, macOS, and Windows. The guide is written for beginners and includes step-by-step instructions to help you set up a fully working environment for cosmological analyses.
 
 First, the computer needs to install essential libraries and compilers.  
 
@@ -116,7 +116,7 @@ or for a standard installation:
 pip install .
 ```
 
-In the next page, we will explore the basic structure of \texttt{SimpleMC} and learn how to add a new dark energy model by considering the JBP (\textit{Jassal--Bagla--Padmanabhan}) parametrization as an example.
+In the next page, we will explore the basic structure of \texttt{SimpleMC} and learn how to add a new dark energy model by considering the JBP `Jassal--Bagla--Padmanabhan` parametrization as an example.
 
 
 
