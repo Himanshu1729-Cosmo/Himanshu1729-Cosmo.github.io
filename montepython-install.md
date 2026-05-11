@@ -307,7 +307,8 @@ wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz  "http://pla.esac.esa.int/pla/
   ```bash
   source bin/clik_profile.sh
   ```
-  ### For MacOS
+  ## For MacOS
+  
   Running on a z-shell, you will first need to create a .zsh version of the above file. This can be done in many ways, for example
   ```bash
   cp bin/clik_profile.sh bin/clik_profile.zsh
@@ -321,8 +322,10 @@ wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz  "http://pla.esac.esa.int/pla/
   source </path/to/planck>/code/plc_3.0/plc-3.01/bin/clik_profile.sh
   ```
   ⚠️ You need to replace `<path/to/your/planck>` by your own installed path.
-  to your `.bashrc`, and you should put it in your scripts for cluster computing. \
-  ### For Ubuntu
+  to your `.bashrc`, and you should put it in your scripts for cluster computing. 
+  
+  ## For Ubuntu
+  
   Running on a bash-shell, you will first need to create a .sh version of the above file. This can be done in many ways, for example
   ```bash
   cp bin/clik_profile.sh bin/clik_profile.sh
@@ -340,7 +343,7 @@ wget -O COM_Likelihood_Data-baseline_R3.00.tar.gz  "http://pla.esac.esa.int/pla/
   ```bash
   path['clik'] = '</path/to/planck/code/plc_3.0/plc-3.01>'
   ```
-⚠️ **You need to replace `<path/to/your/planck/code/plc_3.0/plc-3.01>` by your own installed path.\
+⚠️ You need to replace `<path/to/your/planck/code/plc_3.0/plc-3.01>` by your own installed path.\
   There are nine Planck 2018 likelihoods defined in *Monte Python*: 'Planck_highl_TT', 'Planck_highl_TT_lite', 'Planck_highl_TTTEEE', 'Planck_highl_TTTEEE_lite', 'Planck_lensing', 'Planck_lowl_TT', 'Planck_lowl_EE', 'Planck_lowl_EEBB', 'Planck_lowl_BB', as well as five sets of parameter files, bestfit files, and covmats.
 
 
