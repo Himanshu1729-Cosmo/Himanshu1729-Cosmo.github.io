@@ -61,7 +61,7 @@ The figure above shows the overall structure and workflow of `SimpleMC`. At the 
   * Other cosmological visualization utilities
 
 * **ini File and runbase**
-  The `.ini` configuration files define the cosmological model, datasets, priors, and sampler settings. The `runbase` module connects these configurations to the internal `SimpleMC` pipeline.
+  The `.ini` configuration files define the cosmological model, datasets, and sampler settings. The `runbase` module connects these configurations to the internal `SimpleMC` pipeline.
 
 In the next sections, we will explore how to:
 
