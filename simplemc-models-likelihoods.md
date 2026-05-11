@@ -5,3 +5,5 @@ permalink: /tutorials/simplemc-models-likelihoods/
 ---
 
 ![Figure](/assets/img/simplemc.png){: .mx-auto.d-block }
+
+![Figure](/assets/img/simpleMC_1.png){: .mx-auto.d-block }
