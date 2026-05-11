@@ -21,44 +21,35 @@ The figure above shows the overall structure and workflow of `SimpleMC`. At the 
   The `Models` directory contains the cosmological models implemented in `SimpleMC`, such as:
 
   * `LCDMCosmology`
-  * `owaCDMCosmology`
+  * `wCDMCosmology`
+  * `owa0CDMCosmology`
   * `oLCDMCosmology`
-  * `slowDECosmology`
-  * `GenericCosmology`
-
+  * `ChaplyginCosmology`, etc.
+    
   This is the main location where new dark energy parametrizations can be added.
 
 * **Likelihoods**
   This module contains the observational likelihoods used for cosmological parameter estimation, including:
 
-  * BAO likelihoods
-  * Pantheon supernova likelihoods
-  * CMB compressed likelihoods
-  * Rotation curve likelihoods
-  * Generic likelihood classes
-
-  New datasets can also be implemented within this structure.
+  * `DESI DR2 BAO Likelihood`
+  * `PantheonPlus Supernova Likelihood`
+  * `Cosmic Chronometer Likelihoods`
+  * `Compressed CMB Likelihoods`
+  * `Rotation Curve Likelihoods`
+  * `Genetic Algorithms`
+  * `Strong Lensing Likelihoods`, etc.
+    
+  New Likelihoods can also be implemented within this structure.
 
 * **Samplers**
   `SimpleMC` supports several Bayesian sampling algorithms, including:
-
-  * MCMC samplers
-  * `dynesty`
-  * `nestle`
-  * `emcee`
-  * Nested samplers with machine learning acceleration
-
-* **Optimizers**
-  Optimization methods such as `MaxLikeAnalyzer` and `SimpleGenetic` are used for likelihood maximization and parameter searches.
-
-* **Plots and Post-processing**
-  `SimpleMC` includes built-in tools for:
-
-  * Corner plots
-  * Fisher plots
-  * `GetDist`
-  * `fgivenx`
-  * Other cosmological visualization utilities
+  
+* `MCMC Samplers`
+* `Nested Sampling using the dynesty library`
+* `Maximum Likelihood Analyzer`
+* `Genetic (genetic using deap library)`
+* `Particle Swarm Optimization (pyswarms)`
+* `emcee`, etc.
 
 * **ini File and runbase**
   The `.ini` configuration files define the cosmological model, datasets, and sampler settings. The `runbase` module connects these configurations to the internal `SimpleMC` pipeline.
