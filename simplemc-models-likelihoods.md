@@ -25,7 +25,7 @@ The figure above shows the overall structure and workflow of `SimpleMC`. At the 
   * `owa0CDMCosmology`
   * `oLCDMCosmology`
   * `ChaplyginCosmology`, etc.
-    
+
   This is the main location where new dark energy parametrizations can be added.
 
 * **Likelihoods**
@@ -36,20 +36,19 @@ The figure above shows the overall structure and workflow of `SimpleMC`. At the 
   * `Cosmic Chronometer Likelihoods`
   * `Compressed CMB Likelihoods`
   * `Rotation Curve Likelihoods`
-  * `Genetic Algorithms`
   * `Strong Lensing Likelihoods`, etc.
-    
-  New Likelihoods can also be implemented within this structure.
 
-* **Samplers**
-  `SimpleMC` supports several Bayesian sampling algorithms, including:
-  
-* `MCMC Samplers`
-* `Nested Sampling using the dynesty library`
-* `Maximum Likelihood Analyzer`
-* `Genetic (genetic using deap library)`
-* `Particle Swarm Optimization (pyswarms)`
-* `emcee`, etc.
+  New likelihoods can also be implemented within this structure.
+
+* **Samplers and Optimizers**
+  `SimpleMC` supports several Bayesian sampling and optimization algorithms, including:
+
+  * `MCMC Samplers`
+  * `Nested Sampling using the dynesty library`
+  * `Maximum Likelihood Analyzer`
+  * `Genetic Algorithms (using the deap library)`
+  * `Particle Swarm Optimization (pyswarms)`
+  * `emcee`, etc.
 
 * **ini File and runbase**
   The `.ini` configuration files define the cosmological model, datasets, and sampler settings. The `runbase` module connects these configurations to the internal `SimpleMC` pipeline.
