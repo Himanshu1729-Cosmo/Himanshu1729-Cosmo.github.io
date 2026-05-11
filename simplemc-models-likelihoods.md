@@ -8,11 +8,11 @@ This page is devoted to understanding the internal structure of `SimpleMC` and l
 
 ![Figure](/assets/img/simplemc.png){: .mx-auto.d-block }
 
-## Structure of `SimpleMC`
+### 1. Structure of `SimpleMC`
 
 The figure above shows the overall structure and workflow of `SimpleMC`. At the center of the framework is the `DriverMC` module, which acts as the main engine connecting cosmological models, likelihoods, samplers, optimizers, analyzers, and post-processing tools.
 
-### Main Components of `SimpleMC`
+### 2. Main Components of `SimpleMC`
 
 * **Cosmo**
   This module contains the fundamental cosmological background quantities and basic cosmological calculations. Classes such as `BaseCosmology`, `RadiationAndNeutrinos`, and related background modules are defined here.
@@ -53,6 +53,8 @@ The figure above shows the overall structure and workflow of `SimpleMC`. At the 
 * **ini File and runbase**
   The `.ini` configuration files define the cosmological model, datasets, and sampler settings. The `runbase` module connects these configurations to the internal `SimpleMC` pipeline.
 
+### 3. Understanding the Structure of `SimpleMC`
+
 Now, I will explain how to add a new dark energy model within `SimpleMC`. However, before doing that, we first need to understand the internal structure of `SimpleMC` and how the code is organized once you clone and install it. Below, you can see a schematic overview of the `SimpleMC` code.
 
 ![Figure](/assets/img/simpleMC_1.png){: .mx-auto.d-block }
@@ -60,3 +62,13 @@ Now, I will explain how to add a new dark energy model within `SimpleMC`. Howeve
 You will first find the parent `SimpleMC` folder, and once you open it, you will see the smaller `simplemc` directory, which contains the main source code of the framework.
 
 ![Figure](/assets/img/simpleMC_2.png){: .mx-auto.d-block }
+
+Inside the `SimpleMC` → `simplemc` → `models` directory, you can find the different cosmological models. This is the main location where new dark energy models and parametrizations can be added and modified.
+
+![Figure](/assets/img/simpleMC_3.png){: .mx-auto.d-block }
+
+Inside the `SimpleMC` → `simplemc` → `likelihoods` directory, you can find the different likelihoods. This is the main location where new likelihoods.
+
+![Figure](/assets/img/simpleMC_4.png){: .mx-auto.d-block }
+
+
