@@ -116,7 +116,7 @@ or for a standard installation:
 pip install .
 ```
 
-In the next page, we will explore the basic structure of \texttt{SimpleMC} and learn how to add a new dark energy model by considering the JBP `Jassal--Bagla--Padmanabhan` parametrization as an example.
+In the next page, we will explore the basic structure of \texttt{SimpleMC} and learn how to add a new dark energy model by considering the CPL `(Chevallier–Polarski–Linder)` parametrization as an example.
 
 
 
