@@ -157,5 +157,13 @@ One of the most important steps is to define your model parameters. After this, 
 from simplemc.cosmo.paramDefs import (your model parameters)
 ```
 
+Then, define your cosmological class as
+
+```bash
+class JBPCosmology(LCDMCosmology):
+```
+
+The class name should match the name of your .py file. For example, if your file is named JBPCosmology.py, then the class should also be named JBPCosmology.
+
 
 
