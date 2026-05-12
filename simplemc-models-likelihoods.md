@@ -264,11 +264,45 @@ wa_par = Parameter("wa", 0, 0.20, (-3.0, 2.0), "w_a") # Evolution parameter of t
 
 **3.h Now go to the `SimpleMC` → `simplemc` → `runbase.py`**
 
-Here, we are approaching the final step before running the MCMC analysis and post-processing the results. At this stage, we need to globally register our cosmological model inside `SimpleMC` so that it can be called directly from the configuration .ini files and sampling pipeline.
+Here, we are approaching the final step before running the MCMC analysis and post-processing the results. At this stage, we need to globally register our cosmological model inside `SimpleMC` so that it can be directly called from the `.ini` configuration files and used throughout the sampling pipeline.
 
 This can be done by adding the model inside `runbase.py`, as shown in the screenshot below.
 
 ![Figure](/assets/img/simpleMC_8.png){: .mx-auto.d-block }
 
+You basically need to call your model inside `runbase.py` using:
 
+```python
+from .models import JBPCosmology
+```
+
+Now, scroll down in the same `runbase.py` file. Here, you need to define the global model names that will later be used inside the `.ini` configuration files for sampling and cosmological analyses.
+
+Keep in mind that, while defining the JBP model, we also included the neutrino contribution through
+
+```python
+NuContrib = self.NuDensity.rho(a)/self.h**2
+```
+
+Check Section **3.e**, where we expressed the normalized Hubble function in terms of the scale factor \(a\). The same expression is implemented inside the `JBPCosmology` class, specifically before the definition of `rhow`. We also allow the curvature parameter to vary through `varyOk=True`. So, keep in mind that once you define your cosmological model, you will typically vary only the main cosmological parameters such as `Om_par`, `Obh2_par`, `h_par`, `w_par`, and `wa_par`. If you want to vary the curvature parameter, you need to call the model with the argument `varyOk=True`. Similarly, for varying the sum of neutrino masses, you need to use `T.setVaryMnu()` and for varying the effective number of relativistic species, use `T.setVaryNnu()` as shown in the screenshot below.
+
+![Figure](/assets/img/simpleMC_9.png){: .mx-auto.d-block }
+
+The corresponding Python implementation can be seen below:
+
+```python
+
+    elif model == 'JBP':  # Standard JBP (Jassal–Bagla–Padmanabhan) dark energy model
+        T = JBPCosmology()
+    elif model == 'oJBP':  # JBP model with spatial curvature as a free parameter
+        T = JBPCosmology(varyOk=True)
+    elif model == 'JBP_mnu':  # JBP model with varying sum of neutrino masses
+        T = JBPCosmology()
+        T.setVaryMnu()
+    elif model == 'JBP_Neff':  # JBP model with varying effective number of relativistic species
+        T = JBPCosmology()
+        T.setVaryNnu()
+```
+
+Congratulations! You have successfully defined your first cosmological model in `SimpleMC`. In the next stage, I will show how to run the JBP model, perform post-processing of the chains, and explore the JBP parameter space using nested sampling.
 
