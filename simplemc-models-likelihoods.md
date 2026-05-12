@@ -220,5 +220,16 @@ class JBPCosmology(LCDMCosmology):
         return (self.Ocb/a**3 + self.Ok/a**2 + self.Omrad/a**4 + NuContrib + (1.0 - self.Om - self.Ok - self.Omrad)*rhow)
 ```
 
+**3.g Now go to the `SimpleMC` → `simplemc` → `cosmo` → `paramDefs.py`**
+
+Here, you need to define your model parameters. This means specifying the parameter name, its mean value from theory, the corresponding uncertainty, the prior range, and the LaTeX label used in plots and tables.
+
+In general, a parameter definition looks like:
+
+```python
+parameter_name = Parameter("parameter_name", mean_value, error, (lower_prior, upper_prior),"parameter_latex_name")
+```
+
+![Figure](/assets/img/simpleMC_7.png){: .mx-auto.d-block }
 
 
