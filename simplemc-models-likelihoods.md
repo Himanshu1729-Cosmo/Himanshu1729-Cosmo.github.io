@@ -167,7 +167,7 @@ The class name should match the name of your .py file. For example, if your file
 
 The corresponding Python class of the JBP model can be seen below:
 
-```bash
+```python
 from simplemc.models.LCDMCosmology import LCDMCosmology
 from simplemc.cosmo.paramDefs import w_par, wa_par, Ok_par
 import numpy as np
