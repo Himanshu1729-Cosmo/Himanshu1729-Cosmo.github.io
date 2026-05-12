@@ -112,4 +112,23 @@ $$
 E(z)=\frac{H(z)}{H_0}.
 $$
 
+For the implementation in `SimpleMC`, we need to rewrite the normalized Hubble function in terms of the scale factor \(a\), where
+
+$$
+a = \frac{1}{1+z}.
+$$
+
+**3.d Using this relation, the normalized Hubble function can be written as**
+
+$$
+E^2(a)
+=
+\Omega_m a^{-3}
++
+(1-\Omega_m)
+a^{-3(1+w_0)}
+\exp\left[
+\frac{3w_a}{2}(a-1)^2
+\right].
+$$
 
