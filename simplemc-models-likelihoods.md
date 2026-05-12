@@ -304,5 +304,5 @@ The corresponding Python implementation can be seen below:
         T.setVaryNnu()
 ```
 
-Congratulations! You have successfully defined your first cosmological model in `SimpleMC`. In the next stage, I will show how to run the JBP model, perform post-processing of the chains, and explore the JBP parameter space using nested sampling.
+Congratulations! You have successfully defined your first cosmological model in `SimpleMC`. In the next page, I will show how to run the JBP model, perform post-processing of the chains, and explore the JBP parameter space using nested sampling.
 
