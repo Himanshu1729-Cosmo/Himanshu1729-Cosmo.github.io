@@ -165,5 +165,61 @@ class JBPCosmology(LCDMCosmology):
 
 The class name should match the name of your .py file. For example, if your file is named JBPCosmology.py, then the class should also be named JBPCosmology.
 
+The corresponding Python imports can be seen below:
+
+```bash
+from simplemc.models.LCDMCosmology import LCDMCosmology
+from simplemc.cosmo.paramDefs import w_par, wa_par, Ok_par
+import numpy as np
+
+#TODO Add more DE EoS for comparison
+
+class JBPCosmology(LCDMCosmology):
+
+    """
+        JBP parameterization 
+    """
+    def __init__(self, varyw=True, varywa=True, varyOk=True):
+        self.varyw  = varyw
+        self.varywa = varywa
+        self.varyOk = varyOk
+
+        self.w0 = w_par.value
+        self.wa = wa_par.value
+        self.Ok = Ok_par.value
+        LCDMCosmology.__init__(self)
+
+    def freeParameters(self):
+        l = LCDMCosmology.freeParameters(self)
+        if (self.varyw): l.append(w_par)
+        if (self.varywa): l.append(wa_par)
+        if (self.varyOk): l.append(Ok_par)
+        return l
+    
+    def updateParams(self, pars):
+        ok = LCDMCosmology.updateParams(self, pars)
+        if not ok:
+            return False
+        for p in pars:
+            if p.name == "w":
+                self.w0 = p.value
+            elif p.name == "wa":
+                self.wa = p.value
+            elif p.name == "Ok":
+                self.Ok = p.value
+                self.setCurvature(self.Ok)
+                if (abs(self.Ok) > 1.0):
+                    return False
+        return True
+    
+    # this is relative hsquared as a function of a
+    ## i.e. H(z)^2/H(z=0)^2
+    def RHSquared_a(self, a):
+        z = 1.0/a - 1.0
+        NuContrib = self.NuDensity.rho(a)/self.h**2
+        rhow = (1.0 + z)**(3.0 * (1.0 + self.w0)) * np.exp((1.5 * self.wa * (z**2)) / (1.0 + z)**2)
+        return (self.Ocb/a**3 + self.Ok/a**2 + self.Omrad/a**4 + NuContrib + (1.0 - self.Om - self.Ok - self.Omrad)*rhow)
+    ```
+
 
 
