@@ -145,3 +145,10 @@ a^{-3(1+w_0)}
 \right].
 $$
 
+**3.e Once you have the normalized Hubble function in terms of the scale factor**
+
+First, go to the `SimpleMC` → `simplemc` → `models` directory and create a new `.py` file. For example, here I will create a file named `JBPCosmology.py`. In the screenshot below, you can see where this new model file should be placed.
+
+![Figure](/assets/img/simpleMC_5.png){: .mx-auto.d-block }
+
+
