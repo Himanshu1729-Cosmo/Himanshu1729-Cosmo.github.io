@@ -71,7 +71,7 @@ Inside the `SimpleMC` → `simplemc` → `likelihoods` directory, you can find t
 
 ![Figure](/assets/img/simpleMC_4.png){: .mx-auto.d-block }
 
-### 3. Adding a new dark enesgy Model in `SimpleMC`
+### 3. Adding a new dark energy Model in `SimpleMC`
 
 Now, I will explain how we can add a new dark energy model within `SimpleMC`. As an example, we will consider the JBP (*Jassal–Bagla–Padmanabhan*) parametrization. For this, we first need to define the normalized Hubble function. In the case of the CPL model, the corresponding Hubble function is given by the following equation:
 
