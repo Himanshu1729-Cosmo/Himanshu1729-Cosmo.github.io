@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Adding New Models and Likelihoods
+title: Adding New Dark Energy Models 
 permalink: /tutorials/simplemc-models-likelihoods/
 ---
 
