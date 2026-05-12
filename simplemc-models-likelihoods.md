@@ -216,7 +216,7 @@ class JBPCosmology(LCDMCosmology):
         NuContrib = self.NuDensity.rho(a)/self.h**2
         rhow = (1.0 + z)**(3.0 * (1.0 + self.w0)) * np.exp((1.5 * self.wa * (z**2)) / (1.0 + z)**2)
         return (self.Ocb/a**3 + self.Ok/a**2 + self.Omrad/a**4 + NuContrib + (1.0 - self.Om - self.Ok - self.Omrad)*rhow)
-    ```
+```
 
 
 
