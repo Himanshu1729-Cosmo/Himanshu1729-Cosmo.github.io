@@ -155,6 +155,7 @@ One of the most important steps is to define your model parameters. After this, 
 
 ```python
 from simplemc.cosmo.paramDefs import (your model parameters)
+```
 
 
 
