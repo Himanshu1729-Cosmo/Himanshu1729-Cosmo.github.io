@@ -262,4 +262,13 @@ w_par = Parameter("w", -1, 0.02, (-3.0, 1.0), "w_0") # Present value of the dark
 wa_par = Parameter("wa", 0, 0.20, (-3.0, 2.0), "w_a") # Evolution parameter of the JBP dark energy model
 ```
 
+**3.h Now go to the `SimpleMC` → `simplemc` → `runbase.py`**
+
+Here, we are approaching the final step before running the MCMC analysis and post-processing the results. At this stage, we need to globally register our cosmological model inside `SimpleMC` so that it can be called directly from the configuration .ini files and sampling pipeline.
+
+This can be done by adding the model inside `runbase.py`, as shown in the screenshot below.
+
+![Figure](/assets/img/simpleMC_8.png){: .mx-auto.d-block }
+
+
 
