@@ -153,13 +153,13 @@ First, go to the `SimpleMC` → `simplemc` → `models` directory and create a n
 
 One of the most important steps is to define your model parameters. After this, you need to import the required parameters from
 
-```bash
+```python
 from simplemc.cosmo.paramDefs import (your model parameters)
 ```
 
 Then, define your cosmological class as
 
-```bash
+```python
 class JBPCosmology(LCDMCosmology):
 ```
 
@@ -171,6 +171,8 @@ The corresponding Python class of the JBP model can be seen below:
 from simplemc.models.LCDMCosmology import LCDMCosmology
 from simplemc.cosmo.paramDefs import w_par, wa_par, Ok_par
 import numpy as np
+
+#TODO Add more DE EoS for comparison
 
 TODO Add more DE EoS for comparison
 
