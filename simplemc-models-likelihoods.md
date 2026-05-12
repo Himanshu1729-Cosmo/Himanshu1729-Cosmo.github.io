@@ -75,13 +75,13 @@ Inside the `SimpleMC` → `simplemc` → `likelihoods` directory, you can find t
 
 Now, I will explain how we can add a new dark energy model within `SimpleMC`. As an example, we will consider the JBP (*Jassal–Bagla–Padmanabhan*) parametrization. For this, we first need to define the normalized Hubble function. In the case of the CPL model, the corresponding Hubble function is given by the following equation:
 
-### 1. Equation of State
+**3.a Equation of State**
 
 $$
 w(z) = w_0 + w_a \frac{z}{(1+z)^2}
 $$
 
-### 2. Dark Energy Density Evolution
+**3.b Dark Energy Density Evolution**
 
 $$
 f_{\rm DE}(z)
@@ -92,7 +92,7 @@ f_{\rm DE}(z)
 \right]
 $$
 
-### 3. Normalized Hubble Function
+**3.c Normalized Hubble Function**
 
 $$
 E^2(z)
