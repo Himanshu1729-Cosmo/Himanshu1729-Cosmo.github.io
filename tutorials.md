@@ -27,7 +27,7 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 ## SimpleMC
 
 - [Installation](/tutorials/simplemc-install/)
-- [Adding New Models and Likelihoods](/tutorials/simplemc-models-likelihoods/)
+- [Adding New Dark Energy Models](/tutorials/simplemc-models-likelihoods/)
 - [Post-processing and Statistical Analysis](/tutorials/simplemc-postprocessing/)
   
 ## Cosmological Inference: Learn with Me
