@@ -220,6 +220,12 @@ class JBPCosmology(LCDMCosmology):
         return (self.Ocb/a**3 + self.Ok/a**2 + self.Omrad/a**4 + NuContrib + (1.0 - self.Om - self.Ok - self.Omrad)*rhow)
 ```
 
+**3.f Now go to the `SimpleMC` → `simplemc` → `models` → `__init__.py`**
+
+Here, you need to register your new cosmological model so that `SimpleMC` can recognize and import it properly.
+
+![Figure](/assets/img/simpleMC_6.png){: .mx-auto.d-block }
+
 **3.g Now go to the `SimpleMC` → `simplemc` → `cosmo` → `paramDefs.py`**
 
 Here, you need to define your model parameters. This means specifying the parameter name, its mean value from theory, the corresponding uncertainty, the prior range, and the LaTeX label used in plots and tables.
