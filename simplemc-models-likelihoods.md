@@ -83,6 +83,19 @@ $$
 
 **3.b Dark Energy Density Evolution**
 
+The general dark energy density evolution is
+
+$$
+f_{\rm DE}(a)
+=
+\exp\left[
+-3\int_{1}^{a}
+\frac{1+w(a')}{a'}\,da'
+\right].
+$$
+
+For the JBP parametrization, this becomes
+
 $$
 f_{\rm DE}(z)
 =
