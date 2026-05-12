@@ -77,28 +77,26 @@ Now, I will explain how we can add a new dark energy model within `SimpleMC`. As
 
 ### 1. Equation of State
 
-[
+$$
 w(z) = w_0 + w_a \frac{z}{(1+z)^2}
-]
+$$
 
 ### 2. Dark Energy Density Evolution
 
-[
+$$
 f_{\rm DE}(z)
-=============
-
+=
 (1+z)^{3(1+w_0)}
 \exp\left[
 \frac{3w_a z^2}{2(1+z)^2}
 \right]
-]
+$$
 
 ### 3. Normalized Hubble Function
 
-[
+$$
 E^2(z)
-======
-
+=
 \Omega_m(1+z)^3
 +
 (1-\Omega_m)
@@ -106,8 +104,12 @@ E^2(z)
 \exp\left[
 \frac{3w_a z^2}{2(1+z)^2}
 \right]
-]
+$$
 
-where (E(z)=H(z)/H_0).
+where
+
+$$
+E(z)=\frac{H(z)}{H_0}.
+$$
 
 
