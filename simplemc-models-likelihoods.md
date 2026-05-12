@@ -226,6 +226,11 @@ Here, you need to register your new cosmological model so that `SimpleMC` can re
 
 ![Figure](/assets/img/simpleMC_6.png){: .mx-auto.d-block }
 
+Corresponding Python output
+
+```python
+from .JBPCosmology import JBPCosmology
+```
 **3.g Now go to the `SimpleMC` → `simplemc` → `cosmo` → `paramDefs.py`**
 
 Here, you need to define your model parameters. This means specifying the parameter name, its mean value from theory, the corresponding uncertainty, the prior range, and the LaTeX label used in plots and tables.
