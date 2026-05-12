@@ -153,7 +153,7 @@ First, go to the `SimpleMC` → `simplemc` → `models` directory and create a n
 
 One of the most important steps is to define your model parameters. After this, you need to import the required parameters from
 
-```python
+```bash
 from simplemc.cosmo.paramDefs import (your model parameters)
 ```
 
