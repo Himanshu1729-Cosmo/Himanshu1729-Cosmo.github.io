@@ -236,12 +236,6 @@ The corresponding Python parameter definitions inside `paramDefs.py` can be seen
 
 ```python
 ##
-# This file has parameter definitions for all
-# parameters used in this code.
-##
-# Change here for bounds, or import and rewrite.
-##
-##
 # The Parameter class is defined as
 # Parameter(name, value, err=0.0, bounds=None, Ltxname=None)
 
