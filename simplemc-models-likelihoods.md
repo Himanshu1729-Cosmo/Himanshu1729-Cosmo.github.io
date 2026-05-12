@@ -86,11 +86,11 @@ $$
 The general dark energy density evolution is
 
 $$
-f_{\rm DE}(a)
+f_{\rm DE}(z)
 =
 \exp\left[
--3\int_{1}^{a}
-\frac{1+w(a')}{a'}\,da'
+3\int_{0}^{z}
+\frac{1+w(z')}{1+z'}\,dz'
 \right].
 $$
 
