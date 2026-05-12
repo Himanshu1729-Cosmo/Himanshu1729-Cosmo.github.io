@@ -232,4 +232,29 @@ parameter_name = Parameter("parameter_name", mean_value, error, (lower_prior, up
 
 ![Figure](/assets/img/simpleMC_7.png){: .mx-auto.d-block }
 
+The corresponding Python parameter definitions inside `paramDefs.py` can be seen below:
+
+```python
+##
+# This file has parameter definitions for all
+# parameters used in this code.
+##
+# Change here for bounds, or import and rewrite.
+##
+##
+# The Parameter class is defined as
+# Parameter(name, value, err=0.0, bounds=None, Ltxname=None)
+
+from simplemc.cosmo.Parameter import Parameter
+
+# Parameters are value, variation, bounds.
+# Base parameters for JBP.
+Om_par = Parameter("Om", 0.3038, 0.05, (0.1, 0.5), "\Omega_m") # Matter density parameter today
+Obh2_par = Parameter("Obh2", 0.02234, 0.001, (0.02, 0.025), "\Omega_{b}h^2") # Physical baryon density parameter
+h_par = Parameter("h", 0.6821, 0.05, (0.4, 0.9), "h") # Dimensionless Hubble parameter
+Ok_par = Parameter("Ok", 0.0, 0.01, (-0.3, 0.3), "\Omega_k") # Spatial curvature density parameter
+w_par = Parameter("w", -1, 0.02, (-3.0, 1.0), "w_0") # Present value of the dark energy EoS
+wa_par = Parameter("wa", 0, 0.20, (-3.0, 2.0), "w_a") # Evolution parameter of the JBP dark energy model
+```
+
 
