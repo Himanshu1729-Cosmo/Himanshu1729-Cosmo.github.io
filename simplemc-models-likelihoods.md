@@ -163,9 +163,9 @@ Then, define your cosmological class as
 class JBPCosmology(LCDMCosmology):
 ```
 
-The class name should match the name of your .py file. For example, if your file is named JBPCosmology.py, then the class should also be named JBPCosmology.
+The class name should match the name of your .py file. For example, if your file is named `JBPCosmology.py`, then the class should also be named JBPCosmology.
 
-The corresponding Python imports can be seen below:
+The corresponding Python class of the JBP model can be seen below:
 
 ```bash
 from simplemc.models.LCDMCosmology import LCDMCosmology
