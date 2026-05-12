@@ -172,13 +172,10 @@ from simplemc.models.LCDMCosmology import LCDMCosmology
 from simplemc.cosmo.paramDefs import w_par, wa_par, Ok_par
 import numpy as np
 
-#TODO Add more DE EoS for comparison
+TODO Add more DE EoS for comparison
 
 class JBPCosmology(LCDMCosmology):
 
-    """
-        JBP parameterization 
-    """
     def __init__(self, varyw=True, varywa=True, varyOk=True):
         self.varyw  = varyw
         self.varywa = varywa
