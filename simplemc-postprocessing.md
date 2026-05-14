@@ -8,5 +8,7 @@ This page is devoted to the post-processing stage in SimpleMC. After adding a co
 
 Now, we will continue our discussion by exploring the JBP model. For this analysis, I will use nested sampling within SimpleMC. The nested sampling implementation in SimpleMC is based on the `dynesty` package with the `multi` bounding option. Below, we also show the different `dynesty` bounding methods available in SimpleMC, namely `{'single', 'multi', 'balls', 'cubes'}`, together with the standard MCMC configuration options.
 
+![Figure](/assets/img/simpleMC_4.png){: .mx-auto.d-block }
+
 
 
