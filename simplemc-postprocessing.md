@@ -18,6 +18,22 @@ Now, I will explain how we can add a `.ini` file where you will define where the
 
 Find below the corresponding `.ini` file.
 
+```ini
+[custom]
+chainsdir = simplemc/chains/
+model = MEDE_AS
+prefact = phy
+datasets = DESIDR2+HD23+Union3
+analyzername = nested
+overwrite = True
+
+[nested]
+nestedType = multi
+nlivepoints = 250
+accuracy = 0.0005
+priortype = u
+nproc = 10
+```
 
 
 
