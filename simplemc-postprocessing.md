@@ -10,13 +10,13 @@ Now, we will continue our discussion by exploring the JBP model after adding it 
 
 ![Figure](/assets/img/simpleMC_10.png){: .mx-auto.d-block }
 
-### 3. Adding New .ini file `SimpleMC`
+### 1. Adding New .ini file `SimpleMC`
 
-Now, I will explain how we can add a `.ini` file where you will define where the chains will be stored, the choice of the model, the choice of datasets, and the sampler settings. Below, you will find an example.
+Now, I will explain how we can add a `.ini` file where you will define where the chains will be stored, the choice of the model, the choice of datasets, and the sampler settings. Below, you will find an example. You need to create your `.ini` file in the `SimpleMC` directory, let us say with the name `jbp.ini`.
 
 ![Figure](/assets/img/simpleMC_11.png){: .mx-auto.d-block }
 
-Find below the corresponding `.ini` file.
+Find below the corresponding `jbp.ini` file.
 
 ```ini
 [custom]
@@ -34,6 +34,15 @@ accuracy = 0.0005
 priortype = u
 nproc = 10
 ```
+
+### 2. Give your path in the `test.py`
+
+Now, go to the `SimpleMC` directory and open the `test.py` file. Then, add the name of your corresponding `.ini` file, for example `jbp.ini`.
+
+![Figure](/assets/img/simpleMC_12.png){: .mx-auto.d-block }
+
+
+
 
 
 
