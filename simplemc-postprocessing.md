@@ -56,8 +56,24 @@ if __name__ == '__main__':
     analyzer.executer()
 ```
 
-Now, open your terminal, open the `SimpleMC` directory, activate the environment using `conda activate simpleMC_env`, and type `python test.py` to run the code.
+Now, open your terminal, open the `SimpleMC` directory, activate the environment using `conda activate simpleMC_env`, and type `python test.py` to run the code. Once the sampling process is completed, you will obtain several output files such as:
 
+* `JBP_phy_DESIDR2+HD23+Union3_nested_multi_1.txt`
+* `JBP_phy_DESIDR2+HD23+Union3_nested_multi_Summary.txt`
+* `JBP_phy_DESIDR2+HD23+Union3_nested_multi.covmat`
+* `JBP_phy_DESIDR2+HD23+Union3_nested_multi.maxlike`
+* `JBP_phy_DESIDR2+HD23+Union3_nested_multi.paramnames`
+
+Each of these files contains different information related to the analysis:
+
+* `*_1.txt` : contains the full chain samples generated during the nested sampling process, including parameter values, likelihoods, and weights.
+* `*_Summary.txt` : provides a summary of the parameter constraints and statistical results.
+* `*.covmat` : stores the covariance matrix of the sampled cosmological parameters.
+* `*.maxlike` : contains the maximum-likelihood parameter values.
+* `*.paramnames` : lists the parameter names and their corresponding LaTeX labels used in the analysis.
+
+For post-processing and visualization, we are mainly interested in the file
+`JBP_phy_DESIDR2+HD23+Union3_nested_multi_1.txt`.
 
 
 
