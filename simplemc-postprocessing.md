@@ -16,6 +16,8 @@ Now, I will explain how we can add a `.ini` file where you will define where the
 
 ![Figure](/assets/img/simpleMC_11.png){: .mx-auto.d-block }
 
+Find below the corresponding `.ini` file.
+
 
 
 
