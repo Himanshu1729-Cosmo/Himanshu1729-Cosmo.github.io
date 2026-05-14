@@ -56,6 +56,9 @@ if __name__ == '__main__':
     analyzer.executer()
 ```
 
+Now, open your terminal, open the `SimpleMC` directory, activate the environment using `conda activate simpleMC_env`, and type `python test.py` to run the code.
+
+
 
 
 
