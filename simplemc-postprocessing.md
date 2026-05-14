@@ -10,5 +10,7 @@ Now, we will continue our discussion by exploring the JBP model after adding it 
 
 ![Figure](/assets/img/simpleMC_10.png){: .mx-auto.d-block }
 
+`SimpleMC`
+
 
 
