@@ -56,7 +56,9 @@ if __name__ == '__main__':
     analyzer.executer()
 ```
 
-Now, open your terminal, open the `SimpleMC` directory, activate the environment using `conda activate simpleMC_env`, and type `python test.py` to run the code. Once the sampling process is completed, you will obtain several output files such as:
+Now, open your terminal, open the `SimpleMC` directory, activate the environment using `conda activate simpleMC_env`, and type `python test.py` to run the code. 
+
+Once the sampling process is completed, you will obtain several output files such as:
 
 * `JBP_phy_DESIDR2+HD23+Union3_nested_multi_1.txt`
 * `JBP_phy_DESIDR2+HD23+Union3_nested_multi_Summary.txt`
