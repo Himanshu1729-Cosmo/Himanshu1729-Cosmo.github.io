@@ -10,7 +10,12 @@ Now, we will continue our discussion by exploring the JBP model after adding it 
 
 ![Figure](/assets/img/simpleMC_10.png){: .mx-auto.d-block }
 
-`SimpleMC`
+### 3. Adding New .ini file `SimpleMC`
+
+Now, I will explain how we can add a `.ini` file where you will define where the chains will be stored, the choice of the model, the choice of datasets, and the sampler settings. Below, you will find an example.
+
+![Figure](/assets/img/simpleMC_11.png){: .mx-auto.d-block }
+
 
 
 
