@@ -21,7 +21,7 @@ Find below the corresponding `jbp.ini` file.
 ```ini
 [custom]
 chainsdir = simplemc/chains/
-model = MEDE_AS
+model = JBP
 prefact = phy
 datasets = DESIDR2+HD23+Union3
 analyzername = nested
@@ -40,6 +40,21 @@ nproc = 10
 Now, go to the `SimpleMC` directory and open the `test.py` file. Then, add the name of your corresponding `.ini` file, for example `jbp.ini`.
 
 ![Figure](/assets/img/simpleMC_12.png){: .mx-auto.d-block }
+
+Find below the corresponding `test.py` file.
+
+```python
+from simplemc.DriverMC import DriverMC
+import multiprocessing as mp
+
+"read all setting from .ini file"
+inifile = "jbp.ini"
+
+if __name__ == '__main__':
+    mp.freeze_support()
+    analyzer = DriverMC(iniFile=inifile)
+    analyzer.executer()
+```
 
 
 
