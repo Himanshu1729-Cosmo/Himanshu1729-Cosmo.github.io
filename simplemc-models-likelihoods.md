@@ -292,11 +292,11 @@ The corresponding Python implementation can be seen below:
 
 ```python
 
-    elif model == 'oJBP':     # JBP model with spatial curvature as a free parameter
+    elif model == 'oJBP':    # JBP model with spatial curvature as a free parameter
         T = JBPCosmology()
     elif model == 'JBP':     # JBP model with without spatial curvature as a free parameter
         T = JBPCosmology(varyOk=False)
-    elif model == 'JBP_mnu':  # JBP model with varying sum of neutrino masses (without Ok)
+    elif model == 'JBP_mnu': # JBP model with varying sum of neutrino masses (without Ok)
         T = JBPCosmology(varyOk=False)
         T.setVaryMnu()
     elif model == 'JBP_Neff': # JBP model with varying effective number of relativistic species (without Ok)
