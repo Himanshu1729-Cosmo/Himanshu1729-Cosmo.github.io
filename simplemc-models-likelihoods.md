@@ -292,15 +292,15 @@ The corresponding Python implementation can be seen below:
 
 ```python
 
-    elif model == 'JBP':  # Standard JBP (Jassal–Bagla–Padmanabhan) dark energy model
+    elif model == 'oJBP':     # JBP model with spatial curvature as a free parameter
         T = JBPCosmology()
-    elif model == 'oJBP':  # JBP model with spatial curvature as a free parameter
-        T = JBPCosmology(varyOk=True)
-    elif model == 'JBP_mnu':  # JBP model with varying sum of neutrino masses
-        T = JBPCosmology()
+    elif model == 'oJBP':     # JBP model with without spatial curvature as a free parameter
+        T = JBPCosmology(varyOk=False)
+    elif model == 'JBP_mnu':  # JBP model with varying sum of neutrino masses (without Ok)
+        T = JBPCosmology(varyOk=False)
         T.setVaryMnu()
-    elif model == 'JBP_Neff':  # JBP model with varying effective number of relativistic species
-        T = JBPCosmology()
+    elif model == 'JBP_Neff': # JBP model with varying effective number of relativistic species (without Ok)
+        T = JBPCosmology(varyOk=False)
         T.setVaryNnu()
 ```
 
