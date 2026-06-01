@@ -196,10 +196,10 @@ This quantity corresponds to $\ln Z$, i.e., the Bayesian evidence expressed in l
 The Bayesian evidence is one of the key quantities produced by nested sampling and is defined as
 
 $$
-Z=\int P(D|\theta,M)\,P(\theta|M)\,d\theta.
+Z=\int P(D\mid\theta,M)\,P(\theta\mid M)\,d\theta.
 $$
 
-where $P(D|\theta,M)$ is the likelihood of the observational data $D$ given the model $M$ and parameters $\theta$, and $P(\theta|M)$ is the prior probability distribution of the model parameters.
+where $P(D\mid\theta,M)$ is the likelihood of the observational data $D$ given the model $M$ and parameters $\theta$, and $P(\theta\mid M)$ is the prior probability distribution of the model parameters.
 
 The strength of evidence is commonly interpreted using the Jeffreys scale: $\ln B_{ij} < 1$ indicates inconclusive evidence, $1 \leq \ln B_{ij} < 2.5$ indicates weak evidence, $2.5 \leq \ln B_{ij} < 5$ corresponds to moderate evidence, $5 \leq \ln B_{ij} < 10$ indicates strong evidence, and $\ln B_{ij} \geq 10$ corresponds to decisive evidence in favor of model $i$ over model $j$. Conversely, if $\ln B_{ij}$ is negative, the preference is reversed and favors model $j$ over model $i$, with the strength of evidence interpreted according to the same Jeffreys scale using the magnitude of $\ln B_{ij}$.
 
