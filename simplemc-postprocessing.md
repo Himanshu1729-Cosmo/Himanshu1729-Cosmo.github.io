@@ -78,6 +78,91 @@ For post-processing and visualization, we are mainly interested in the file
 `JBP_phy_DESIDR2+HD23+Union3_nested_multi_1.txt`.
 
 
+```python
+import numpy as np
+from scipy.special import logsumexp
+from getdist import MCSamples, plots
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.rcParams['mathtext.fontset'] = 'cm'
+
+# ============================================================
+# Load chain
+# Replace the path below with the location of your chain file
+# on your system.
+# ============================================================
+chain = np.loadtxt( "/path/to/your/chain/JBP_phy_DESIDR2+Planck_18+Union3_nested_multi_1.txt")
+
+# ============================================================
+# Nested weights
+# ============================================================
+logwt = chain[:,0]
+negloglike = chain[:,1]
+loglike = -negloglike
+
+logwt_norm = logwt - logsumexp(logwt)
+weights = np.exp(logwt_norm)
+
+print("Sum of weights =", np.sum(weights))
+
+# ============================================================
+# Extract parameters
+# ============================================================
+Om   = chain[:,2]
+Obh2 = chain[:,3]
+h    = chain[:,4]
+w0   = chain[:,5]
+wa   = chain[:,6]
+
+H0 = 100.0 * h
+
+samples_array = np.vstack([Om, H0, w0, wa, Obh2]).T
+
+# ============================================================
+# Create GetDist samples
+# ============================================================
+samples = MCSamples(
+    samples=samples_array,
+    weights=weights,
+    loglikes=loglike,
+    names=['Om','H0','w0','wa','Obh2'],
+    labels=[
+        r'\Omega_m',
+        r'H_0',
+        r'w_0',
+        r'w_a',
+        r'\Omega_b h^2'
+    ],
+    ranges={'wa': (-3.0, None)}
+)
+
+# ============================================================
+# Triangle Plot
+# ============================================================
+g = plots.getSubplotPlotter(width_inch=6)
+
+g.settings.alpha_filled_add = 0.5
+g.settings.axes_fontsize = 12
+g.settings.lab_fontsize = 16
+g.settings.legend_fontsize = 14
+
+g.triangle_plot(
+    samples,
+    ['Om', 'H0', 'w0', 'wa'],
+    filled=True,
+    contour_colors=['darkblue'],
+    title_limit=1
+)
+
+g.export("JBP_triangle.pdf")
+
+plt.show()
+```
+
+
+
+
+
 
 
 
