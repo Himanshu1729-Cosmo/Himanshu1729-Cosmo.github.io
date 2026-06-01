@@ -187,12 +187,18 @@ where $P(D\mid\theta,M)$ is the likelihood of the observational data $D$ given t
 The value reported in the summary file as
 
 ```text
-logz = -17.3144 ± 0.2610
+logz: -33.0977 +/- 0.3429
 ```
 
 This quantity corresponds to $\ln Z$, i.e., the Bayesian evidence expressed in logarithmic space. Since the evidence itself can span many orders of magnitude, it is customary to work with its logarithm when performing Bayesian model comparison.
 
-Now, to compare the Bayesian evidence of two models for the same observational dataset, one must first obtain the value of $\ln Z$ from the nested-sampling output. In our case, let model $i$ correspond to the JBP model and model $j$ correspond to the $\Lambda$CDM model.
+Now, to compare the Bayesian evidence of two models for the same combination of observational datasets, one must first obtain the value of $\ln Z$ for the baseline model, which in our case is the $\Lambda$CDM model. Let model $i$ correspond to the JBP model and model $j$ correspond to the $\Lambda$CDM model. Now, to compare two cosmological models, one must compute the logarithmic Bayes factor,
+
+$$
+\ln B_{ij} = \ln Z_i - \ln Z_j.
+$$
+
+For the same combination of observational datasets, we obtain for the $\Lambda$CDM model $$\ln Z_{\Lambda{\rm CDM}} = -33.8473 \pm 0.3805.$$ Considering only the mean value of the Bayesian evidence, we use $$\ln Z_{\Lambda{\rm CDM}} = -33.8473.$$ Similarly, for the JBP model, we obtain $$\ln Z_{\rm JBP} = -33.0977.$$ We find $$\ln B_{ij} = \ln Z_{\rm JBP} - \ln Z_{\Lambda{\rm CDM}} = (-33.0977) - (-33.8473) = 0.7496.$$
 
 The strength of evidence is commonly interpreted using the Jeffreys scale: $\ln B_{ij} < 1$ indicates inconclusive evidence, $1 \leq \ln B_{ij} < 2.5$ indicates weak evidence, $2.5 \leq \ln B_{ij} < 5$ corresponds to moderate evidence, $5 \leq \ln B_{ij} < 10$ indicates strong evidence, and $\ln B_{ij} \geq 10$ corresponds to decisive evidence in favor of model $i$ over model $j$. Conversely, if $\ln B_{ij}$ is negative, the preference is reversed and favors model $j$ over model $i$, with the strength of evidence interpreted according to the same Jeffreys scale using the magnitude of $\ln B_{ij}$.
 
