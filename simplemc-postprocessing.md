@@ -158,8 +158,7 @@ g.export("JBP_triangle.pdf")
 
 plt.show()
 ```
-
-
+![Figure](/assets/img/jbp.png){: .mx-auto.d-block }
 
 
 
