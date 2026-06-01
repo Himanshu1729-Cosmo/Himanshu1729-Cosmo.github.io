@@ -183,7 +183,7 @@ $$
 Z=\int P(D|\theta,M)\,P(\theta|M)\,d\theta,
 $$
 
-where $P(D|\theta,M)$ is the likelihood of the observational data $D$ given the model $M$ and parameters $\theta$, and $P(\theta|M)$ is the prior probability distribution of the model parameters.
+where $$P(D|\theta,M)$$ is the likelihood of the observational data $D$ given the model $M$ and parameters $$\theta$, and $P(\theta|M)$$ is the prior probability distribution of the model parameters.
 
 The value reported in the summary file as
 
