@@ -203,21 +203,19 @@ where $Z_i$ and $Z_j$ are the Bayesian evidences of the two competing models. In
 
 The strength of evidence is commonly interpreted using the Jeffreys scale:
 
-\begin{table}[h]
-\centering
-\caption{Jeffreys scale for interpreting the logarithmic Bayes factor.}
-\begin{tabular}{cc}
+\[
+\begin{array}{cc}
 \hline
-$|\ln B_{ij}|$ & Interpretation \\
+|\ln B_{ij}| & \text{Interpretation} \\
 \hline
-$<1$ & Inconclusive evidence \\
-$1 \leq |\ln B_{ij}| < 2.5$ & Weak evidence \\
-$2.5 \leq |\ln B_{ij}| < 5$ & Moderate evidence \\
-$5 \leq |\ln B_{ij}| < 10$ & Strong evidence \\
-$\geq 10$ & Decisive evidence \\
+<1 & \text{Inconclusive evidence} \\
+1 \leq |\ln B_{ij}| < 2.5 & \text{Weak evidence} \\
+2.5 \leq |\ln B_{ij}| < 5 & \text{Moderate evidence} \\
+5 \leq |\ln B_{ij}| < 10 & \text{Strong evidence} \\
+\geq 10 & \text{Decisive evidence} \\
 \hline
-\end{tabular}
-\end{table}
+\end{array}
+\]
 
 Therefore, the `logz` entry in the summary file provides the Bayesian evidence required for model selection and can be used to determine whether a dynamical dark energy model is preferred over the standard (\Lambda)CDM cosmology by the observational data.
 
