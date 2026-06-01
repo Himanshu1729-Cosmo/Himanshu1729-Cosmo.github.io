@@ -160,6 +160,63 @@ plt.show()
 ```
 ![Figure](/assets/img/jbp.png){: .mx-auto.d-block }
 
+## Statistical Quantities and Model Comparison
+
+After generating the posterior distributions and parameter constraints, we can move to the statistical quantities produced by the nested-sampling analysis.
+
+The file `*_Summary.txt` contains a concise summary of the nested-sampling run and the resulting statistical quantities. A typical output looks like:
+
+```text
+maxlike: 16.0822
+nlive: 250
+logz: -33.0977 +/- 0.3429
+```
+
+where:
+
+* `maxlike` is the maximum value of the likelihood found during the sampling process.
+* `logz` is the natural logarithm of the Bayesian evidence (Z), together with its estimated uncertainty.
+
+The Bayesian evidence is one of the key quantities produced by nested sampling and is defined as
+
+[
+Z=\int P(D|\theta,M),P(\theta|M),d\theta ,
+]
+
+where (P(D|\theta,M)) is the likelihood of the data (D) given the model (M) and parameters (\theta), and (P(\theta|M)) is the prior distribution of the model parameters.
+
+The value reported as
+
+```text
+logz = -17.3144 ± 0.2610
+```
+
+corresponds to (\ln Z), i.e., the Bayesian evidence expressed in logarithmic space. This quantity is commonly used for Bayesian model comparison because the evidence itself can span many orders of magnitude.
+
+To compare two cosmological models (M_i) and (M_j), one computes the logarithmic Bayes factor
+
+[
+\ln B_{ij}=\ln Z_i-\ln Z_j ,
+]
+
+where (Z_i) and (Z_j) are the Bayesian evidences of the two competing models. In practice, the (\ln Z) values reported in the `*_Summary.txt` files can be directly used to calculate (\ln B_{ij}).
+
+The strength of evidence is commonly interpreted using the Jeffreys scale:
+
+| (|\ln B_{ij}|) | Interpretation |
+|---|---|
+| (<1) | Inconclusive evidence |
+| (1-2.5) | Weak evidence |
+| (2.5-5) | Moderate evidence |
+| (5-10) | Strong evidence |
+| (\ge 10) | Decisive evidence |
+
+Therefore, the `logz` entry in the summary file provides the Bayesian evidence required for model selection and can be used to determine whether a dynamical dark energy model is preferred over the standard (\Lambda)CDM cosmology by the observational data.
+
+---
+
+This fits naturally into a SimpleMC tutorial because it explains exactly where the Bayesian evidence comes from and how the `logz` value in the summary file is used for model comparison.
+
 
 
 
