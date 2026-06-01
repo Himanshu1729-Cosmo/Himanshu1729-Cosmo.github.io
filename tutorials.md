@@ -14,7 +14,7 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 ## Cobaya
 
-- [Cobaya Installation & Post-Processing for Beginners](/tutorials/cobaya-install-beginners/)
+- [Cobaya Installation & Post-Processing for Beginners](/tutorials/cobaya-install/)
 - [Cobaya Installation & Post-Processing for Pro Users](/tutorials/cobaya-pro/)
 
 ## CosmoMC
