@@ -179,37 +179,45 @@ where:
 
 The Bayesian evidence is one of the key quantities produced by nested sampling and is defined as
 
-[
-Z=\int P(D|\theta,M),P(\theta|M),d\theta ,
-]
+$$
+Z=\int P(D|\theta,M)\,P(\theta|M)\,d\theta,
+$$
 
-where (P(D|\theta,M)) is the likelihood of the data (D) given the model (M) and parameters (\theta), and (P(\theta|M)) is the prior distribution of the model parameters.
+where $P(D|\theta,M)$ is the likelihood of the observational data $D$ given the model $M$ and parameters $\theta$, and $P(\theta|M)$ is the prior probability distribution of the model parameters.
 
-The value reported as
+The value reported in the summary file as
 
 ```text
 logz = -17.3144 ± 0.2610
 ```
 
-corresponds to (\ln Z), i.e., the Bayesian evidence expressed in logarithmic space. This quantity is commonly used for Bayesian model comparison because the evidence itself can span many orders of magnitude.
+This quantity corresponds to $\ln Z$, i.e., the Bayesian evidence expressed in logarithmic space. Since the evidence itself can span many orders of magnitude, it is customary to work with its logarithm when performing Bayesian model comparison.
 
-To compare two cosmological models (M_i) and (M_j), one computes the logarithmic Bayes factor
+To compare two cosmological models, $M_i$ and $M_j$, one computes the logarithmic Bayes factor
 
-[
-\ln B_{ij}=\ln Z_i-\ln Z_j ,
-]
+$$
+\ln B_{ij} = \ln Z_i - \ln Z_j,
+$$
 
-where (Z_i) and (Z_j) are the Bayesian evidences of the two competing models. In practice, the (\ln Z) values reported in the `*_Summary.txt` files can be directly used to calculate (\ln B_{ij}).
+where $Z_i$ and $Z_j$ are the Bayesian evidences of the two competing models. In practice, the values of $\ln Z$ reported in the corresponding `*_Summary.txt` files can be directly used to calculate $\ln B_{ij}$.
 
 The strength of evidence is commonly interpreted using the Jeffreys scale:
 
-| (|\ln B_{ij}|) | Interpretation |
-|---|---|
-| (<1) | Inconclusive evidence |
-| (1-2.5) | Weak evidence |
-| (2.5-5) | Moderate evidence |
-| (5-10) | Strong evidence |
-| (\ge 10) | Decisive evidence |
+\begin{table}[h]
+\centering
+\caption{Jeffreys scale for interpreting the logarithmic Bayes factor.}
+\begin{tabular}{cc}
+\hline
+$|\ln B_{ij}|$ & Interpretation \\
+\hline
+$<1$ & Inconclusive evidence \\
+$1 \leq |\ln B_{ij}| < 2.5$ & Weak evidence \\
+$2.5 \leq |\ln B_{ij}| < 5$ & Moderate evidence \\
+$5 \leq |\ln B_{ij}| < 10$ & Strong evidence \\
+$\geq 10$ & Decisive evidence \\
+\hline
+\end{tabular}
+\end{table}
 
 Therefore, the `logz` entry in the summary file provides the Bayesian evidence required for model selection and can be used to determine whether a dynamical dark energy model is preferred over the standard (\Lambda)CDM cosmology by the observational data.
 
