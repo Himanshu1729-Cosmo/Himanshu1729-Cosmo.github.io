@@ -203,6 +203,89 @@ where $Z_i$ and $Z_j$ are the Bayesian evidences of the two competing models. In
 
 The strength of evidence is commonly interpreted using the Jeffreys scale: $\ln B_{ij} < 1$ indicates inconclusive evidence, $1 \leq \ln B_{ij} < 2.5$ indicates weak evidence, $2.5 \leq \ln B_{ij} < 5$ corresponds to moderate evidence, $5 \leq \ln B_{ij} < 10$ indicates strong evidence, and $\ln B_{ij} \geq 10$ corresponds to decisive evidence in favor of model $i$ over model $j$. Conversely, if $\ln B_{ij}$ is negative, the preference is reversed and favors model $j$ over model $i$, with the strength of evidence interpreted according to the same Jeffreys scale using the magnitude of $\ln B_{ij}$.
 
+## Covariance Matrix
+
+SimpleMC also produces a covariance matrix file (`*.covmat`) containing the estimated parameter covariance matrix obtained from the posterior samples. The covariance matrix quantifies the uncertainties of the parameters as well as their correlations.
+
+For the JBP model, a typical covariance matrix is stored as
+
+```text
+JBP_phy_DESIDR2+HD23+Union3.covmat
+```
+
+The following script loads the covariance matrix and visualizes it as a correlation matrix:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+# ============================================================
+# Matplotlib settings
+# ============================================================
+mpl.rcParams['mathtext.fontset'] = 'cm'
+mpl.rcParams['font.size'] = 14
+
+# ============================================================
+# Load covariance matrix
+# ============================================================
+cov = np.loadtxt("/path/to/your/JBP_phy_DESIDR2+HD23+Union3.covmat", delimiter=",")
+
+print("Covariance matrix shape:", cov.shape)
+print(cov)
+
+# ============================================================
+# Parameter labels
+# ============================================================
+labels = [r'$\Omega_m$', r'$\Omega_b h^2$', r'$h$', r'$w_0$', r'$w_a$']
+
+# ============================================================
+# Convert covariance matrix to correlation matrix
+# ============================================================
+sigma = np.sqrt(np.diag(cov))
+corr = cov / np.outer(sigma, sigma)
+
+print("\nCorrelation matrix:")
+print(corr)
+
+# ============================================================
+# Plot correlation matrix
+# ============================================================
+fig, ax = plt.subplots(figsize=(7, 6))
+im = ax.imshow(corr, cmap='coolwarm', vmin=-1, vmax=1)
+
+# Axis labels
+ax.set_xticks(np.arange(len(labels)))
+ax.set_yticks(np.arange(len(labels)))
+
+ax.set_xticklabels(labels, fontsize=14, rotation=45, ha='right')
+ax.set_yticklabels(labels, fontsize=14)
+
+# Write correlation values inside cells
+for i in range(corr.shape[0]):
+    for j in range(corr.shape[1]):
+        ax.text(
+            j, i,
+            f"{corr[i, j]:.2f}",
+            ha='center',
+            va='center',
+            fontsize=11,
+            color='black'
+        )
+
+# Colorbar
+cbar = fig.colorbar(im, ax=ax, shrink=0.90,pad=0.04)
+cbar.set_label('Correlation Coefficient', fontsize=14)
+plt.tight_layout()
+
+# Save figure
+plt.savefig("JBP_correlation_matrix.png", dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+![Figure](/assets/img/JBP_correlation_matrix.png){: .mx-auto.d-block }
+
+The diagonal elements of the covariance matrix correspond to the variances of the parameters, while the off-diagonal elements quantify correlations between different parameters. Positive values indicate correlated parameters, whereas negative values indicate anti-correlations. Converting the covariance matrix to a correlation matrix normalizes these quantities to the interval $[-1,1]$, making the parameter degeneracies easier to visualize and interpret.
 
 
 
