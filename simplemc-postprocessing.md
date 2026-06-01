@@ -168,7 +168,6 @@ The file `*_Summary.txt` contains a concise summary of the nested-sampling run a
 
 ```text
 maxlike: 16.0822
-nlive: 250
 logz: -33.0977 +/- 0.3429
 ```
 
