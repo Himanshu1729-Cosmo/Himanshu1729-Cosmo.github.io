@@ -1,4 +1,4 @@
----
+--------------------------------------
 layout: page
 title: Windows Users
 permalink: /tutorials/cobaya-pro-windows/
@@ -420,4 +420,3 @@ g.export("fig_super.png")
 ```
 ![Figure](/assets/img/fig_super.png){: .mx-auto.d-block }
 
-The next page provides a step-by-step guide for installing Cobaya on macOS (Apple Silicon).
