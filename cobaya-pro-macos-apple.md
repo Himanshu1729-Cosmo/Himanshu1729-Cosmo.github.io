@@ -43,7 +43,7 @@ pip3 --version
 
 The required Python packages such as NumPy, SciPy, Matplotlib, GetDist, MPI4Py, and other dependencies will be installed automatically during the Cobaya installation process described in the following sections.
 
-** 6.a For Apple Silicon Chips **
+** 1.a For Apple Silicon Chips **
 
 ```bash
 mkdir -p ~/miniconda3
@@ -52,15 +52,3 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
-** 6.b For Intel Chips
-
-```bash
-mkdir -p ~/miniconda3
-curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm ~/miniconda3/miniconda.sh
-source ~/miniconda3/bin/activate
-```
-
-Once you have created and activated the Conda environment, please follow the same installation procedure described in Section 1 for Ubuntu.
-
