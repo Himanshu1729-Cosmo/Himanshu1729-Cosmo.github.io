@@ -8,6 +8,12 @@ This page is devoted to the full installation guide for the `SimpleMC` cosmologi
 
 The cosmological models currently implemented in `SimpleMC` mainly focus on dark energy scenarios in which the cosmic expansion history plays the central role. In this tutorial, you will learn how to install `SimpleMC` on Linux-based systems, macOS, and Windows. The guide is written for beginners and includes step-by-step instructions to help you set up a fully working environment for cosmological analyses.
 
+Acknowledgement: This tutorial is based on the publicly available SimpleMC cosmological parameter estimation framework. The original code was developed by J. Alberto Vazquez and Isidro Gómez-Vargas. Readers are encouraged to consult the official repository and documentation for the latest updates, examples, and advanced features.
+
+Original Repository: https://github.com/ja-vazquez/SimpleMC
+
+Official Documentation: https://igomezv.github.io/SimpleMC/index.html
+
 First, the computer needs to install essential libraries and compilers.  
 
 ### 1. Ubuntu
