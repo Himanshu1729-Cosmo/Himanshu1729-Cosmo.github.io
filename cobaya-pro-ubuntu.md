@@ -45,7 +45,7 @@ conda activate cobaya_env
 
 In this tutorial, however, we will proceed with the installation in the base environment for simplicity. Users who prefer an isolated setup can simply activate their custom environment before following the remaining installation steps.
 
-### 1.a Cobaya Installation
+### 2. Cobaya Installation
 
 We begin by installing the required dependencies and the latest version of **Cobaya**. First, upgrade `pip`, install the MPI libraries (`OpenMPI` and `mpi4py`), and then install Cobaya:
 
@@ -68,7 +68,7 @@ mkdir ~/cobaya
 cd ~/cobaya
 ```
 
-### 1.b Installing Cosmological Theory Codes and Likelihoods
+### 3. Installing Cosmological Theory Codes and Likelihoods
 
 Once the working directory has been created, install the cosmological theory codes and likelihood packages used by Cobaya:
 
