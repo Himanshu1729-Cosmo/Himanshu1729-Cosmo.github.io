@@ -10,9 +10,9 @@ The cosmological models currently implemented in `SimpleMC` mainly focus on dark
 
 Acknowledgement: This tutorial is based on the publicly available SimpleMC cosmological parameter estimation framework. The original code was developed by J. Alberto Vazquez and Isidro Gómez-Vargas. Readers are encouraged to consult the official repository and documentation for the latest updates, examples, and advanced features.
 
-Original Repository: https://github.com/ja-vazquez/SimpleMC
+**Original Repository:** [SimpleMC GitHub Repository](https://github.com/ja-vazquez/SimpleMC)
 
-Official Documentation: https://igomezv.github.io/SimpleMC/index.html
+**Official Documentation:** [SimpleMC Official Documentation](https://igomezv.github.io/SimpleMC/index.html)
 
 First, the computer needs to install essential libraries and compilers.  
 
