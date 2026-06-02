@@ -45,7 +45,7 @@ sudo apt install build-essential
 sudo apt install openmpi-bin openmpi-doc libopenmpi-dev
 ```
 
-** 3. Install Python and Librareis, We recommd you to install Miniconda for better manage Python evironment.**
+**3. Install Python and Librareis, We recommd you to install Miniconda for better manage Python evironment.**
 
 ```bash
 mkdir -p ~/miniconda3
