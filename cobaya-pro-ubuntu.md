@@ -274,6 +274,8 @@ sampler:
 
 **After saving the `.yaml` file (e.g., `test.yaml`), run:**
 
+### 4. Running Cobaya
+
 ```bash
 cobaya-run test.yaml
 ```
@@ -309,7 +311,7 @@ $$
 w(z) = w_0 + w_a \frac{z}{1+z}.
 $$
 
-**Plotting with GetDist**
+** 5. Plotting with GetDist**
 
 ```python
 %matplotlib inline
