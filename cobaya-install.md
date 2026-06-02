@@ -389,7 +389,7 @@ samples3 = loadMCSamples(file_root=file_root3, settings={'ignore_rows':0.5})
 samples4 = loadMCSamples(file_root=file_root4, settings={'ignore_rows':0.5})
 ```
 
-2D plot
+**2D plot**
 
 ```python
 g2 = plots.get_subplot_plotter(width_inch=5)
@@ -413,7 +413,7 @@ g2d.export("2D.png")
 
 ![Figure](/assets/img/2D.png){: .mx-auto.d-block}
 
-Triangle plot
+**Triangle plot**
 ```python
 g = plots.get_subplot_plotter(width_inch=10)
 g.settings.axes_fontsize = 16
