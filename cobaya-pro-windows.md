@@ -1,8 +1,8 @@
---------------------------------------
+---
 layout: page
 title: Windows Users
 permalink: /tutorials/cobaya-pro-windows/
------------------------------------------
+---
 
 This tutorial is intended for Windows users who wish to install and run Cobaya for cosmological parameter estimation and Bayesian inference. Since most cosmological software packages, including Cobaya, CLASS, and CAMB, are primarily developed and tested in Linux environments, we will use the Windows Subsystem for Linux (WSL) to provide a stable and efficient setup. This guide will walk you through the installation of WSL, the required compilers and libraries, and the complete Cobaya installation process on a Windows machine.
 
