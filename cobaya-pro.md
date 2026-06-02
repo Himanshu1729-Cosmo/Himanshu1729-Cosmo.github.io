@@ -109,7 +109,7 @@ cobaya-cosmo-generator
 
 ![Figure](/assets/img/input.png){: .mx-auto.d-block }
 
-**4. Configuration of the YAML file**
+**2. Configuration of the YAML file**
 
 ```yaml
 theory:
@@ -272,12 +272,12 @@ sampler:
 ```
 ---
 
-**5. After saving the `.yaml` file (e.g., `test.yaml`), run:**
+**3. After saving the `.yaml` file (e.g., `test.yaml`), run:**
 
 ```bash
 cobaya-run test.yaml
 ```
-**6. Output Files**
+**4. Output Files**
 
 **Once the MCMC sampling with Cobaya is completed, the output consists of several files generated using the chosen run name (e.g., `test`). These typically include:**
 
@@ -297,7 +297,7 @@ Each file serves a specific purpose:
 
 This file contains the actual MCMC samples. Inside, you will find multiple columns corresponding to different cosmological parameters (e.g., $H_0$, $\Omega_m$, $\sigma_8$, etc.), along with additional columns such as weights and likelihood values.
 
-**7. Post-processing and Visualization**
+**5. Post-processing and Visualization**
 
 Now, we introduce the main library used for post-processing, namely the **GetDist** package, which is widely used in cosmology. It provides a powerful and flexible framework for processing Monte Carlo chains, computing marginalized constraints, and generating high-quality plots such as one-dimensional distributions and two-dimensional contour (triangle) plots. GetDist is fully compatible with Cobaya outputs and allows efficient handling of large datasets. It also supports derived parameters, parameter transformations, and comparison between different cosmological models or datasets.
 
@@ -309,7 +309,7 @@ $$
 w(z) = w_0 + w_a \frac{z}{1+z}.
 $$
 
-**8. Plotting with GetDist**
+**6. Plotting with GetDist**
 
 ```python
 %matplotlib inline
@@ -397,4 +397,62 @@ g2.add_legend([r'DESI DR2 + CMB',
 g.export("fig_super.png")
 ```
 ![Figure](/assets/img/fig_super.png){: .mx-auto.d-block }
+
+### 6. Installation on macOS
+
+#### Install Homebrew
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+#### Install Required Compilers and Libraries
+
+```bash
+brew install wget
+brew install git
+brew install nano
+brew install lapack
+brew install cfitsio
+brew install open-mpi
+```
+
+macOS includes a built-in Python installation, so in many cases it is not necessary to install Python through Homebrew. However, if you encounter dependency issues or version conflicts, it is recommended to install and use the Homebrew Python distribution.
+
+#### Install Homebrew Python (Optional)
+
+```bash
+brew install python
+python3 -m pip install --upgrade pip
+```
+
+You can verify the installation using
+
+```bash
+python3 --version
+pip3 --version
+```
+
+The required Python packages such as NumPy, SciPy, Matplotlib, GetDist, MPI4Py, and other dependencies will be installed automatically during the Cobaya installation process described in the following sections.
+
+** 6.a For Apple Silicon Chips **
+
+```bash
+mkdir -p ~/miniconda3
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+source ~/miniconda3/bin/activate
+```
+** 6.b For Intel Chips
+
+```bash
+mkdir -p ~/miniconda3
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+source ~/miniconda3/bin/activate
+```
+
+Once you have created and activated the Conda environment, please follow the same installation procedure described in Section 1 for Ubuntu.
 
