@@ -34,29 +34,74 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
 
-### 3. Cobaya
+Before installing **Cobaya**, users may choose whether to install it directly in the **base Conda environment** or create a dedicated environment specifically for Cobaya. Using a separate environment is generally recommended because it helps avoid dependency conflicts with other scientific software.
 
-**Cobaya Library Installation**
+For example, a dedicated environment can be created using:
 
 ```bash
-pip3 install cobaya
+conda create -n cobaya_env python=3.10 -y
+conda activate cobaya_env
 ```
-**Cosmological theory codes and likelihoods. ⚠️ You need to replace `<path/to/your/directory>` by your istalled directory path such as `/home/if01/`**
+
+In this tutorial, however, we will proceed with the installation in the base environment for simplicity. Users who prefer an isolated setup can simply activate their custom environment before following the remaining installation steps.
+
+### 1.a Cobaya Installation
+
+We begin by installing the required dependencies and the latest version of **Cobaya**. First, upgrade `pip`, install the MPI libraries (`OpenMPI` and `mpi4py`), and then install Cobaya:
 
 ```bash
-cobaya-install cosmo -p /path/to/your/directory
+python -m pip install --upgrade pip
+conda install -c conda-forge openmpi mpi4py
+python -m pip install cobaya --upgrade
+```
+
+After the installation is complete, verify that Cobaya has been installed correctly by checking its version:
+
+```bash
+python -c "import cobaya; print(cobaya.__version__)"
+```
+
+If the installation is successful, the command should print the installed Cobaya version without any errors. Next, create a working directory where all Cobaya-related files, chains, and configuration files will be stored:
+
+```bash
+mkdir ~/cobaya
+cd ~/cobaya
+```
+
+### 1.b Installing Cosmological Theory Codes and Likelihoods
+
+Once the working directory has been created, install the cosmological theory codes and likelihood packages used by Cobaya:
+
+```bash
+cobaya-install cosmo -p ~/cobaya
 cobaya-install planck_2018_highl_plik.TTTEEE
 cobaya-install bicep_keck_2018
 ```
 
-You need to place theory codes and likelihoods in the `/path/to/packages` directory, but you can also modified this path to suit on your own machine.\
-If the installation is successful, `code` and `data` directories will be shown on your pc.
+The first command downloads and installs the required cosmological theory codes and supporting packages into the `~/cobaya` directory. The remaining commands install the Planck 2018 high-$\ell$ likelihood and the BICEP/Keck 2018 likelihood.
 
-**Setting Cosmology Run, Creating the input for a realistic cosmological case is quite a bit of work. But to make it simpler, cobaya has created an automatic input generator, that you can run from the shell.**
+After the installation is complete, Cobaya will automatically create directories such as
+
+```text
+~/cobaya/code
+~/cobaya/data
+```
+
+where the external theory codes and likelihood data are stored.
+
+Next, create a directory to store MCMC and nested-sampling chains:
 
 ```bash
-python3 -m pip install PySide6
+mkdir ~/cobaya/chains
 ```
+
+For users who wish to use the Cobaya graphical interface, install the required Qt package:
+
+```bash
+python -m pip install PySide6
+```
+
+You can then launch the graphical interface with
 
 ```bash
 cobaya-cosmo-generator
