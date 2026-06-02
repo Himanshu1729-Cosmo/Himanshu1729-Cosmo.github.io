@@ -53,6 +53,16 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
 
+**For Intel Chips
+
+```bash
+mkdir -p ~/miniconda3
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+source ~/miniconda3/bin/activate
+```
+
 Before installing **Cobaya**, users may choose whether to install it directly in the **base Conda environment** or create a dedicated environment specifically for Cobaya. Using a separate environment is generally recommended because it helps avoid dependency conflicts with other scientific software.
 
 For example, a dedicated environment can be created using:
