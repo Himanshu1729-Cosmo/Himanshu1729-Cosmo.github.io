@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ubuntu Users
-permalink: /tutorials/cobaya-pro/cobaya-pro-ubuntu/
+permalink: /tutorials/cobaya-pro-ubuntu/
 ---
 
 This tutorial is intended for users who already have some experience with MCMC analyses and computational cosmology. In particular, readers should be familiar with the main cosmological datasets commonly used in parameter estimation, such as Baryon Acoustic Oscillations (BAO), Type Ia Supernovae (SNe Ia), and the Cosmic Microwave Background (CMB), as well as the construction and interpretation of likelihood functions. It is particularly suitable for researchers and graduate students who are comfortable using the Linux/macOS terminal, Python environments, Visual Studio Code, and scientific programming languages such as C, C++, and Fortran. Familiarity with software compilation, package management, virtual environments, and troubleshooting installation issues is also recommended.
