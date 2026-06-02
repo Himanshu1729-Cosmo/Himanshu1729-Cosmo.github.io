@@ -1,3 +1,11 @@
+---
+layout: page
+title: macOS Users
+permalink: /tutorials/cobaya-pro-macos-apple/
+---
+
+This page is devoted to **macOS users with Apple Silicon chips (M1, M2, M3, and M4)**. In this tutorial, we will provide a step-by-step guide for installing **Cobaya** and its required dependencies on Apple Silicon-based Mac systems. The instructions are intended for advanced users who wish to build a fully functional environment for cosmological parameter estimation and Bayesian inference using Cobaya.
+
 ### 1. Installation on macOS
 
 #### Install Homebrew
