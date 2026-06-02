@@ -89,7 +89,7 @@ mkdir ~/cobaya
 cd ~/cobaya
 ```
 
-### 4.a Installing Cosmological Theory Codes and Likelihoods
+### 5. Installing Cosmological Theory Codes and Likelihoods
 
 Once the working directory has been created, install the cosmological theory codes and likelihood packages used by Cobaya:
 
