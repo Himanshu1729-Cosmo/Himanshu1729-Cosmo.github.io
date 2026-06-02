@@ -34,7 +34,7 @@ brew install python
 python3 -m pip install --upgrade pip
 ```
 
-You can verify the installation using
+**You can verify the installation using**
 
 ```bash
 python3 --version
@@ -43,7 +43,7 @@ pip3 --version
 
 The required Python packages such as NumPy, SciPy, Matplotlib, GetDist, MPI4Py, and other dependencies will be installed automatically during the Cobaya installation process described in the following sections.
 
-** 1.a For Apple Silicon Chips **
+**For Apple Silicon Chips**
 
 ```bash
 mkdir -p ~/miniconda3
