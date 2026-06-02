@@ -311,7 +311,7 @@ $$
 w(z) = w_0 + w_a \frac{z}{1+z}.
 $$
 
-### 5. Plotting with GetDist**
+### 5. Plotting with GetDist
 
 ```python
 %matplotlib inline
