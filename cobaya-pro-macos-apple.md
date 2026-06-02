@@ -53,7 +53,7 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
 
-**For Intel Chips
+**For Intel Chips**
 
 ```bash
 mkdir -p ~/miniconda3
