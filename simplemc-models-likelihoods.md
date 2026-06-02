@@ -8,7 +8,7 @@ This page is devoted to understanding the internal structure of `SimpleMC` and l
 
 The diagram below is adapted from the original SimpleMC documentation by Isidro Gómez-Vargas and J. Alberto Vazquez.
 
-Source: https://igomezv.github.io/SimpleMC/structure.html
+Source: [SimpleMC Structure Diagram](https://igomezv.github.io/SimpleMC/structure.html)
 
 ![Figure](/assets/img/simplemc.png){: .mx-auto.d-block }
 
