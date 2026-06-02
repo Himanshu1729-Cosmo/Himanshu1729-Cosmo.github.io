@@ -6,6 +6,10 @@ permalink: /tutorials/simplemc-models-likelihoods/
 
 This page is devoted to understanding the internal structure of `SimpleMC` and learning how to extend the code by implementing new cosmological models and likelihoods. In particular, we will focus on how to add a new dark energy parametrization within the `SimpleMC` framework and connect it with cosmological datasets through custom likelihood modules.
 
+The diagram below is adapted from the original SimpleMC documentation by Isidro Gómez-Vargas and J. Alberto Vazquez.
+
+Source: https://igomezv.github.io/SimpleMC/structure.html
+
 ![Figure](/assets/img/simplemc.png){: .mx-auto.d-block }
 
 ### 1. Structure of `SimpleMC`
