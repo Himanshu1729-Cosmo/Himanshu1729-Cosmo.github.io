@@ -74,7 +74,7 @@ conda activate cobaya_env
 
 In this tutorial, however, we will proceed with the installation in the base environment for simplicity. Users who prefer an isolated setup can simply activate their custom environment before following the remaining installation steps.
 
-### 1.a Cobaya Installation
+### 2. Cobaya Installation
 
 We begin by installing the required dependencies and the latest version of **Cobaya**. First, upgrade `pip`, install the MPI libraries (`OpenMPI` and `mpi4py`), and then install Cobaya:
 
@@ -97,7 +97,7 @@ mkdir ~/cobaya
 cd ~/cobaya
 ```
 
-### 1.b Installing Cosmological Theory Codes and Likelihoods
+### 3. Installing Cosmological Theory Codes and Likelihoods
 
 Once the working directory has been created, install the cosmological theory codes and likelihood packages used by Cobaya:
 
@@ -303,6 +303,8 @@ sampler:
 
 **After saving the `.yaml` file (e.g., `test.yaml`), run:**
 
+### 4. Running Cobaya
+
 ```bash
 cobaya-run test.yaml
 ```
@@ -326,7 +328,7 @@ Each file serves a specific purpose:
 
 This file contains the actual MCMC samples. Inside, you will find multiple columns corresponding to different cosmological parameters (e.g., $H_0$, $\Omega_m$, $\sigma_8$, etc.), along with additional columns such as weights and likelihood values.
 
-**Post-processing and Visualization**
+### 5. Post-processing and Visualization**
 
 Now, we introduce the main library used for post-processing, namely the **GetDist** package, which is widely used in cosmology. It provides a powerful and flexible framework for processing Monte Carlo chains, computing marginalized constraints, and generating high-quality plots such as one-dimensional distributions and two-dimensional contour (triangle) plots. GetDist is fully compatible with Cobaya outputs and allows efficient handling of large datasets. It also supports derived parameters, parameter transformations, and comparison between different cosmological models or datasets.
 
