@@ -180,8 +180,6 @@ layout: page
 
 <div class="name">
 
-<div class="about-title">About Me</div>
-
 <div class="about">
 
 Himanshu Chaudhary is a PhD researcher at Babeș-Bolyai University,
