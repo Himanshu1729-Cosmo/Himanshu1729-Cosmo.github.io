@@ -10,41 +10,15 @@ layout: page
 }
 
 .header{
-    display:flex;
-    align-items:center;
-    gap:35px;
     border-bottom:3px solid #d89a00;
     padding-bottom:25px;
 }
 
-.profile-img{
-    width:180px;
-    height:180px;
-    object-fit:cover;
-    border-radius:50%;
-    border:3px solid #d89a00;
-}
-
-.name{ flex:1; }
-
-.name h1{
-    font-size:60px;
-    color:#08245a;
-    margin:0;
-    font-weight:800;
-}
-
-.name h2{
-    color:#c07a00;
-    margin:5px 0 20px 0;
-    font-size:30px;
-}
-
 .about-title{
-    font-size:26px;
+    font-size:30px;
     font-weight:800;
     color:#08245a;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
 .about{
@@ -95,9 +69,29 @@ layout: page
     font-weight:bold;
 }
 
+.pie-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:25px 0;
+}
+
+.pie-area svg{
+    max-width:430px;
+    width:100%;
+    height:auto;
+}
+
+.journal-list{
+    columns:2;
+    column-gap:30px;
+    margin-top:20px;
+}
+
 .journal-list li{
     margin-bottom:7px;
     font-size:16px;
+    break-inside:avoid;
 }
 
 .metric-box{
@@ -144,17 +138,12 @@ layout: page
 }
 
 @media(max-width:900px){
-    .header{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .name h1{
-        font-size:42px;
-    }
-
     .content{
         grid-template-columns:1fr;
+    }
+
+    .journal-list{
+        columns:1;
     }
 
     .metric-box{
@@ -178,7 +167,7 @@ layout: page
 
 <div class="header">
 
-<div class="name">
+<div class="about-title">About Me</div>
 
 <div class="about">
 
@@ -190,11 +179,15 @@ datasets, including the Cosmic Microwave Background (CMB), Type Ia
 Supernovae, Baryon Acoustic Oscillations (BAO), and gravitational
 lensing probes.
 
+<br><br>
+
 His current research is primarily dedicated to investigating the
 implications of recent DESI results and the impact of strong progenitor
 age bias in supernova cosmology. In particular, he aims to understand
 how these effects influence cosmological parameter estimation and
 whether they indicate deviations from the standard ΛCDM model.
+
+<br><br>
 
 In astrophysics, he works on ray-tracing of photons around compact
 objects, including black holes, and studies black hole shadows,
@@ -212,8 +205,6 @@ For collaborations, projects, or academic opportunities, please
 
 </div>
 
-</div>
-
 <div class="content">
 
 <div>
@@ -225,39 +216,37 @@ For collaborations, projects, or academic opportunities, please
 <p>Published</p>
 </div>
 
-<div style="
-background:red;
-height:300px;
-width:300px;
-margin:auto;">
+<div class="pie-area">
+
+<svg viewBox="0 0 42 42">
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#08245a" stroke-width="6" stroke-dasharray="16.42 83.58" stroke-dashoffset="25"></circle>
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#ff8800" stroke-width="6" stroke-dasharray="16.42 83.58" stroke-dashoffset="8.58"></circle>
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#39a935" stroke-width="6" stroke-dasharray="11.94 88.06" stroke-dashoffset="-7.84"></circle>
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#6b46c1" stroke-width="6" stroke-dasharray="7.46 92.54" stroke-dashoffset="-19.78"></circle>
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#008080" stroke-width="6" stroke-dasharray="5.97 94.03" stroke-dashoffset="-27.24"></circle>
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#ff6a00" stroke-width="6" stroke-dasharray="4.48 95.52" stroke-dashoffset="-33.21"></circle>
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#3559d5" stroke-width="6" stroke-dasharray="4.48 95.52" stroke-dashoffset="-37.69"></circle>
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#6f2c8f" stroke-width="6" stroke-dasharray="4.48 95.52" stroke-dashoffset="-42.17"></circle>
+<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#999999" stroke-width="6" stroke-dasharray="28.35 71.65" stroke-dashoffset="-46.65"></circle>
+<text x="21" y="19" text-anchor="middle" font-size="5" fill="#08245a" font-weight="bold">67</text>
+<text x="21" y="24" text-anchor="middle" font-size="3" fill="#08245a">Publications</text>
+</svg>
+
 </div>
-
-
-<div>
 
 <h3>Journal Distribution</h3>
 
 <ul class="journal-list">
-<li>The European Physical Journal C (11)</li>
-<li>Journal of High Energy Astrophysics (11)</li>
-<li>Physics of the Dark Universe (8)</li>
-<li>International Journal of Geometric Methods in Modern Physics (5)</li>
-<li>Nuclear Physics B (4)</li>
-<li>Fortschritte der Physik (3)</li>
-<li>Chinese Physics C (3)</li>
-<li>Universe (3)</li>
-<li>Physica Scripta (2)</li>
-<li>General Relativity and Gravitation (2)</li>
-<li>The European Physical Journal Plus (2)</li>
-<li>Modern Physics Letters A (2)</li>
-<li>Annalen der Physik (2)</li>
-<li>The Astrophysical Journal Supplement Series (2)</li>
-<li>Other Journals (8)</li>
+<li><span style="color:#08245a;">■</span> EPJC (11)</li>
+<li><span style="color:#ff8800;">■</span> JHEAp (11)</li>
+<li><span style="color:#39a935;">■</span> PDU (8)</li>
+<li><span style="color:#6b46c1;">■</span> IJGMMP (5)</li>
+<li><span style="color:#008080;">■</span> Nuclear Physics B (4)</li>
+<li><span style="color:#ff6a00;">■</span> Fortschritte der Physik (3)</li>
+<li><span style="color:#3559d5;">■</span> Chinese Physics C (3)</li>
+<li><span style="color:#6f2c8f;">■</span> Universe (3)</li>
+<li><span style="color:#999999;">■</span> Other Journals (19)</li>
 </ul>
-
-</div>
-
-</div>
 
 <div class="metric-box">
 
