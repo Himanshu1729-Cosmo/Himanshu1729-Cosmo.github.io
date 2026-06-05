@@ -1,159 +1,209 @@
 ---
 layout: page
-title: About Me
+title: CV
 ---
 
 <style>
-.cv-wrap{
-  font-family: Arial, sans-serif;
-  color:#061b49;
+
+.cv-container{
+    max-width:1400px;
+    margin:auto;
 }
-.cv-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:3px solid #d99000;
-  padding-bottom:25px;
-  margin-bottom:25px;
+
+.header{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    border-bottom:3px solid #d89a00;
+    padding-bottom:20px;
 }
-.cv-name h1{
-  font-size:48px;
-  margin:0;
-  color:#061b49;
+
+.profile-img{
+    width:180px;
+    border-radius:50%;
+    border:3px solid #d89a00;
 }
-.cv-name h2{
-  margin:5px 0;
-  color:#c47a00;
+
+.name{
+    flex:1;
 }
-.cv-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:40px;
+
+.name h1{
+    font-size:60px;
+    color:#08245a;
+    margin:0;
 }
-.cv-card{
-  background:#fff;
-  border:1px solid #e2cfae;
-  border-radius:14px;
-  padding:25px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.06);
-  margin-bottom:25px;
+
+.name h2{
+    color:#c07a00;
+    margin:0;
 }
-.cv-title{
-  font-size:26px;
-  font-weight:700;
-  color:#061b49;
-  border-bottom:2px solid #d99000;
-  padding-bottom:8px;
-  margin-bottom:20px;
+
+.about{
+    margin-top:15px;
+    font-size:18px;
+    line-height:1.7;
 }
-.cv-item{
-  margin-bottom:22px;
+
+.content{
+    display:grid;
+    grid-template-columns:60% 40%;
+    gap:40px;
+    margin-top:40px;
 }
-.cv-item h3{
-  margin:0;
-  font-size:21px;
-  color:#061b49;
+
+.section-title{
+    font-size:32px;
+    color:#08245a;
+    border-bottom:2px solid #d89a00;
+    padding-bottom:10px;
+    margin-bottom:20px;
 }
-.cv-item span{
-  color:#d98000;
-  font-weight:600;
+
+.metric-box{
+    display:flex;
+    justify-content:space-around;
+    margin-top:30px;
+    text-align:center;
 }
-.cv-item p{
-  margin:6px 0 0;
-  color:#061b49;
+
+.metric{
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    width:30%;
 }
-.skill-list li{
-  margin-bottom:8px;
+
+.metric h2{
+    color:#08245a;
+    margin:0;
 }
-@media(max-width:800px){
-  .cv-grid{grid-template-columns:1fr;}
-  .cv-header{flex-direction:column; align-items:flex-start;}
-  .cv-name h1{font-size:36px;}
+
+.education-item{
+    margin-bottom:40px;
+    border-left:4px solid #d89a00;
+    padding-left:20px;
 }
+
+.education-item h3{
+    margin-bottom:5px;
+    color:#08245a;
+}
+
+.year{
+    color:#c07a00;
+    font-weight:bold;
+}
+
 </style>
 
-<div class="cv-wrap">
+<div class="cv-container">
 
-<div class="cv-header">
-  <div class="cv-name">
-    <h1>Himanshu Chaudhary</h1>
-    <h2>PhD Student</h2>
-    <p>
-      Faculty of Physics<br>
-      Universitatea Babeș-Bolyai din Cluj-Napoca, România
-    </p>
-  </div>
+<div class="header">
+
+<img src="/assets/images/profile.jpg" class="profile-img">
+
+<div class="name">
+
+<h1>Himanshu Chaudhary</h1>
+
+<h2>PhD Student in Physics</h2>
+
+<div class="about">
+
+I am a PhD student at the Faculty of Physics,
+Babeș-Bolyai University, Romania. My research focuses on
+cosmology, dark energy, modified gravity, cosmological
+parameter estimation, Bayesian inference, and observational
+constraints using CMB, BAO, Supernovae, and large-scale
+structure data.
+
 </div>
 
-<div class="cv-grid">
+</div>
+
+</div>
+
+<div class="content">
+
+<!-- LEFT COLUMN -->
 
 <div>
 
-<div class="cv-card">
-<div class="cv-title">Education</div>
+<h2 class="section-title">Research Publications</h2>
 
-<div class="cv-item">
-<h3>Doctor of Philosophy (PhD) in Physics</h3>
-<span>2024 – Present</span>
-<p>Babeș-Bolyai University, Cluj-Napoca, Romania</p>
+<h3>Total Publications: 67</h3>
+
+<img src="/assets/images/publication_piechart.png"
+     style="width:100%;max-width:700px;">
+
+<h3>Journal Distribution</h3>
+
+<ul>
+<li>The European Physical Journal C (11)</li>
+<li>Journal of High Energy Astrophysics (11)</li>
+<li>Physics of the Dark Universe (8)</li>
+<li>IJGMMP (5)</li>
+<li>Nuclear Physics B (4)</li>
+<li>Fortschritte der Physik (3)</li>
+<li>Chinese Physics C (3)</li>
+<li>Universe (3)</li>
+<li>and others...</li>
+</ul>
+
+<div class="metric-box">
+
+<div class="metric">
+<h2>1164</h2>
+Citations
 </div>
 
-<div class="cv-item">
-<h3>Master of Science (M.Sc.) in Applied Mathematics</h3>
-<span>2021 – 2023</span>
-<p>Delhi Technological University, India</p>
+<div class="metric">
+<h2>21</h2>
+h-index
 </div>
 
-<div class="cv-item">
-<h3>Bachelor of Education (B.Ed.)</h3>
-<span>2019 – 2021</span>
-<p>Guru Ram Dass College of Education, India</p>
-</div>
-
-<div class="cv-item">
-<h3>Bachelor of Science (B.Sc.) in Physical Sciences</h3>
-<span>2016 – 2019</span>
-<p>Shyam Lal College, University of Delhi, India</p>
+<div class="metric">
+<h2>37</h2>
+i10-index
 </div>
 
 </div>
 
 </div>
+
+<!-- RIGHT COLUMN -->
 
 <div>
 
-<div class="cv-card">
-<div class="cv-title">Computer Skills</div>
+<h2 class="section-title">Education</h2>
 
-<h3>Skills</h3>
-<ul class="skill-list">
-<li>Microsoft Office: Word, Excel, PowerPoint</li>
-<li>Operating Systems: Windows, macOS, Linux</li>
-<li>Typesetting: LaTeX</li>
-</ul>
+<div class="education-item">
+<h3>PhD in Physics</h3>
+<div class="year">2024 – Present</div>
+Babeș-Bolyai University, Romania
+</div>
 
-<h3>Programming</h3>
-<ul class="skill-list">
-<li>Python: scientific computing, data analysis, MCMC pipelines</li>
-<li>C, C++, Fortran</li>
-<li>Mathematica</li>
-</ul>
+<div class="education-item">
+<h3>M.Sc. Applied Mathematics</h3>
+<div class="year">2021 – 2023</div>
+Delhi Technological University, India
+</div>
 
-<h3>Cosmology and Astrophysics Tools</h3>
-<ul class="skill-list">
-<li>Cobaya</li>
-<li>SimpleMC</li>
-<li>CosmoSIS</li>
-<li>CAMB / CLASS</li>
-<li>GetDist</li>
-<li>Pytearcat</li>
-<li>GADGET</li>
-<li>L-PICOLA</li>
-</ul>
+<div class="education-item">
+<h3>B.Ed.</h3>
+<div class="year">2019 – 2021</div>
+Guru Ram Dass College of Education, India
+</div>
 
+<div class="education-item">
+<h3>B.Sc. Physical Sciences</h3>
+<div class="year">2016 – 2019</div>
+University of Delhi, India
 </div>
 
 </div>
 
 </div>
+
 </div>
