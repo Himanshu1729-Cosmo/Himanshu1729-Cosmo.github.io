@@ -225,11 +225,6 @@ For collaborations, projects, or academic opportunities, please
 <p>Published</p>
 </div>
 
-<div style="display:grid;
-            grid-template-columns:45% 55%;
-            gap:25px;
-            align-items:start;">
-
 <div>
 
 <img src="/assets/images/publication_piechart.png"
@@ -265,26 +260,6 @@ For collaborations, projects, or academic opportunities, please
 </div>
 
 </div>
-
-<h3>Journal Distribution</h3>
-
-<ul class="journal-list">
-<li>The European Physical Journal C (11)</li>
-<li>Journal of High Energy Astrophysics (11)</li>
-<li>Physics of the Dark Universe (8)</li>
-<li>International Journal of Geometric Methods in Modern Physics (5)</li>
-<li>Nuclear Physics B (4)</li>
-<li>Fortschritte der Physik (3)</li>
-<li>Chinese Physics C (3)</li>
-<li>Universe (3)</li>
-<li>Physica Scripta (2)</li>
-<li>General Relativity and Gravitation (2)</li>
-<li>The European Physical Journal Plus (2)</li>
-<li>Modern Physics Letters A (2)</li>
-<li>Annalen der Physik (2)</li>
-<li>The Astrophysical Journal Supplement Series (2)</li>
-<li>Other journals (8)</li>
-</ul>
 
 <div class="metric-box">
 
