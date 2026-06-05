@@ -139,38 +139,38 @@ layout: page
 
 .publication-layout{
     display:grid;
-    grid-template-columns:42% 58%;
+    grid-template-columns:45% 55%;
     gap:20px;
     align-items:start;
-    margin-top:15px;
-}
-
-#publicationChart{
-    width:100%;
-    max-width:420px;
-    margin:auto;
-    display:block;
+    margin-top:20px;
 }
 
 .pie-column{
-    max-width:520px;
+    text-align:center;
+}
+
+#publicationChart{
+    max-width:420px;
+    width:100%;
     margin:auto;
 }
 
 .legend-column{
-    padding-top:10px;
+    padding-top:0;
 }
 
 .journal-list{
     list-style:none;
-    padding-left:0;
+    padding:0;
     margin:0;
+    columns:1;
 }
 
 .journal-list li{
+    font-size:17px;
     margin-bottom:10px;
-    font-size:18px;
-}    
+    line-height:1.4;
+}
     
 @media(max-width:900px){
     .content{
@@ -262,9 +262,9 @@ For collaborations, projects, or academic opportunities, please
 <div class="legend-column">
 
 <ul class="journal-list">
-<li><span style="color:#08245a;">■</span> The European Physical Journal C (11)</li>
-<li><span style="color:#ff8800;">■</span> Journal of High Energy Astrophysics (11)</li>
-<li><span style="color:#39a935;">■</span> Physics of the Dark Universe (8)</li>
+<li><span style="color:#08245a;">■</span> EPJC (11)</li>
+<li><span style="color:#ff8800;">■</span> JHEAp (11)</li>
+<li><span style="color:#39a935;">■</span> PDU (8)</li>
 <li><span style="color:#6b46c1;">■</span> IJGMMP (5)</li>
 <li><span style="color:#008080;">■</span> Nuclear Physics B (4)</li>
 <li><span style="color:#ff6a00;">■</span> Fortschritte der Physik (3)</li>
