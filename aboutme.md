@@ -212,41 +212,97 @@ For collaborations, projects, or academic opportunities, please
 <h2 class="section-title">Research Publications</h2>
 
 <div class="pub-number">
-<h2>67</h2>
-<p>Published</p>
+    <h2>67</h2>
+    <p>Published</p>
 </div>
 
-<div class="pie-area">
-
-<svg viewBox="0 0 42 42">
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#08245a" stroke-width="6" stroke-dasharray="16.42 83.58" stroke-dashoffset="25"></circle>
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#ff8800" stroke-width="6" stroke-dasharray="16.42 83.58" stroke-dashoffset="8.58"></circle>
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#39a935" stroke-width="6" stroke-dasharray="11.94 88.06" stroke-dashoffset="-7.84"></circle>
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#6b46c1" stroke-width="6" stroke-dasharray="7.46 92.54" stroke-dashoffset="-19.78"></circle>
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#008080" stroke-width="6" stroke-dasharray="5.97 94.03" stroke-dashoffset="-27.24"></circle>
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#ff6a00" stroke-width="6" stroke-dasharray="4.48 95.52" stroke-dashoffset="-33.21"></circle>
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#3559d5" stroke-width="6" stroke-dasharray="4.48 95.52" stroke-dashoffset="-37.69"></circle>
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#6f2c8f" stroke-width="6" stroke-dasharray="4.48 95.52" stroke-dashoffset="-42.17"></circle>
-<circle r="15.915" cx="21" cy="21" fill="transparent" stroke="#999999" stroke-width="6" stroke-dasharray="28.35 71.65" stroke-dashoffset="-46.65"></circle>
-<text x="21" y="19" text-anchor="middle" font-size="5" fill="#08245a" font-weight="bold">67</text>
-<text x="21" y="24" text-anchor="middle" font-size="3" fill="#08245a">Publications</text>
-</svg>
-
+<div style="max-width:900px;margin:auto;">
+    <canvas id="publicationChart"></canvas>
 </div>
 
-<h3>Journal Distribution</h3>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
-<ul class="journal-list">
-<li><span style="color:#08245a;">■</span> EPJC (11)</li>
-<li><span style="color:#ff8800;">■</span> JHEAp (11)</li>
-<li><span style="color:#39a935;">■</span> PDU (8)</li>
-<li><span style="color:#6b46c1;">■</span> IJGMMP (5)</li>
-<li><span style="color:#008080;">■</span> Nuclear Physics B (4)</li>
-<li><span style="color:#ff6a00;">■</span> Fortschritte der Physik (3)</li>
-<li><span style="color:#3559d5;">■</span> Chinese Physics C (3)</li>
-<li><span style="color:#6f2c8f;">■</span> Universe (3)</li>
-<li><span style="color:#999999;">■</span> Other Journals (19)</li>
-</ul>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+Chart.register(ChartDataLabels);
+
+const ctx = document.getElementById('publicationChart');
+
+new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: [
+            'The European Physical Journal C (11)',
+            'Journal of High Energy Astrophysics (11)',
+            'Physics of the Dark Universe (8)',
+            'IJGMMP (5)',
+            'Nuclear Physics B (4)',
+            'Fortschritte der Physik (3)',
+            'Chinese Physics C (3)',
+            'Universe (3)',
+            'Physica Scripta (2)',
+            'GRG (2)',
+            'EPJP (2)',
+            'MPLA (2)',
+            'Annalen der Physik (2)',
+            'ApJS (2)',
+            'Others (7)'
+        ],
+        datasets: [{
+            data: [11,11,8,5,4,3,3,3,2,2,2,2,2,2,7],
+            backgroundColor: [
+                '#08245a',
+                '#ff8800',
+                '#39a935',
+                '#6b46c1',
+                '#008080',
+                '#ff6a00',
+                '#3559d5',
+                '#6f2c8f',
+                '#d38b11',
+                '#1380a1',
+                '#2d49b8',
+                '#9cb300',
+                '#e64b2c',
+                '#7d3c98',
+                '#666666'
+            ],
+            borderColor:'#ffffff',
+            borderWidth:2
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{
+                position:'right',
+                labels:{
+                    boxWidth:15,
+                    font:{
+                        size:14
+                    }
+                }
+            },
+            datalabels:{
+                color:'#ffffff',
+                font:{
+                    weight:'bold',
+                    size:18
+                },
+                formatter:(value,ctx)=>{
+                    const total = ctx.dataset.data.reduce((a,b)=>a+b,0);
+                    const p = value*100/total;
+                    return p >= 3 ? p.toFixed(1)+'%' : '';
+                }
+            }
+        }
+    }
+});
+
+});
+</script>
 
 <div class="metric-box">
 
