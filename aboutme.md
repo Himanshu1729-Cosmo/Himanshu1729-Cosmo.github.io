@@ -225,15 +225,13 @@ For collaborations, projects, or academic opportunities, please
 <p>Published</p>
 </div>
 
-<div>
-
-<img src="/assets/images/publication_piechart.png"
-     style="width:100%;
-            max-width:500px;
-            display:block;
-            margin:auto;">
-
+<div style="
+background:red;
+height:300px;
+width:300px;
+margin:auto;">
 </div>
+
 
 <div>
 
