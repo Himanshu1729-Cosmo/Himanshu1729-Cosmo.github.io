@@ -225,8 +225,74 @@ For collaborations, projects, or academic opportunities, please
 <p>Published</p>
 </div>
 
-<img src="/assets/images/publication_piechart.png"
-     style="width:100%;max-width:700px;">
+<div style="max-width:650px;margin:auto;">
+    <canvas id="publicationChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('publicationChart');
+
+new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: [
+            'EPJC (11)',
+            'JHEAp (11)',
+            'PDU (8)',
+            'IJGMMP (5)',
+            'Nuclear Physics B (4)',
+            'Fortschritte der Physik (3)',
+            'Chinese Physics C (3)',
+            'Universe (3)',
+            'Physica Scripta (2)',
+            'GRG (2)',
+            'EPJP (2)',
+            'MPLA (2)',
+            'Annalen der Physik (2)',
+            'ApJS (2)',
+            'Others (8)'
+        ],
+        datasets: [{
+            data: [11,11,8,5,4,3,3,3,2,2,2,2,2,2,8],
+            backgroundColor: [
+                '#08245a',
+                '#ff8800',
+                '#39a935',
+                '#6b46c1',
+                '#008080',
+                '#ff6a00',
+                '#3559d5',
+                '#6f2c8f',
+                '#d38b11',
+                '#1380a1',
+                '#2d49b8',
+                '#9cb300',
+                '#e64b2c',
+                '#7d3c98',
+                '#999999'
+            ],
+            borderColor:'#ffffff',
+            borderWidth:2
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{
+                position:'right',
+                labels:{
+                    font:{
+                        size:14
+                    }
+                }
+            }
+        }
+    }
+});
+</script>
+
 
 <h3>Journal Distribution</h3>
 
