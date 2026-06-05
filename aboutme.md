@@ -3,48 +3,157 @@ layout: page
 title: About Me
 ---
 
-### Himanshu Chaudhary
+<style>
+.cv-wrap{
+  font-family: Arial, sans-serif;
+  color:#061b49;
+}
+.cv-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:3px solid #d99000;
+  padding-bottom:25px;
+  margin-bottom:25px;
+}
+.cv-name h1{
+  font-size:48px;
+  margin:0;
+  color:#061b49;
+}
+.cv-name h2{
+  margin:5px 0;
+  color:#c47a00;
+}
+.cv-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:40px;
+}
+.cv-card{
+  background:#fff;
+  border:1px solid #e2cfae;
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.06);
+  margin-bottom:25px;
+}
+.cv-title{
+  font-size:26px;
+  font-weight:700;
+  color:#061b49;
+  border-bottom:2px solid #d99000;
+  padding-bottom:8px;
+  margin-bottom:20px;
+}
+.cv-item{
+  margin-bottom:22px;
+}
+.cv-item h3{
+  margin:0;
+  font-size:21px;
+  color:#061b49;
+}
+.cv-item span{
+  color:#d98000;
+  font-weight:600;
+}
+.cv-item p{
+  margin:6px 0 0;
+  color:#061b49;
+}
+.skill-list li{
+  margin-bottom:8px;
+}
+@media(max-width:800px){
+  .cv-grid{grid-template-columns:1fr;}
+  .cv-header{flex-direction:column; align-items:flex-start;}
+  .cv-name h1{font-size:36px;}
+}
+</style>
 
-Himanshu Chaudhary is a PhD researcher at Babeș-Bolyai University, Cluj-Napoca, Romania. His research focuses on understanding the nature of dark energy and its role in the evolution of the Universe. He works on constraining different dark energy models using a combination of observational datasets, including the Cosmic Microwave Background (CMB), Type Ia Supernovae, Baryon Acoustic Oscillations (BAO), and gravitational lensing probes (weak and strong lensing). His current research is primarily dedicated to investigating the implications of recent DESI results and the impact of strong progenitor age bias in supernova cosmology. In particular, he aims to understand how these effects influence cosmological parameter estimation and whether they indicate deviations from the standard ΛCDM model.
+<div class="cv-wrap">
 
-In astrophysics, he works on ray-tracing of photons around compact objects, including black holes, and studies black hole shadows, equatorial periodic orbits and their gravitational wave signatures, as well as quasinormal modes.
+<div class="cv-header">
+  <div class="cv-name">
+    <h1>Himanshu Chaudhary</h1>
+    <h2>PhD Student</h2>
+    <p>
+      Faculty of Physics<br>
+      Universitatea Babeș-Bolyai din Cluj-Napoca, România
+    </p>
+  </div>
+</div>
 
-Learn more about my research on [**ResearchGate**](https://www.researchgate.net/profile/Himanshu-Chaudhary-17). For collaborations, projects, or academic opportunities, please [**contact me via email**](mailto:himanshuch1729@gmail.com).
+<div class="cv-grid">
 
---------------------------------------------------------------
-# Education
----
+<div>
 
-- **Doctor of Philosophy (PhD) in Physics** *(2024 – Present)*  
-  Babeș-Bolyai University, Cluj-Napoca, Romania  
+<div class="cv-card">
+<div class="cv-title">Education</div>
 
-- **Master of Science (M.Sc.) in Applied Mathematics** *(2021 – 2023)*  
-  Delhi Technological University, India  
+<div class="cv-item">
+<h3>Doctor of Philosophy (PhD) in Physics</h3>
+<span>2024 – Present</span>
+<p>Babeș-Bolyai University, Cluj-Napoca, Romania</p>
+</div>
 
-- **Bachelor of Education (B.Ed.)** *(2019 – 2021)*  
-  Guru Ram Dass College of Education, India  
+<div class="cv-item">
+<h3>Master of Science (M.Sc.) in Applied Mathematics</h3>
+<span>2021 – 2023</span>
+<p>Delhi Technological University, India</p>
+</div>
 
-- **Bachelor of Science (B.Sc.) in Physical Sciences** *(2016 – 2019)*  
-  Shyam Lal College, University of Delhi, India  
+<div class="cv-item">
+<h3>Bachelor of Education (B.Ed.)</h3>
+<span>2019 – 2021</span>
+<p>Guru Ram Dass College of Education, India</p>
+</div>
 
---------------------------------------------------------------
+<div class="cv-item">
+<h3>Bachelor of Science (B.Sc.) in Physical Sciences</h3>
+<span>2016 – 2019</span>
+<p>Shyam Lal College, University of Delhi, India</p>
+</div>
 
-## General Skills
-- Microsoft Office (Word, Excel, PowerPoint)  
-- Operating Systems: Windows, macOS, Linux  
-- Typesetting: LaTeX  
+</div>
 
-## Programming
-- Python (scientific computing, data analysis, MCMC pipelines)  
-- C, C++, Fortran  
-- Mathematica  
+</div>
 
-## Cosmological and Astrophysical Tools
-- Cobaya (Bayesian inference, MCMC, nested sampling)  
-- SimpleMC (cosmological parameter estimation)  
-- CosmoSIS (modular cosmological pipelines)  
-- CAMB / CLASS (Boltzmann solvers for cosmology)  
-- GetDist (post-processing and visualization)  
-- Pytearcat (tensor algebra computations)  
-- GADGET (cosmological N-body simulations)  
-- L-PICOLA (large-scale structure simulations)
+<div>
+
+<div class="cv-card">
+<div class="cv-title">Computer Skills</div>
+
+<h3>Skills</h3>
+<ul class="skill-list">
+<li>Microsoft Office: Word, Excel, PowerPoint</li>
+<li>Operating Systems: Windows, macOS, Linux</li>
+<li>Typesetting: LaTeX</li>
+</ul>
+
+<h3>Programming</h3>
+<ul class="skill-list">
+<li>Python: scientific computing, data analysis, MCMC pipelines</li>
+<li>C, C++, Fortran</li>
+<li>Mathematica</li>
+</ul>
+
+<h3>Cosmology and Astrophysics Tools</h3>
+<ul class="skill-list">
+<li>Cobaya</li>
+<li>SimpleMC</li>
+<li>CosmoSIS</li>
+<li>CAMB / CLASS</li>
+<li>GetDist</li>
+<li>Pytearcat</li>
+<li>GADGET</li>
+<li>L-PICOLA</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
