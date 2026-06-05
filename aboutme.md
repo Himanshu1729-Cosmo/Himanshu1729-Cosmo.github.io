@@ -21,7 +21,7 @@ Learn more about my research on [**ResearchGate**](https://www.researchgate.net/
 - **Bachelor of Education (B.Ed.)** *(2019 – 2021)*  
   Guru Ram Dass College of Education, India  
 
-- **Bachelor of Science (B.Sc.) in Physical Sciences** *(2016 – 2019)*  
+- **Bachelor of Science (B.Sc.)** *(2016 – 2019)*  
   Shyam Lal College, University of Delhi, India  
 
 --------------------------------------------------------------
