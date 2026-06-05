@@ -1,9 +1,6 @@
 ---
 layout: page
-title: About Me
 ---
-
-### Himanshu Chaudhary
 
 Himanshu Chaudhary is a PhD researcher at Babeș-Bolyai University, Cluj-Napoca, Romania. His research focuses on understanding the nature of dark energy and its role in the evolution of the Universe. He works on constraining different dark energy models using a combination of observational datasets, including the Cosmic Microwave Background (CMB), Type Ia Supernovae, Baryon Acoustic Oscillations (BAO), and gravitational lensing probes (weak and strong lensing). His current research is primarily dedicated to investigating the implications of recent DESI results and the impact of strong progenitor age bias in supernova cosmology. In particular, he aims to understand how these effects influence cosmological parameter estimation and whether they indicate deviations from the standard ΛCDM model.
 
