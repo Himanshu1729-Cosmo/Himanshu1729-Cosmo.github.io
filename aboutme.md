@@ -137,6 +137,41 @@ layout: page
     margin-bottom:8px;
 }
 
+.publication-layout{
+    display:grid;
+    grid-template-columns:42% 58%;
+    gap:20px;
+    align-items:start;
+    margin-top:15px;
+}
+
+#publicationChart{
+    width:100%;
+    max-width:420px;
+    margin:auto;
+    display:block;
+}
+
+.pie-column{
+    max-width:520px;
+    margin:auto;
+}
+
+.legend-column{
+    padding-top:10px;
+}
+
+.journal-list{
+    list-style:none;
+    padding-left:0;
+    margin:0;
+}
+
+.journal-list li{
+    margin-bottom:10px;
+    font-size:18px;
+}    
+    
 @media(max-width:900px){
     .content{
         grid-template-columns:1fr;
@@ -216,17 +251,42 @@ For collaborations, projects, or academic opportunities, please
     <p>Published</p>
 </div>
 
-<div style="max-width:900px;margin:auto;">
-    <canvas id="publicationChart"></canvas>
+<div class="publication-layout">
+
+<div class="pie-column">
+
+<canvas id="publicationChart"></canvas>
+
+</div>
+
+<div class="legend-column">
+
+<ul class="journal-list">
+<li><span style="color:#08245a;">■</span> The European Physical Journal C (11)</li>
+<li><span style="color:#ff8800;">■</span> Journal of High Energy Astrophysics (11)</li>
+<li><span style="color:#39a935;">■</span> Physics of the Dark Universe (8)</li>
+<li><span style="color:#6b46c1;">■</span> IJGMMP (5)</li>
+<li><span style="color:#008080;">■</span> Nuclear Physics B (4)</li>
+<li><span style="color:#ff6a00;">■</span> Fortschritte der Physik (3)</li>
+<li><span style="color:#3559d5;">■</span> Chinese Physics C (3)</li>
+<li><span style="color:#6f2c8f;">■</span> Universe (3)</li>
+<li><span style="color:#d38b11;">■</span> Physica Scripta (2)</li>
+<li><span style="color:#1380a1;">■</span> GRG (2)</li>
+<li><span style="color:#2d49b8;">■</span> EPJP (2)</li>
+<li><span style="color:#9cb300;">■</span> MPLA (2)</li>
+<li><span style="color:#e64b2c;">■</span> Annalen der Physik (2)</li>
+<li><span style="color:#7d3c98;">■</span> ApJS (2)</li>
+<li><span style="color:#666666;">■</span> Others (7)</li>
+</ul>
+
+</div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
-Chart.register(ChartDataLabels);
 
 const ctx = document.getElementById('publicationChart');
 
@@ -234,21 +294,21 @@ new Chart(ctx, {
     type: 'pie',
     data: {
         labels: [
-            'The European Physical Journal C (11)',
-            'Journal of High Energy Astrophysics (11)',
-            'Physics of the Dark Universe (8)',
-            'IJGMMP (5)',
-            'Nuclear Physics B (4)',
-            'Fortschritte der Physik (3)',
-            'Chinese Physics C (3)',
-            'Universe (3)',
-            'Physica Scripta (2)',
-            'GRG (2)',
-            'EPJP (2)',
-            'MPLA (2)',
-            'Annalen der Physik (2)',
-            'ApJS (2)',
-            'Others (7)'
+            'EPJC',
+            'JHEAp',
+            'PDU',
+            'IJGMMP',
+            'NPB',
+            'Fortschritte',
+            'CPC',
+            'Universe',
+            'Physica Scripta',
+            'GRG',
+            'EPJP',
+            'MPLA',
+            'Annalen',
+            'ApJS',
+            'Others'
         ],
         datasets: [{
             data: [11,11,8,5,4,3,3,3,2,2,2,2,2,2,7],
@@ -269,33 +329,15 @@ new Chart(ctx, {
                 '#7d3c98',
                 '#666666'
             ],
-            borderColor:'#ffffff',
-            borderWidth:2
+            borderWidth:2,
+            borderColor:'#fff'
         }]
     },
     options:{
         responsive:true,
         plugins:{
             legend:{
-                position:'right',
-                labels:{
-                    boxWidth:15,
-                    font:{
-                        size:14
-                    }
-                }
-            },
-            datalabels:{
-                color:'#ffffff',
-                font:{
-                    weight:'bold',
-                    size:18
-                },
-                formatter:(value,ctx)=>{
-                    const total = ctx.dataset.data.reduce((a,b)=>a+b,0);
-                    const p = value*100/total;
-                    return p >= 3 ? p.toFixed(1)+'%' : '';
-                }
+                display:false
             }
         }
     }
