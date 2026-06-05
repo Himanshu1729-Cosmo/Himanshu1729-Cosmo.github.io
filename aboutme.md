@@ -1,6 +1,5 @@
 ---
 layout: page
-title: About Me
 ---
 
 <style>
@@ -179,13 +178,7 @@ title: About Me
 
 <div class="header">
 
-<img src="/assets/images/profile.jpg" class="profile-img">
-
 <div class="name">
-
-<h1>Himanshu Chaudhary</h1>
-
-<h2>PhD Student in Physics</h2>
 
 <div class="about-title">About Me</div>
 
