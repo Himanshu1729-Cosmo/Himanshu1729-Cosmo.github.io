@@ -225,74 +225,46 @@ For collaborations, projects, or academic opportunities, please
 <p>Published</p>
 </div>
 
-<div style="max-width:650px;margin:auto;">
-    <canvas id="publicationChart"></canvas>
+<div style="display:grid;
+            grid-template-columns:45% 55%;
+            gap:25px;
+            align-items:start;">
+
+<div>
+
+<img src="/assets/images/publication_piechart.png"
+     style="width:100%;
+            max-width:500px;
+            display:block;
+            margin:auto;">
+
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div>
 
-<script>
-const ctx = document.getElementById('publicationChart');
+<h3>Journal Distribution</h3>
 
-new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: [
-            'EPJC (11)',
-            'JHEAp (11)',
-            'PDU (8)',
-            'IJGMMP (5)',
-            'Nuclear Physics B (4)',
-            'Fortschritte der Physik (3)',
-            'Chinese Physics C (3)',
-            'Universe (3)',
-            'Physica Scripta (2)',
-            'GRG (2)',
-            'EPJP (2)',
-            'MPLA (2)',
-            'Annalen der Physik (2)',
-            'ApJS (2)',
-            'Others (8)'
-        ],
-        datasets: [{
-            data: [11,11,8,5,4,3,3,3,2,2,2,2,2,2,8],
-            backgroundColor: [
-                '#08245a',
-                '#ff8800',
-                '#39a935',
-                '#6b46c1',
-                '#008080',
-                '#ff6a00',
-                '#3559d5',
-                '#6f2c8f',
-                '#d38b11',
-                '#1380a1',
-                '#2d49b8',
-                '#9cb300',
-                '#e64b2c',
-                '#7d3c98',
-                '#999999'
-            ],
-            borderColor:'#ffffff',
-            borderWidth:2
-        }]
-    },
-    options:{
-        responsive:true,
-        plugins:{
-            legend:{
-                position:'right',
-                labels:{
-                    font:{
-                        size:14
-                    }
-                }
-            }
-        }
-    }
-});
-</script>
+<ul class="journal-list">
+<li>The European Physical Journal C (11)</li>
+<li>Journal of High Energy Astrophysics (11)</li>
+<li>Physics of the Dark Universe (8)</li>
+<li>International Journal of Geometric Methods in Modern Physics (5)</li>
+<li>Nuclear Physics B (4)</li>
+<li>Fortschritte der Physik (3)</li>
+<li>Chinese Physics C (3)</li>
+<li>Universe (3)</li>
+<li>Physica Scripta (2)</li>
+<li>General Relativity and Gravitation (2)</li>
+<li>The European Physical Journal Plus (2)</li>
+<li>Modern Physics Letters A (2)</li>
+<li>Annalen der Physik (2)</li>
+<li>The Astrophysical Journal Supplement Series (2)</li>
+<li>Other Journals (8)</li>
+</ul>
 
+</div>
+
+</div>
 
 <h3>Journal Distribution</h3>
 
