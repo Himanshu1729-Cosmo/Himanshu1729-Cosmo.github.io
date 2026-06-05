@@ -15,7 +15,7 @@ Learn more about my research on [**ResearchGate**](https://www.researchgate.net/
 - **Doctor of Philosophy (PhD) in Physics** *(2024 – Present)*  
   Babeș-Bolyai University, Cluj-Napoca, Romania  
 
-- **Master of Science (M.Sc.) in Applied Mathematics** *(2021 – 2023)*  
+- **Master of Science (M.Sc.) in Mathematics** *(2021 – 2023)*  
   Delhi Technological University, India  
 
 - **Bachelor of Education (B.Ed.)** *(2019 – 2021)*  
