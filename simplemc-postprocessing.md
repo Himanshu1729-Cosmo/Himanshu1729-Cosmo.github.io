@@ -88,8 +88,6 @@ mpl.rcParams['mathtext.fontset'] = 'cm'
 
 # ============================================================
 # Load chain
-# Replace the path below with the location of your chain file
-# on your system.
 # ============================================================
 chain = np.loadtxt( "/path/to/your/chain/JBP_phy_DESIDR2+Planck_18+Union3_nested_multi_1.txt")
 
@@ -116,45 +114,29 @@ wa   = chain[:,6]
 
 H0 = 100.0 * h
 
-samples_array = np.vstack([Om, H0, w0, wa, Obh2]).T
+samples_array = np.vstack([Om, Obh2, H0, w0, wa,]).T
 
 # ============================================================
 # Create GetDist samples
 # ============================================================
-samples = MCSamples(
-    samples=samples_array,
-    weights=weights,
-    loglikes=loglike,
-    names=['Om','H0','w0','wa','Obh2'],
-    labels=[
-        r'\Omega_m',
-        r'H_0',
-        r'w_0',
-        r'w_a',
-        r'\Omega_b h^2'
-    ],
-    ranges={'wa': (-3.0, None)}
-)
+samples = MCSamples(samples=samples_array,weights=weights,loglikes=loglike,
+    names=['Om','Obh2','H0','w0','wa'],
+    labels=[r'\Omega_m', r'\Omega_b h^2', r'H_0', r'w_0', r'w_a',],ranges={'wa': (-3.0, None)})
 
 # ============================================================
 # Triangle Plot
 # ============================================================
-g = plots.getSubplotPlotter(width_inch=6)
+g = plots.getSubplotPlotter(width_inch=9)
 
 g.settings.alpha_filled_add = 0.5
 g.settings.axes_fontsize = 12
 g.settings.lab_fontsize = 16
 g.settings.legend_fontsize = 14
 
-g.triangle_plot(
-    samples,
-    ['Om', 'H0', 'w0', 'wa'],
-    filled=True,
-    contour_colors=['darkblue'],
-    title_limit=1
-)
+g.triangle_plot(samples, ['Om', 'Obh2', 'H0', 'w0', 'wa'], filled=True, 
+    contour_colors=['darkblue'],title_limit=1)
 
-g.export("JBP_triangle.pdf")
+g.export("jbp.png")
 
 plt.show()
 ```
