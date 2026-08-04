@@ -39,10 +39,14 @@ title: CV
 
 
 ## Cosmological and Astrophysical Tools
-- Cobaya (Bayesian inference, MCMC, nested sampling)  
+- Cobaya (Bayesian inference, MCMC, nested sampling)
+- CoCoA (Cobaya–CosmoLike Joint Architecture) 
 - SimpleMC (cosmological parameter estimation)  
 - CosmoSIS (modular cosmological pipelines)  
-- CAMB / CLASS (Boltzmann solvers for cosmology)  
+- CAMB / CLASS (Boltzmann solvers for cosmology)
+- MontePython (Bayesian cosmological parameter inference and MCMC analysis)
+- CosmoMC (Markov Chain Monte Carlo cosmological parameter estimation)
+- Kosmulator (a modular and vectorised Python framework designed to accelerate the statistical testing of cosmological models)
 - GetDist (post-processing and visualization)  
 - Pytearcat (tensor algebra computations)  
 - GADGET (cosmological N-body simulations)  
