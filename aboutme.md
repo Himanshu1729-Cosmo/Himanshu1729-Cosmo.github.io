@@ -39,7 +39,8 @@ Learn more about my research on [**ResearchGate**](https://www.researchgate.net/
 - Mathematica  
 
 ## Cosmological and Astrophysical Tools
-- Cobaya (Bayesian inference, MCMC, nested sampling)  
+- Cobaya (Bayesian inference, MCMC, nested sampling)
+- CoCoA (Cobaya–CosmoLike Joint Architecture)
 - SimpleMC (cosmological parameter estimation)  
 - CosmoSIS (modular cosmological pipelines)  
 - CAMB / CLASS (Boltzmann solvers for cosmology)  
