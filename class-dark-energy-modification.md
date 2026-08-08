@@ -12,13 +12,5 @@ In this tutorial series, we will focus on modifying the CLASS source code to imp
 
 ## 1. Structure of CLASS
 
-<object data="/assets/img/class-beyond-lcdm.pdf"
-        type="application/pdf"
-        width="100%"
-        height="800">
-    <p>Your browser does not support PDFs.
-       <a href="/assets/img/class-beyond-lcdm.pdf">Download the PDF</a>.
-    </p>
-</object>
 
 
