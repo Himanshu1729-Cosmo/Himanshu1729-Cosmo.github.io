@@ -425,29 +425,55 @@ $$
 w(z)=w_0+w_1\frac{z}{(1+z)^2}.
 $$
 
-To implement this model in CLASS, the equation of state must first be expressed in terms of the scale factor $a$, using
+Using the relation
 
 $$
-1+z=\frac{1}{a}.
+1+z=\frac{1}{a},
 $$
 
-For a given dark energy parameterization, CLASS requires three main quantities:
+we rewrite the equation of state in terms of the scale factor $a$. For the implementation in CLASS, we need to determine the equation of state $w(a)$, its derivative $dw/da$, and the corresponding dark energy density evolution function $f_{\rm DE}(a)$.
+
+After performing these calculations, we obtain
 
 $$
-w(a),
+w(a)=w_0+w_1a(1-a),
 $$
 
 $$
-\frac{dw(a)}{da},
+\frac{dw(a)}{da}=w_1(1-2a),
 $$
 
 and
 
 $$
-\int_a^1 \frac{3[1+w(a')]}{a'}\,da'.
+f_{\rm DE}(a)
+=
+\exp\left[
+\int_a^1
+\frac{3[1+w(a')]}{a'}\,da'
+\right],
 $$
 
-The last quantity determines the evolution of the dark energy density. Therefore, our first task is to derive these three expressions for the JBP parameterization before introducing them into the CLASS source code.
+which for the JBP parameterization becomes
+
+$$
+f_{\rm DE}(a)
+=
+a^{-3(1+w_0)}
+\exp\left[
+\frac{3w_1}{2}(1-a)^2
+\right].
+$$
+
+The dark energy density can therefore be written as
+
+$$
+\rho_{\rm DE}(a)
+=
+\rho_{{\rm DE},0}f_{\rm DE}(a).
+$$
+
+These are the main model-dependent quantities that we will now introduce into the CLASS fluid description.
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
 
