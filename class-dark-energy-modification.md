@@ -433,47 +433,32 @@ $$
 
 we rewrite the equation of state in terms of the scale factor $a$. For the implementation in CLASS, we need to determine the equation of state $w(a)$, its derivative $dw/da$, and the corresponding dark energy density evolution function $f_{\rm DE}(a)$.
 
-After performing these calculations, we obtain
+After performing these calculations, we obtain the JBP equation of state
 
 $$
-w(a)=w_0+w_1a(1-a),
+w(a) = w_0 + w_1 a(1-a),
 $$
 
-$$
-\frac{dw(a)}{da}=w_1(1-2a),
-$$
-
-and
+its derivative
 
 $$
-f_{\rm DE}(a)
-=
-\exp\left[
-\int_a^1
-\frac{3[1+w(a')]}{a'}\,da'
-\right],
+\frac{dw}{da} = w_1(1-2a),
 $$
 
-which for the JBP parameterization becomes
+and the dark energy evolution function
 
 $$
-f_{\rm DE}(a)
-=
-a^{-3(1+w_0)}
-\exp\left[
-\frac{3w_1}{2}(1-a)^2
-\right].
+f_{\mathrm{DE}}(a) = a^{-3(1+w_0)}
+\exp\left[\frac{3w_1}{2}(1-a)^2\right].
 $$
 
-The dark energy density can therefore be written as
+The corresponding dark energy density is then
 
 $$
-\rho_{\rm DE}(a)
-=
-\rho_{{\rm DE},0}f_{\rm DE}(a).
+\rho_{\mathrm{DE}}(a) = \rho_{\mathrm{DE},0} f_{\mathrm{DE}}(a).
 $$
 
-These are the main model-dependent quantities that we will now introduce into the CLASS fluid description.
+These are the three main model-dependent quantities required to implement the JBP parameterization in the CLASS fluid description.
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
 
