@@ -14,3 +14,21 @@ In this tutorial series, we will focus on modifying the CLASS source code to imp
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0012.jpg){: .mx-auto.d-block }
 
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0013.jpg){: .mx-auto.d-block }
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0014.jpg){: .mx-auto.d-block }
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0015.jpg){: .mx-auto.d-block }
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0016.jpg){: .mx-auto.d-block }
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0017.jpg){: .mx-auto.d-block }
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0018.jpg){: .mx-auto.d-block }
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-00119.jpg){: .mx-auto.d-block }
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0020.jpg){: .mx-auto.d-block }
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0021.jpg){: .mx-auto.d-block }
+
