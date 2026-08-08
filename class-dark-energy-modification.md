@@ -707,6 +707,30 @@ Once these two modifications have been completed, CLASS can successfully recogni
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0014.jpg){: .mx-auto.d-block }
 
+## 7. Updating the Python Interface
+
+The final modification is to expose the newly added JBP parameters to the Python interface. This step is required if you plan to use **MontePython**, **Cobaya**, or directly access the parameters through the CLASS Python wrapper.
+
+Open
+
+```text
+class_public/python/classy.pxd
+```
+
+and add the same variables that were introduced in `background.h`.
+
+```cpp
+double w0_fld
+double wa_fld
+
+double w0_jbp
+double wa_jbp
+```
+
+By adding these declarations, the Python wrapper is informed that these variables exist inside the CLASS background structure, making them accessible from Python-based cosmological analysis codes.
+
+After this modification, the new JBP parameters are fully connected throughout CLASS, from the C source code to the Python interface.
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0015.jpg){: .mx-auto.d-block }
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0016.jpg){: .mx-auto.d-block }
