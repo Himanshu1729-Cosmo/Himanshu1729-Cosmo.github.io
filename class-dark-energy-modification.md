@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Implementing Different Dark Energy Models in CLASS
-permalink: /tutorials/class-dark-energy-modification/
+permalink: /tutorials/class-dark-energy-modificatio/
 ---
 
 # Implementing Different Dark Energy Models in CLASS
