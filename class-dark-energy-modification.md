@@ -12,11 +12,13 @@ In this tutorial series, we will focus on modifying the CLASS source code to imp
 
 ## 1. Structure of CLASS
 
-<iframe
-    src="/assets/img/CLASS%20Beyond%20%CE%9BCDM-12.pdf"
-    width="100%"
-    height="800px"
-    style="border:1px solid #ddd;">
-</iframe>
+<object data="/assets/img/class-beyond-lcdm.pdf"
+        type="application/pdf"
+        width="100%"
+        height="800">
+    <p>Your browser does not support PDFs.
+       <a href="/assets/img/class-beyond-lcdm.pdf">Download the PDF</a>.
+    </p>
+</object>
 
 
