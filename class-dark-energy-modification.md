@@ -460,6 +460,57 @@ $$
 
 These are the three main model-dependent quantities required to implement the JBP parameterization in the CLASS fluid description.
 
+## 4. Modifying `background.h`
+
+We are now ready to implement the JBP parameterization in CLASS. The first file that needs to be modified is
+
+```text
+class_public/include/background.h
+```
+
+This file defines the available dark energy parameterizations and declares the variables used throughout the CLASS background module. Therefore, before implementing the JBP equations, we must first register the new model and define its corresponding parameters.
+
+### Step 1: Register the JBP Parameterization
+
+Locate the following line in `background.h`:
+
+```cpp
+enum equation_of_state {CLP,EDE};
+```
+
+and add the JBP parameterization:
+
+```cpp
+enum equation_of_state {CLP,EDE,JBP};
+```
+
+This informs CLASS that a new fluid equation-of-state parameterization named **JBP** is available.
+
+### Step 2: Define the JBP Parameters
+
+Next, locate the fluid equation-of-state parameters
+
+```cpp
+double w0_fld; /**< \f$ w0_{DE} \f$: current fluid equation of state parameter */
+double wa_fld; /**< \f$ wa_{DE} \f$: fluid equation of state parameter derivative */
+```
+
+Immediately below these lines, add the two parameters of the JBP model:
+
+```cpp
+double w0_jbp;
+double w1_jbp;
+```
+
+Here,
+
+- `w0_jbp` is the present-day value of the dark energy equation of state.
+- `w1_jbp` controls the time evolution of the equation of state.
+
+The figure below highlights the required modifications in `background.h`.
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0014.jpg){: .mx-auto.d-block }
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0012.jpg){: .mx-auto.d-block }
