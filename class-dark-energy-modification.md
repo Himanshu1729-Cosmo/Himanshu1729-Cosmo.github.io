@@ -1,13 +1,14 @@
 ---
 layout: page
 title: Implementing Different Dark Energy Models in CLASS
-permalink: /tutorials/montepython-install/
+permalink: /tutorials/class-modification/
 ---
 
-# Class-Installation
-CLASS (Cosmic Linear Anisotropy Solving System) is a numerical tool for solving the evolution of linear cosmological perturbations and for computing the cosmological observables for a given input model. CLASS is a flexible and user-friendly code that can be easily generalized to non-minimal cosmological models. CLASS was written by Julien Lesgourgues & Thomas Tram, and first released in 2011. CLASS is written in C language for each module. It comes with C++ and Python wrapper. 
+# Implementing Different Dark Energy Models in CLASS
 
-For more information about CLASS can be found on the website: [http://class-code.net](http://class-code.net). The CLASS papers can be found below
+In the previous tutorial, we covered the installation and compilation of the **CLASS** and **MontePython** codes. With a working CLASS installation in place, we are now ready to explore one of its greatest strengths—its flexibility in implementing new dark energy models.
 
-- CLASS I: Overview, by J. Lesgourgues, arXiv:1104.2932 [astro-ph.IM]
-- CLASS II: Approximation schemes, by D. Blas, J. Lesgourgues, T. Tram, arXiv:1104.2933 [astro-ph.CO], JCAP 1107 (2011) 034
+In this tutorial series, we will focus on modifying the CLASS source code to implement the **JBP parameterization**, which can be further extended to implement different dark energy models. Rather than simply replacing equations, we will first develop a clear understanding of the structure of CLASS and then, step by step, modify the CLASS code. We will also learn how cosmological parameters are passed through the code and where modifications should be introduced. This approach will make it straightforward to implement virtually any dark energy parameterization.
+
+
+
