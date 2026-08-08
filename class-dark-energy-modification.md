@@ -12,5 +12,5 @@ In this tutorial series, we will focus on modifying the CLASS source code to imp
 
 ## 1. Structure of CLASS
 
-![Figure](/assets/img/input.png){: .mx-auto.d-block }
+![Figure](/assets/img/CLASS Beyond ΛCDM_page-0012.jpg){: .mx-auto.d-block }
 
