@@ -509,19 +509,112 @@ Here,
 
 The figure below highlights the required modifications in `background.h`.
 
-![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0014.jpg){: .mx-auto.d-block }
-
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
 
-![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0012.jpg){: .mx-auto.d-block }
+## 5. Modifying `background.c`
 
-![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
+The next step is to implement the JBP parameterization in the CLASS background evolution. All modifications are performed in
 
-![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0012.jpg){: .mx-auto.d-block }
+```text
+class_public/source/background.c
+```
 
-![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
+The function `background_w_fld()` is responsible for computing the fluid equation of state, its derivative, and the integral that determines the dark energy density evolution. Therefore, we need to add a new `JBP` case in each of these three sections.
 
-![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
+---
+
+### Step 1: Define the JBP Equation of State
+
+Locate the switch statement that computes the fluid equation of state,
+
+```cpp
+switch (pba->fluid_equation_of_state) {
+case CLP:
+  *w_fld = pba->w0_fld + pba->wa_fld * (1. - a);
+  break;
+}
+```
+
+and add the JBP implementation:
+
+```cpp
+case JBP:
+  *w_fld = pba->w0_jbp + pba->w1_jbp * a * (1. - a);
+  break;
+```
+
+This implements the JBP equation of state
+
+$$
+w(a)=w_0+w_1a(1-a).
+$$
+
+---
+
+### Step 2: Define the Derivative
+
+Next, locate the switch statement that computes the derivative of the equation of state,
+
+```cpp
+switch (pba->fluid_equation_of_state) {
+case CLP:
+  *dw_over_da_fld = -pba->wa_fld;
+  break;
+}
+```
+
+and add
+
+```cpp
+case JBP:
+  *dw_over_da_fld = pba->w1_jbp * (1. - 2.*a);
+  break;
+```
+
+This corresponds to
+
+$$
+\frac{dw(a)}{da}=w_1(1-2a).
+$$
+
+---
+
+### Step 3: Define the Dark Energy Density Evolution
+
+Finally, locate the switch statement that computes the integral controlling the evolution of the dark energy density,
+
+```cpp
+switch (pba->fluid_equation_of_state) {
+case CLP:
+  *integral_fld =
+      3.*((1.+pba->w0_fld+pba->wa_fld)*log(1./a)
+      + pba->wa_fld*(a-1.));
+  break;
+}
+```
+
+and add
+
+```cpp
+case JBP:
+  *integral_fld =
+      -3.*(1.+pba->w0_jbp)*log(a)
+      + 1.5*pba->w1_jbp*pow(1.-a,2.);
+  break;
+```
+
+This implements the JBP dark energy evolution function
+
+$$
+f_{\mathrm{DE}}(a)
+=
+a^{-3(1+w_0)}
+\exp\left[
+\frac{3w_1}{2}(1-a)^2
+\right].
+$$
+
+Once these three modifications are completed, the CLASS background module will be able to compute the JBP equation of state, its derivative, and the corresponding dark energy density evolution.
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0012.jpg){: .mx-auto.d-block }
 
