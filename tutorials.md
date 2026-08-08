@@ -26,7 +26,8 @@ Here I provide tutorials on cosmological tools and workflows, including installa
 
 ## CLASS & Monte Python
 
-- [Installation](/tutorials/montepython-install/)
+- [Installation of CLASS & MontePython](/tutorials/montepython-install/)
+- [Modifying CLASS Code for Different Dark Energy Model](/tutorials/class-dark-energy-modification/)
 
 ## SimpleMC
 
