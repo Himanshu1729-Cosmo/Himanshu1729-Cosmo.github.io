@@ -618,6 +618,91 @@ Once these three modifications are completed, the CLASS background module will b
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0012.jpg){: .mx-auto.d-block }
 
+## 6. Modifying `input.c`
+
+The next file that must be modified is
+
+```text
+class_public/source/input.c
+```
+
+This file is responsible for reading the cosmological parameters supplied by the user and initializing their default values. To support the JBP parameterization, we need to perform two modifications.
+
+---
+
+### Step 1: Read the JBP Parameters
+
+Locate the section where CLASS reads the fluid equation-of-state parameterization and its corresponding parameters. Extend the existing implementation by adding a new `JBP` case.
+
+First, register the new equation-of-state parameterization:
+
+```cpp
+/* Complete set of parameters */
+if (flag1 == _TRUE_) {
+
+  if ((strstr(string1,"CLP") != NULL) ||
+      (strstr(string1,"clp") != NULL)) {
+    pba->fluid_equation_of_state = CLP;
+  }
+
+  else if ((strstr(string1,"JBP") != NULL) ||
+           (strstr(string1,"jbp") != NULL)) {
+    pba->fluid_equation_of_state = JBP;
+  }
+}
+```
+
+Next, instruct CLASS to read the JBP model parameters from the input file:
+
+```cpp
+if (pba->fluid_equation_of_state == CLP) {
+
+  class_read_double("w0_fld", pba->w0_fld);
+  class_read_double("wa_fld", pba->wa_fld);
+  class_read_double("cs2_fld", pba->cs2_fld);
+
+}
+
+if (pba->fluid_equation_of_state == JBP) {
+
+  class_read_double("w0_jbp", pba->w0_jbp);
+  class_read_double("w1_jbp", pba->w1_jbp);
+  class_read_double("cs2_fld", pba->cs2_fld);
+
+}
+```
+
+This modification allows CLASS to recognize the keyword `JBP` and read the corresponding model parameters from the input configuration file.
+
+---
+
+### Step 2: Initialize the Default Values
+
+Further down in the same file, locate the section where the default values of the fluid parameters are initialized.
+
+The standard CLASS implementation contains
+
+```cpp
+pba->fluid_equation_of_state = CLP;
+
+pba->w0_fld = -1.;
+pba->wa_fld = 0.;
+pba->cs2_fld = 1.;
+```
+
+Immediately below these lines, add the default values for the JBP parameters:
+
+```cpp
+/** JBP default parameters */
+
+pba->w0_jbp = -1.;
+pba->w1_jbp = 0.;
+```
+
+These default values ensure that all newly introduced variables are properly initialized before being overwritten by the values provided in the input file.
+
+Once these two modifications have been completed, CLASS can successfully recognize the JBP parameterization and read its free parameters from the input configuration.
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0013.jpg){: .mx-auto.d-block }
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0014.jpg){: .mx-auto.d-block }
