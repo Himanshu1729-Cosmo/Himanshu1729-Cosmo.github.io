@@ -236,9 +236,184 @@ The figure below shows how the cosmological constant contribution is implemented
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0007.jpg){: .mx-auto.d-block }
 
+### 2.2 Fluid Dark Energy and Scalar-Field Contribution
+
+In addition to the cosmological constant, CLASS allows dark energy to be described as a dynamical fluid. This sector is identified internally by `fld`, and it is activated when `has_fld` is set to `_TRUE_`.
+
+Unlike the cosmological constant, the fluid component can have a time-dependent equation of state,
+
+$$
+w_{\rm fld}(a)
+=
+\frac{p_{\rm fld}(a)}{\rho_{\rm fld}(a)}.
+$$
+
+The value of $w_{\rm fld}(a)$ is evaluated through the function `background_w_fld()`. This function plays a central role in implementing dynamical dark energy models because it specifies how the equation of state evolves with the scale factor.
+
+Once $w_{\rm fld}(a)$ and $\rho_{\rm fld}(a)$ are known, CLASS adds the fluid contribution to the total energy density as
+
+$$
+\rho_{\rm tot}
+\rightarrow
+\rho_{\rm tot}+\rho_{\rm fld},
+$$
+
+and its pressure contribution as
+
+$$
+p_{\rm tot}
+\rightarrow
+p_{\rm tot}
++
+w_{\rm fld}(a)\rho_{\rm fld}(a).
+$$
+
+The evolution of the fluid density follows from the continuity equation,
+
+$$
+\frac{d\rho_{\rm fld}}{d\ln a}
+=
+-3\left[1+w_{\rm fld}(a)\right]\rho_{\rm fld}.
+$$
+
+Therefore, specifying a new function $w_{\rm fld}(a)$ determines the corresponding background evolution of the dark energy fluid.
+
+The lower part of the code also shows the treatment of the scalar-field (`scf`) contribution to the derivative of the total pressure. The scalar-field sector is handled separately from the phenomenological `fld` component.
+
+For the JBP parameterization considered later in this tutorial, our main focus will be the **`fld` sector**, particularly the `background_w_fld()` function, where the desired equation of state will be introduced.
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0008.jpg){: .mx-auto.d-block }
 
+### 2.3 Fluid Description and the Equation of State
+
+For phenomenological dynamical dark energy models, the most relevant part of CLASS is the **fluid (`fld`) description**. In this approach, the evolution of dark energy is determined by specifying its equation of state as a function of the scale factor,
+
+$$
+w_{\rm fld}(a)
+=
+\frac{p_{\rm fld}(a)}{\rho_{\rm fld}(a)}.
+$$
+
+In the standard CLASS implementation, one of the available fluid equations of state is the Chevallier–Polarski–Linder (CPL) parameterization,
+
+$$
+w_{\rm CPL}(a)
+=
+w_0+w_a(1-a).
+$$
+
+This expression is implemented in the `background_w_fld()` function through the `CLP` case of `fluid_equation_of_state`.
+
+In addition to $w_{\rm fld}(a)$ itself, CLASS requires its derivative with respect to the scale factor. For the CPL parameterization,
+
+$$
+\frac{dw_{\rm CPL}}{da}
+=
+-w_a.
+$$
+
+This derivative is stored through `dw_over_da_fld` and is required in the evolution of the background quantities and in the perturbation equations.
+
+The evolution of the dark energy density follows from the conservation equation,
+
+$$
+\frac{d\rho_{\rm fld}}{da}
+=
+-\frac{3}{a}
+\left[1+w_{\rm fld}(a)\right]
+\rho_{\rm fld}.
+$$
+
+Therefore, CLASS also requires the integral
+
+$$
+I(a)
+=
+\int_a^1
+\frac{3\left[1+w_{\rm fld}(a')\right]}{a'}
+\,da'.
+$$
+
+For the CPL equation of state, this integral has the analytic form
+
+$$
+I_{\rm CPL}(a)
+=
+3\left[
+(1+w_0+w_a)\ln\left(\frac{1}{a}\right)
++w_a(a-1)
+\right].
+$$
+
+The corresponding dark energy density can then be written as
+
+$$
+\rho_{\rm fld}(a)
+=
+\rho_{\rm fld,0}\,
+\exp\left[I(a)\right].
+$$
+
+Hence, when implementing a different dark energy parameterization in the fluid sector, three model-dependent quantities must be treated consistently:
+
+1. the equation of state $w_{\rm fld}(a)$,
+2. its derivative $dw_{\rm fld}/da$, and
+3. the integral $I(a)$ that determines the evolution of $\rho_{\rm fld}(a)$.
+
+These three ingredients are the central quantities that we will modify when replacing the standard CPL parameterization with the JBP dark energy model.
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0009.jpg){: .mx-auto.d-block }
+
+### 2.4 Dark Energy Perturbations
+
+So far, we have discussed how a dynamical dark energy model modifies the background evolution. However, CLASS also evolves the linear perturbations of the different cosmological components. These equations are implemented mainly in
+
+`class_public/source/perturbations.c`.
+
+CLASS treats the perturbations of the scalar-field (`scf`) and fluid (`fld`) dark energy components separately. For phenomenological equation-of-state parameterizations such as CPL or JBP, the relevant part is the **fluid perturbation sector**, identified by `has_fld`.
+
+Within this sector, CLASS again calls the `background_w_fld()` function to obtain the equation of state
+
+$$
+w_{\rm fld}(a)
+$$
+
+and its derivative
+
+$$
+\frac{dw_{\rm fld}}{da}.
+$$
+
+The derivative with respect to conformal time can then be obtained using
+
+$$
+w_{\rm fld}'
+=
+\frac{dw_{\rm fld}}{da}\,a',
+$$
+
+where the prime denotes a derivative with respect to conformal time.
+
+These quantities enter the evolution of the dark energy density, velocity, and pressure perturbations. For example, the adiabatic sound speed depends on both the equation of state and its time evolution and can be written schematically as
+
+$$
+c_a^2
+=
+w_{\rm fld}
+-
+\frac{w_{\rm fld}'}
+{3\mathcal{H}(1+w_{\rm fld})},
+$$
+
+where $\mathcal{H}=a'/a$ is the conformal Hubble parameter.
+
+CLASS also allows the fluid rest-frame sound speed, represented by `cs2_fld`, to be specified independently. This quantity enters the calculation of the dark energy pressure perturbation.
+
+For models in which $w(a)$ crosses the phantom divide $w=-1$, CLASS can employ the **PPF (Parameterized Post-Friedmann)** treatment through the `use_ppf` option, avoiding the singular behavior that can arise in the standard fluid perturbation equations near $1+w=0$.
+
+Therefore, when implementing a new phenomenological dark energy parameterization, it is essential that the expression for $w_{\rm fld}(a)$ and its derivative $dw_{\rm fld}/da$ are defined consistently. Once these quantities are supplied through `background_w_fld()`, they can also be used by the perturbation module.
+
+The figure below shows the separate scalar-field and fluid contributions implemented in `perturbations.c`, with the `has_fld` sector being the relevant one for the JBP implementation considered in this tutorial.
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0010.jpg){: .mx-auto.d-block }
 
