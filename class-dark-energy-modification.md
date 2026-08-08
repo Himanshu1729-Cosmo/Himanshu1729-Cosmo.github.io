@@ -72,7 +72,9 @@ Before modifying the background equations, it is essential to understand the con
 
 In `background.c`, the expansion rate is computed from the Friedmann equation using the total energy density of all cosmological components. CLASS internally expresses the energy densities in units of
 
-$$\frac{3c^2}{8\pi G}.$$
+$$
+\frac{3c^2}{8\pi G}.
+$$
 
 Therefore, the physical energy density is converted according to
 
@@ -88,7 +90,7 @@ $$
 H^2 = \rho_{\rm tot}-\frac{K}{a^2},
 $$
 
-where \(\rho_{\rm tot}\) is the total density expressed in the internal CLASS units, \(K\) denotes the spatial curvature, and \(a\) is the scale factor.
+where $\rho_{\rm tot}$ is the total density expressed in the internal CLASS units, $K$ denotes the spatial curvature, and $a$ is the scale factor.
 
 The code also computes the derivative of the Hubble parameter with respect to conformal time using the total density and pressure. Consequently, any new dark energy component must contribute consistently to both `rho_tot` and `p_tot`.
 
@@ -96,9 +98,141 @@ This convention is particularly important when implementing a new dark energy mo
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0004.jpg){: .mx-auto.d-block }
 
+### 1.4 Computing the Total Density and Pressure
+
+The background evolution in CLASS is constructed by computing the energy density and pressure of each cosmological component separately and then adding their contributions to the total density and pressure.
+
+For example, the photon energy density evolves as
+
+$$
+\rho_{\gamma}(a) \propto a^{-4},
+$$
+
+while non-relativistic components such as baryons and cold dark matter evolve as
+
+$$
+\rho_{m}(a) \propto a^{-3}.
+$$
+
+For each component, CLASS first computes its density and stores it in the corresponding entry of the background vector `pvecback`. The contribution is then added to the total energy density through `rho_tot`. Similarly, the pressure of each component is added to `p_tot`.
+
+For photons,
+
+$$
+p_{\gamma} = \frac{1}{3}\rho_{\gamma},
+$$
+
+whereas baryons and cold dark matter are treated as pressureless components,
+
+$$
+p_b = p_{\rm cdm} = 0.
+$$
+
+Therefore, the total background quantities are constructed schematically as
+
+$$
+\rho_{\rm tot}
+=
+\rho_{\gamma}
++\rho_b
++\rho_{\rm cdm}
++\rho_{\nu}
++\rho_{\rm DE}
++\cdots,
+$$
+
+and
+
+$$
+p_{\rm tot}
+=
+p_{\gamma}
++p_b
++p_{\rm cdm}
++p_{\nu}
++p_{\rm DE}
++\cdots.
+$$
+
+These total quantities are subsequently used by CLASS to determine the expansion history through the Friedmann equations.
+
+This structure is particularly important for implementing a new dark energy model. Once its density $\rho_{\rm DE}(a)$ and equation of state $w_{\rm DE}(a)$ are specified, its pressure is obtained from
+
+$$
+p_{\rm DE}(a)
+=
+w_{\rm DE}(a)\rho_{\rm DE}(a),
+$$
+
+and both contributions must be consistently included in the total background density and pressure.
+
+The figure below illustrates how CLASS computes and accumulates the density and pressure contributions of photons, baryons, and cold dark matter.
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0005.jpg){: .mx-auto.d-block }
 
+## 2. Dark Energy in CLASS
+
+Before implementing a new dark energy parameterization, it is useful to understand how dark energy is already incorporated into CLASS.
+
+The available dark energy components and their input parameters are described in the `explanatory.ini` file. In the standard CLASS implementation, dark energy can be represented through three main descriptions:
+
+- **Cosmological constant (`Lambda`)** — corresponds to a constant vacuum-energy component with equation of state
+
+$$
+w_{\Lambda}=-1.
+$$
+
+- **Fluid (`fld`)** — describes dark energy as a fluid characterized by an equation of state $w(a)$. This is the sector that is particularly useful for implementing phenomenological dynamical dark energy parameterizations.
+
+- **Scalar field (`scf`)** — describes dark energy through the dynamics of a scalar field.
+
+The corresponding present-day density parameters are represented internally by quantities such as `Omega0_lambda`, `Omega0_fld`, and `Omega0_scf`.
+
+CLASS also uses these dark energy components when imposing the cosmological closure relation,
+
+$$
+\sum_i \Omega_{i,0}=1+\Omega_{k,0},
+$$
+
+where $\Omega_{k,0}$ represents the present-day curvature density parameter.
+
+If one of the dark energy density parameters is left unspecified, CLASS can infer the corresponding value from this closure condition, depending on the other components supplied in the input configuration.
+
+For the implementation of phenomenological dark energy parameterizations such as JBP, we will mainly work with the **fluid (`fld`) description**, since it allows the dark energy equation of state to evolve with the scale factor or redshift.
+
+The figure below shows the dark energy options described in the CLASS `explanatory.ini` file.
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0006.jpg){: .mx-auto.d-block }
+
+### 2.1 Cosmological Constant
+
+The simplest dark energy description available in CLASS is the cosmological constant, denoted internally by `Lambda`. It corresponds to a constant energy density with the equation of state
+
+$$
+w_{\Lambda}=-1.
+$$
+
+The present-day cosmological constant density is specified through `Omega0_lambda`. Since the energy density of a cosmological constant does not evolve with the scale factor, CLASS computes it as
+
+$$
+\rho_{\Lambda}
+=
+\Omega_{\Lambda,0}H_0^2,
+$$
+
+in the internal CLASS density convention discussed above.
+
+The corresponding pressure follows directly from $w_{\Lambda}=-1$,
+
+$$
+p_{\Lambda}=-\rho_{\Lambda}.
+$$
+
+In `background.c`, CLASS first checks whether the cosmological constant component is active through `has_lambda`. Its energy density is then added to `rho_tot`, while the same quantity is subtracted from `p_tot`, thereby implementing the relation $p_{\Lambda}=-\rho_{\Lambda}$.
+
+Thus, the cosmological constant contributes to the background evolution without introducing any time dependence in its equation of state.
+
+The figure below shows how the cosmological constant contribution is implemented in `background.c`.
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0007.jpg){: .mx-auto.d-block }
 
