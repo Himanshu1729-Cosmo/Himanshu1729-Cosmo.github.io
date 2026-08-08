@@ -72,23 +72,21 @@ Before modifying the background equations, it is essential to understand the con
 
 In `background.c`, the expansion rate is computed from the Friedmann equation using the total energy density of all cosmological components. CLASS internally expresses the energy densities in units of
 
-\[
-\frac{3c^2}{8\pi G}.
-\]
+$$\frac{3c^2}{8\pi G}.$$
 
 Therefore, the physical energy density is converted according to
 
-\[
+$$
 \rho_{\rm CLASS}
 =
 \frac{8\pi G}{3c^2}\rho_{\rm physical}.
-\]
+$$
 
 With this convention, CLASS evaluates the background expansion rate schematically as
 
-\[
+$$
 H^2 = \rho_{\rm tot}-\frac{K}{a^2},
-\]
+$$
 
 where \(\rho_{\rm tot}\) is the total density expressed in the internal CLASS units, \(K\) denotes the spatial curvature, and \(a\) is the scale factor.
 
