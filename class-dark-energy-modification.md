@@ -46,7 +46,55 @@ The figure below shows the relevant part of `background.h`, where the standard f
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0002.jpg){: .mx-auto.d-block }
 
+### 1.2 Python Interface: Connecting CLASS with MontePython
+
+After defining the model parameters in the CLASS header files, we also need to consider the Python interface. This interface allows the quantities defined in the C code to be accessed from Python and is essential when CLASS is used together with parameter-inference frameworks such as MontePython.
+
+The relevant files are located in the
+
+`class_public/python/`
+
+directory. Two important files for our purpose are **`cclassy.pxd`** and **`classy.pyx`**.
+
+The **`cclassy.pxd`** file contains the Cython declarations of the CLASS structures. If a new model parameter has been added to a C structure, such as the `background` structure in `background.h`, the corresponding variable should also be declared in `cclassy.pxd` when it needs to be exposed through the Python interface. This allows the Python wrapper to recognize and access the newly introduced quantity.
+
+The **`classy.pyx`** file defines the Python interface to CLASS. It contains functions through which different cosmological quantities can be accessed from Python. If we want to expose an additional model-dependent quantity or derived observable, an appropriate function can be defined here.
+
+Therefore, when extending CLASS, it is important to keep the C implementation and the Python interface consistent, particularly when the modified version of CLASS will be used with MontePython.
+
+The figure below shows the location of `cclassy.pxd` and `classy.pyx` and illustrates how CLASS variables and derived quantities can be exposed through the Python interface.
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0003.jpg){: .mx-auto.d-block }
+
+### 1.3 Background Evolution and Density Convention in CLASS
+
+Before modifying the background equations, it is essential to understand the conventions adopted internally by CLASS. The preamble and comments provided in each CLASS source file contain important information about the definitions, units, and numerical conventions used throughout the code. Therefore, these comments should be read carefully before introducing any modification.
+
+In `background.c`, the expansion rate is computed from the Friedmann equation using the total energy density of all cosmological components. CLASS internally expresses the energy densities in units of
+
+\[
+\frac{3c^2}{8\pi G}.
+\]
+
+Therefore, the physical energy density is converted according to
+
+\[
+\rho_{\rm CLASS}
+=
+\frac{8\pi G}{3c^2}\rho_{\rm physical}.
+\]
+
+With this convention, CLASS evaluates the background expansion rate schematically as
+
+\[
+H^2 = \rho_{\rm tot}-\frac{K}{a^2},
+\]
+
+where \(\rho_{\rm tot}\) is the total density expressed in the internal CLASS units, \(K\) denotes the spatial curvature, and \(a\) is the scale factor.
+
+The code also computes the derivative of the Hubble parameter with respect to conformal time using the total density and pressure. Consequently, any new dark energy component must contribute consistently to both `rho_tot` and `p_tot`.
+
+This convention is particularly important when implementing a new dark energy model, since the model equations must be translated into the internal variables and units used by CLASS.
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0004.jpg){: .mx-auto.d-block }
 
