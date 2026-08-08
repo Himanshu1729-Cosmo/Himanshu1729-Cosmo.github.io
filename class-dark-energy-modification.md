@@ -417,6 +417,78 @@ The figure below shows the separate scalar-field and fluid contributions impleme
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0010.jpg){: .mx-auto.d-block }
 
+
+## 3. Implementing a New Dark Energy Model
+
+Before moving forward with the actual modification of the CLASS source code, we first need to understand how a different dark energy parameterization can be incorporated into the existing fluid description.
+
+As discussed above, the fluid sector of CLASS requires three model-dependent quantities: the equation of state $w(a)$, its derivative $dw/da$, and the integral that determines the evolution of the dark energy density. Therefore, before modifying any line of code, these quantities should be derived analytically for the dark energy model under consideration.
+
+To illustrate the complete procedure, we begin with the **Jassal–Bagla–Padmanabhan (JBP) parameterization**. Once the implementation procedure is understood for JBP, the same strategy can be applied to many other phenomenological dark energy parameterizations.
+
+### 3.1 Jassal–Bagla–Padmanabhan (JBP) Parameterization
+
+The JBP parameterization describes the evolution of the dark energy equation of state as
+
+$$
+w(z)=w_0+w_1\frac{z}{(1+z)^2},
+$$
+
+where $w_0$ represents the present-day value of the dark energy equation of state and $w_1$ controls its dynamical evolution.
+
+The dark energy density is determined by the continuity equation,
+
+$$
+\dot{\rho}_{\rm DE}
++
+3H\rho_{\rm DE}\left[1+w(a)\right]
+=
+0.
+$$
+
+Equivalently, its solution can be written as
+
+$$
+\rho_{\rm DE}(a)
+=
+\rho_{{\rm DE},0}
+\exp\left[
+\int_a^{a_0}
+\frac{3\left[1+w(a')\right]}{a'}\,da'
+\right].
+$$
+
+This expression is directly relevant to the implementation in CLASS because the fluid sector requires the corresponding integral in order to determine the evolution of the dark energy density.
+
+### 3.2 Quantities Required by CLASS
+
+The JBP equation of state is originally expressed in terms of redshift $z$. However, the CLASS background module evolves the cosmological equations using the scale factor $a$. We therefore first rewrite the JBP equation of state in terms of $a$ using
+
+$$
+1+z=\frac{a_0}{a},
+$$
+
+or equivalently,
+
+$$
+z=\frac{a_0}{a}-1.
+$$
+
+To implement the JBP model in the CLASS fluid sector, we need to determine three quantities:
+
+1. the equation of state $w(a)$,
+2. the derivative $dw(a)/da$,
+3. the integral
+
+$$
+\int_a^{a_0}
+\frac{3\left[1+w(a')\right]}{a'}\,da'.
+$$
+
+These quantities will replace the corresponding expressions used for the standard CPL parameterization in `background_w_fld()`.
+
+![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
+
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0011.jpg){: .mx-auto.d-block }
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0012.jpg){: .mx-auto.d-block }
