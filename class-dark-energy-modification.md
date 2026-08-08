@@ -46,7 +46,7 @@ The figure below shows the relevant part of `background.h`, where the standard f
 
 ![CLASS Architecture](/assets/img/CLASS%20Beyond%20%CE%9BCDM_page-0002.jpg){: .mx-auto.d-block }
 
-### 1.2 Python Interface: Connecting CLASS with MontePython
+### 1.2 Python Interface
 
 After defining the model parameters in the CLASS header files, we also need to consider the Python interface. This interface allows the quantities defined in the C code to be accessed from Python and is essential when CLASS is used together with parameter-inference frameworks such as MontePython.
 
