@@ -10,6 +10,13 @@ In the previous tutorial, we covered the installation and compilation of the **C
 
 In this tutorial series, we will focus on modifying the CLASS source code to implement the **JBP parameterization**, which can be further extended to implement different dark energy models. Rather than simply replacing equations, we will first develop a clear understanding of the structure of CLASS and then, step by step, modify the CLASS code. We will also learn how cosmological parameters are passed through the code and where modifications should be introduced. This approach will make it straightforward to implement virtually any dark energy parameterization.
 
+## 1. Structure of CLASS
+
+<iframe
+    src="/assets/img/CLASS%20Beyond%20%CE%9BCDM-12.pdf"
+    width="100%"
+    height="800px"
+    style="border:1px solid #ddd;">
+</iframe>
 
 
-CLASS Beyond ΛCDM-12.pdf
