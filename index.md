@@ -17,7 +17,7 @@ img {
 <img src="/assets/img/himanshu_avatar.png" width="170">
 
 <p>
-My research lies at the intersection of cosmology and astrophysics. In cosmology, I focus on understanding the nature of dark energy and testing the standard ΛCDM model using observational data and statistical inference methods. My current research explores the cosmological implications of the latest DESI observations, the Hubble tension, and the impact of progenitor age bias in Type Ia supernova cosmology, particularly in the context of possible evidence for dynamical dark energy and physics beyond the standard cosmological model.
+My research lies at the intersection of cosmology and astrophysics. In cosmology, I focus on understanding the nature of dark energy and testing the standard ΛCDM model using observational data and statistical inference methods. My current research explores the cosmological implications of the DESI measurements, the Hubble tension, and the impact of progenitor age bias in Type Ia supernova cosmology, particularly in the context of possible evidence for dynamical dark energy and physics beyond the standard cosmological model.
 </p>
 
 <p>
