@@ -17,9 +17,11 @@ img {
 <img src="/assets/img/himanshu_avatar.png" width="170">
 
 <p>
-My research lies at the intersection of cosmology and astrophysics. In cosmology, I work on constraining dark energy models using observational data and statistical inference methods. In astrophysics, I work on ray-tracing of photons around compact objects, including black holes, as well as on black hole shadows, equatorial periodic orbits and their gravitational wave signatures, and quasinormal modes. Beyond research, I enjoy sports, especially cricket, volleyball, swimming, etc.
+My research lies at the intersection of **cosmology and astrophysics**. In cosmology, I focus on understanding the nature of **dark energy** and testing the standard \(\Lambda\)CDM model using observational data and statistical inference methods. My current research explores the cosmological implications of the latest **DESI observations**, the **Hubble tension**, and the impact of **progenitor age bias in Type Ia supernova cosmology**, particularly in the context of possible evidence for dynamical dark energy and physics beyond the standard cosmological model.
+
+In astrophysics, I work on **black hole shadows, equatorial periodic orbits and their gravitational-wave signatures, and quasinormal modes**.
+
+I am currently pursuing my **PhD in Physics at Babeș-Bolyai University, Cluj-Napoca, Romania**. Beyond research, I enjoy sports, especially **cricket, volleyball, and swimming**.
+
 </p>
 
-<p>
-I am currently pursuing my PhD at Babeș-Bolyai University, Cluj-Napoca, Romania.
-</p>
