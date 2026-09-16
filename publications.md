@@ -15,23 +15,23 @@ title: Publications
 - **Is Dark Energy Dynamical in the DESI Era? A Critical Review**  
   S. Capozziello, **H. Chaudhary**, T. Harko, G. Mustafa  
   *Physics of the Dark Universe* **51**, 102196 (2026).  
-  [[Journal](https://doi.org/10.1016/j.dark.2025.102196)]
+  [DOI: 10.1016/j.dark.2025.102196](https://doi.org/10.1016/j.dark.2025.102196)
 
 - **Evidence of Dynamical Dark Energy Found via the DESI DR2 Lyman-α Forest**  
   S. Capozziello, **H. Chaudhary**, G. Mustafa, S. K. J. Pacif  
   *Astronomy & Astrophysics* **709**, A258 (2026).  
-  [[Journal](https://doi.org/10.1051/0004-6361/202557820)]
+  [DOI: 10.1051/0004-6361/202557820](https://doi.org/10.1051/0004-6361/202557820)
   
 - **Is the $\Lambda$CDM Model in Crisis?**  
   **H. Chaudhary**, S. Capozziello, S. Praharaj, S. K. J. Pacif, G. Mustafa  
   *Journal of High Energy Astrophysics* **50**, 100507 (2026).  
-  [[Journal](https://doi.org/10.1016/j.jheap.2025.100507)]
+  [DOI: 10.1016/j.jheap.2025.100507](https://doi.org/10.1016/j.jheap.2025.100507)
 
-- **Probing departures from ΛCDM with late-time datasets**  
+- **Probing Departures from $\Lambda$CDM by Late-time Datasets**  
   **H. Chaudhary**, V. K. Sharma, S. Capozziello, G. Mustafa  
-  *Astrophysical Journal Supplement Series 283 (2026) 73*  
-  [DOI](https://doi.org/10.3847/1538-4365/ae4b3f) | [arXiv:2510.08339](https://arxiv.org/abs/2510.08339)
-
+  *The Astrophysical Journal Supplement Series* **283** (2), 73 (2026).  
+  [DOI: 10.3847/1538-4365/ae4b3f](https://doi.org/10.3847/1538-4365/ae4b3f)
+  
 - **Yano–Schrödinger hyperfluid: Cosmological implications**  
   **H. Chaudhary**, S. Hussain  
   *Journal of High Energy Astrophysics 49 (2026) 100447*  
