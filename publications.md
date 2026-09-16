@@ -12,20 +12,20 @@ title: Publications
   *The Astrophysical Journal* **992** (2), 194 (2025).  
   [DOI: 10.3847/1538-4357/ae0458](https://doi.org/10.3847/1538-4357/ae0458)
 
-- **Is the ΛCDM model in crisis?**  
-  **H. Chaudhary**, S. Capozziello, S. Praharaj, S. K. J. Pacif, G. Mustafa  
-  *Journal of High Energy Astrophysics 50 (2026) 100507*  
-  [DOI](https://doi.org/10.1016/j.jheap.2025.100507) | [arXiv:2509.17124](https://arxiv.org/abs/2509.17124)
-
-- **Is dark energy dynamical in the DESI era? A critical review**  
+- **Is Dark Energy Dynamical in the DESI Era? A Critical Review**  
   S. Capozziello, **H. Chaudhary**, T. Harko, G. Mustafa  
-  *Physics of the Dark Universe 51 (2026) 102196*  
-  [DOI](https://doi.org/10.1016/j.dark.2025.102196) | [arXiv:2512.10585](https://arxiv.org/abs/2512.10585)
+  *Physics of the Dark Universe* **51**, 102196 (2026).  
+  [[Journal](https://doi.org/10.1016/j.dark.2025.102196)]
 
-- **Evidence of dynamical dark energy via the DESI DR2 Lyman-α forest**  
+- **Evidence of Dynamical Dark Energy Found via the DESI DR2 Lyman-α Forest**  
   S. Capozziello, **H. Chaudhary**, G. Mustafa, S. K. J. Pacif  
-  *Astronomy & Astrophysics (2026)*  
-  [DOI](https://doi.org/10.1051/0004-6361/202557820) | [arXiv:2510.21976](https://arxiv.org/abs/2510.21976)
+  *Astronomy & Astrophysics* **709**, A258 (2026).  
+  [[Journal](https://doi.org/10.1051/0004-6361/202557820)]
+  
+- **Is the $\Lambda$CDM Model in Crisis?**  
+  **H. Chaudhary**, S. Capozziello, S. Praharaj, S. K. J. Pacif, G. Mustafa  
+  *Journal of High Energy Astrophysics* **50**, 100507 (2026).  
+  [[Journal](https://doi.org/10.1016/j.jheap.2025.100507)]
 
 - **Probing departures from ΛCDM with late-time datasets**  
   **H. Chaudhary**, V. K. Sharma, S. Capozziello, G. Mustafa  
