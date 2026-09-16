@@ -27,6 +27,11 @@ title: Publications
   *The European Physical Journal C* **86** (5), 564 (2026).  
   [DOI: 10.1140/epjc/s10052-026-15806-w](https://doi.org/10.1140/epjc/s10052-026-15806-w)
 
+- **Testing the Anton-Schmidt Dark Energy Model with the DESI DR2 Measurements**  
+  **H. Chaudhary**, S. Capozziello, D. J. Gogoi, G. Mustafa  
+  *Physical Review D* **114** (4), 043529 (2026).  
+  [DOI: 10.1103/ft7g-gxzf](https://doi.org/10.1103/ft7g-gxzf)  
+
 - **Is the $\Lambda$CDM Model in Crisis?**  
   **H. Chaudhary**, S. Capozziello, S. Praharaj, S. K. J. Pacif, G. Mustafa  
   *Journal of High Energy Astrophysics* **50**, 100507 (2026).  
