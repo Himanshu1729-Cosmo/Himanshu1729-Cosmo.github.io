@@ -12,35 +12,40 @@ title: Publications
   *The Astrophysical Journal* **992** (2), 194 (2025).  
   [DOI: 10.3847/1538-4357/ae0458](https://doi.org/10.3847/1538-4357/ae0458)
 
-- **Is Dark Energy Dynamical in the DESI Era? A Critical Review**  
-  S. Capozziello, **H. Chaudhary**, T. Harko, G. Mustafa  
-  *Physics of the Dark Universe* **51**, 102196 (2026).  
-  [DOI: 10.1016/j.dark.2025.102196](https://doi.org/10.1016/j.dark.2025.102196)
+- **Probing Departures from $\Lambda$CDM by Late-time Datasets**  
+  **H. Chaudhary**, V. K. Sharma, S. Capozziello, G. Mustafa  
+  *The Astrophysical Journal Supplement Series* **283** (2), 73 (2026).  
+  [DOI: 10.3847/1538-4365/ae4b3f](https://doi.org/10.3847/1538-4365/ae4b3f)  
 
 - **Evidence of Dynamical Dark Energy Found via the DESI DR2 Lyman-α Forest**  
   S. Capozziello, **H. Chaudhary**, G. Mustafa, S. K. J. Pacif  
   *Astronomy & Astrophysics* **709**, A258 (2026).  
-  [DOI: 10.1051/0004-6361/202557820](https://doi.org/10.1051/0004-6361/202557820)
-  
+  [DOI: 10.1051/0004-6361/202557820](https://doi.org/10.1051/0004-6361/202557820)  
+
+- **Evidence for Evolving Dark Energy from DESI DR2 BAO and Pantheon$^+$, DES-Dovekie, and Union3**  
+  **H. Chaudhary**, S. Capozziello, V. K. Sharma, I. Gómez-Vargas, G. Mustafa  
+  *The European Physical Journal C* **86** (5), 564 (2026).  
+  [DOI: 10.1140/epjc/s10052-026-15806-w](https://doi.org/10.1140/epjc/s10052-026-15806-w)
+
 - **Is the $\Lambda$CDM Model in Crisis?**  
   **H. Chaudhary**, S. Capozziello, S. Praharaj, S. K. J. Pacif, G. Mustafa  
   *Journal of High Energy Astrophysics* **50**, 100507 (2026).  
   [DOI: 10.1016/j.jheap.2025.100507](https://doi.org/10.1016/j.jheap.2025.100507)
 
-- **Probing Departures from $\Lambda$CDM by Late-time Datasets**  
-  **H. Chaudhary**, V. K. Sharma, S. Capozziello, G. Mustafa  
-  *The Astrophysical Journal Supplement Series* **283** (2), 73 (2026).  
-  [DOI: 10.3847/1538-4365/ae4b3f](https://doi.org/10.3847/1538-4365/ae4b3f)
-  
-- **Impact of interacting parameters on dark matter in interacting dark energy models**  
-  **H. Chaudhary**, R. Nagpal, S. K. J. Pacif, G. Mustafa  
-  *Astrophysical Journal Supplement Series 278 (2025) 22*  
-  [DOI](https://doi.org/10.3847/1538-4365/adc679)
+- **Is Dark Energy Dynamical in the DESI Era? A Critical Review**  
+  S. Capozziello, **H. Chaudhary**, T. Harko, G. Mustafa  
+  *Physics of the Dark Universe* **51**, 102196 (2026).  
+  [DOI: 10.1016/j.dark.2025.102196](https://doi.org/10.1016/j.dark.2025.102196)
 
-- **Yano–Schrödinger hyperfluid: Cosmological implications**  
+- **Impact of Interacting Parameters on Dark Matter in an Interacting Dark Energy Model**  
+  **H. Chaudhary**, R. Nagpal, S. K. J. Pacif, G. Mustafa  
+  *The Astrophysical Journal Supplement Series* **278** (1), 22 (2025).  
+  [DOI: 10.3847/1538-4365/adc679](https://doi.org/10.3847/1538-4365/adc679)
+
+- **Yano-Schrödinger Hyperfluid: Cosmological Implications**  
   **H. Chaudhary**, S. Hussain  
-  *Journal of High Energy Astrophysics 49 (2026) 100447*  
-  [DOI](https://doi.org/10.1016/j.jheap.2025.100447) | [arXiv:2503.23115](https://arxiv.org/abs/2503.23115)
+  *Journal of High Energy Astrophysics* **49**, 100447 (2026).  
+  [DOI: 10.1016/j.jheap.2025.100447](https://doi.org/10.1016/j.jheap.2025.100447)  
 
 --------------------------------------------------------------
 # Full Publication List
