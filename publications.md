@@ -50,7 +50,12 @@ title: Publications
 - **Yano-Schrödinger Hyperfluid: Cosmological Implications**  
   **H. Chaudhary**, S. Hussain  
   *Journal of High Energy Astrophysics* **49**, 100447 (2026).  
-  [DOI: 10.1016/j.jheap.2025.100447](https://doi.org/10.1016/j.jheap.2025.100447)  
+  [DOI: 10.1016/j.jheap.2025.100447](https://doi.org/10.1016/j.jheap.2025.100447)
+
+- **Quasinormal Modes of Black Holes in the Generalized Schwarzschild--de Sitter Solution of $f(R)$ Gravity**  
+  D. J. Gogoi, **H. Chaudhary**, T. Harko  
+  *Physical Review D* **114** (4), 044089 (2026).  
+  [DOI: 10.1103/189y-7pjv](https://doi.org/10.1103/189y-7pjv)  
 
 --------------------------------------------------------------
 # Full Publication List
