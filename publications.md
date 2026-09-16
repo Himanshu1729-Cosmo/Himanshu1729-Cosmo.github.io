@@ -32,25 +32,15 @@ title: Publications
   *The Astrophysical Journal Supplement Series* **283** (2), 73 (2026).  
   [DOI: 10.3847/1538-4365/ae4b3f](https://doi.org/10.3847/1538-4365/ae4b3f)
   
-- **Yano–Schrödinger hyperfluid: Cosmological implications**  
-  **H. Chaudhary**, S. Hussain  
-  *Journal of High Energy Astrophysics 49 (2026) 100447*  
-  [DOI](https://doi.org/10.1016/j.jheap.2025.100447) | [arXiv:2503.23115](https://arxiv.org/abs/2503.23115)
-
 - **Impact of interacting parameters on dark matter in interacting dark energy models**  
   **H. Chaudhary**, R. Nagpal, S. K. J. Pacif, G. Mustafa  
   *Astrophysical Journal Supplement Series 278 (2025) 22*  
   [DOI](https://doi.org/10.3847/1538-4365/adc679)
 
-- **Semi-symmetric metric gravity: A brief overview**  
-  **H. Chaudhary**, L. Csillag, T. Harko  
-  *Universe 10 (2024) 419*  
-  [DOI](https://doi.org/10.3390/universe10110419)
-
-- **Astrophysical implications of Weyl geometric black holes: Shadows and strong gravitational lensing**  
-  N. U. Molla, **H. Chaudhary**, F. Atamurotov, G. Mustafa, T. Harko  
-  *Physics of the Dark Universe 47 (2025) 101735*  
-  [DOI](https://doi.org/10.1016/j.dark.2024.101735)
+- **Yano–Schrödinger hyperfluid: Cosmological implications**  
+  **H. Chaudhary**, S. Hussain  
+  *Journal of High Energy Astrophysics 49 (2026) 100447*  
+  [DOI](https://doi.org/10.1016/j.jheap.2025.100447) | [arXiv:2503.23115](https://arxiv.org/abs/2503.23115)
 
 --------------------------------------------------------------
 # Full Publication List
