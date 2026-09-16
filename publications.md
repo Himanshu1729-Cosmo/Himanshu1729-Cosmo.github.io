@@ -9,9 +9,8 @@ title: Publications
 
 - **Does DESI DR2 challenge the ΛCDM paradigm?**  
   **H. Chaudhary**, S. Capozziello, V. K. Sharma, G. Mustafa  
-  *Astrophysical Journal 992 (2025) 194*  
-  [DOI](https://doi.org/10.3847/1538-4357/ae0458) | [arXiv:2507.21607](https://arxiv.org/abs/2507.21607)
-
+  *[Astrophysical Journal 992 (2025) 194](https://doi.org/10.3847/1538-4357/ae0458)*
+  
 - **Is the ΛCDM model in crisis?**  
   **H. Chaudhary**, S. Capozziello, S. Praharaj, S. K. J. Pacif, G. Mustafa  
   *Journal of High Energy Astrophysics 50 (2026) 100507*  
